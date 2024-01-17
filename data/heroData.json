@@ -1,0 +1,22 @@
+[
+  
+    {
+      "id": 1,
+      "title": "Nikki Haley, Ron DeSantis spar without Trump",
+      "image": "/public/img1.jpg",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
+    },
+    {
+      "id": 2,
+      "title": "Learn How to Make Your First $1,000 Freelance Writing",
+      "image": "/public/img2.jpg",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
+    },
+    {
+      "id": 3,
+      "title": "'Experience Has Taught Me Well'",
+      "image": "/public/img3.jpg",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
+    }
+  
+]
