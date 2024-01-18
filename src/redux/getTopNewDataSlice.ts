@@ -4,7 +4,8 @@ import axios from "axios";
 // import { topNewsData } from "../../data/heroData";
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
-  const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+  const res = await axios.get("http://localhost:3000/topNews");
+  console.log("json data", res)
   return res.data;
 });
 const postSlice = createSlice({

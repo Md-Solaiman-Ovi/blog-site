@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
 
-const RelatedBlogCard = () => {
+const RelatedBlogCard = (sportsNews:any) => {
+  
   return (
     <Link to={"/home/category/single-details-page"}>
-    <div className="flex flex-col border-1 shadow-xl rounded">
+    <div className="flex flex-col  border-1 shadow-xl rounded h-[520px]">
       <div className="flex h-[300px]">
         <img
           className="object-cover object-top w-full"
@@ -11,13 +13,16 @@ const RelatedBlogCard = () => {
           alt=""
         ></img>
       </div>
-      <div className="text-lg font-bold px-2">
-        Interview ‘I voted for Sheikh Shaheb with these hands, I will vote for
-        you also’
+      <div className="text-lg font-bold px-2 h-[100px]">
+        {/* Interview ‘I voted for Sheikh Shaheb with these hands, I will vote for
+        you also’ */}
+     { sportsNews.sportsNews.title}
+        
       </div>
-      <div className="text-sm text-justify p-2">
-        I am already an emotional person and hearing such words brought tears in
-        my eyes for real. I wore sunglasses most of the time during
+      <div className="text-sm text-justify p-2 h-[100px]">
+        {/* I am already an emotional person and hearing such words brought tears in
+        my eyes for real. I wore sunglasses most of the time during */}
+        { sportsNews.sportsNews.shortDesc}
       </div>
       <div className="text-start text-[12px] text-gray-400 p-2">Publish date: 13 Jan 2024</div>
     </div>
