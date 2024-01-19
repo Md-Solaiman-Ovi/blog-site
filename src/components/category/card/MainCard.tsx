@@ -14,7 +14,7 @@ const MainCard = ({ sportsNews }: any) => {
           />
         </div>
       </Link>
-      <div className="text-justify p-2 ">{sportsNews.shortDesc}</div>
+      <div className="text-justify p-2 ">{sportsNews.desc}</div>
     </div>
   );
 };

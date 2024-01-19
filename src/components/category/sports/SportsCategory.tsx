@@ -24,22 +24,12 @@ const SportsCategory = () => {
         <div className="border-1 flex flex-col gap-4 w-full md:w-3/5 shadow-lg">
           {isLoading && <div>Loading</div>}
           {error && <div>{error.message}</div>}
-          {sports &&
-            sports.map((sportsNews: any) => {
-              if (sportsNews.id == 1) {
-                
-                return <MainCard sportsNews={sportsNews} />;
-              }
-            })}
+          {sports.length > 0 && <MainCard sportsNews={sports[0]} />}
         </div>
         <div className="flex flex-col gap-4 md:w-2/5 ">
-        {sports &&
-            sports.map((sportsNews: any) => {
-              if (sportsNews.id > 1) {
-            
-                return (<SmallCategoryCard sportsNews={sportsNews} />);
-              }
-            })}
+          {sports.slice(1).map((sportsNews: any) => (
+            <SmallCategoryCard sportsNews={sportsNews} />
+          ))}
         </div>
       </div>
     </div>

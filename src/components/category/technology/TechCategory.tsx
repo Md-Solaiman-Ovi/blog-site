@@ -18,20 +18,19 @@ const TechCategory = () => {
         Technology Category
       </div>
       <div className="flex flex-col md:flex-row pt-5 gap-20">
-      {isLoading && <div>Loading</div>}
-          {error && <div>{error.message}</div>}
-          {sports &&
-            sports.map((sportsNews: any) => {
-              if (sportsNews.id == 1) {
-                console.log("sportNews title", sportsNews.title);
-                return <MainCard sportsNews={sportsNews} />;
-              }
-            })}
+        {isLoading && <div>Loading</div>}
+        {error && <div>{error.message}</div>}
+        {/* {sports &&
+          sports.map((sportsNews: any) => {
+            if (sportsNews.id == 1) {
+              return <MainCard sportsNews={sportsNews} />;
+            }
+          })} */}
         <div className="flex flex-col gap-4 md:w-2/5 ">
+          {/* <LatestCard />
           <LatestCard />
           <LatestCard />
-          <LatestCard />
-          <LatestCard />
+          <LatestCard /> */}
         </div>
       </div>
     </div>

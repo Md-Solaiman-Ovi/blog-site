@@ -2,6 +2,7 @@
 
 import { Link } from "react-router-dom";
 const SmallCategoryCard = ({ sportsNews }: any) => {
+
   return (
     <Link to={"/home/category/single-details-page"}>
       <div className="flex h-36 items-center gap-4 border-1 bg-gray-50 shadow-xl rounded cursor-pointer">
