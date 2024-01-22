@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../../redux/getTopNewDataSlice";
+import { topNewsDataType } from "../../appStore/dataType";
 
 const HeroSection = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { isLoading, posts, error } = useSelector((state: any) => state.posts);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -27,8 +27,9 @@ const HeroSection = () => {
         </div>
       )}
       <div className="w-full grid grid-rows-2 gap-4">
-        {posts.slice(1).map((topNews: any) => (
+        {posts.slice(1).map((topNews: topNewsDataType) => (
           <div
+            key={topNews.id}
             // className={`border-1 flex flex-col justify-end shadow-lg bg-[url('${topNews.image}')] bg-cover`}
             className={`border-1 flex flex-col justify-end shadow-lg bg-cover`}
             style={{ backgroundImage: `url('${topNews.image}')` }}

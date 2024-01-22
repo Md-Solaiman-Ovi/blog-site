@@ -5,8 +5,8 @@ import axios from "axios";
 export const fetchSports = createAsyncThunk(
   "sportsNews/fetchSport",
   async () => {
-    const res = await axios.get("http://localhost:3000/sportsCategoryNews");
-    console.log("json data", res);
+    const res = await axios.get("http://localhost:3000/Sports");
+
     return res.data;
   }
 );

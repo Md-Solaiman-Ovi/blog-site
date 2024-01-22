@@ -1,12 +1,14 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../../custom-components/Layout";
 import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useEffect } from "react";
 import { fetchSports } from "../../../redux/sportsCategory";
+import { topNewsDataType } from "../../../appStore/dataType";
 
 const CategoryPage = () => {
   const { isLoading, sports, error } = useSelector(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (state: any) => state.sports
   );
   const dispatch = useDispatch();
@@ -23,7 +25,7 @@ const CategoryPage = () => {
         {isLoading && <div>Loading</div>}
         {error && <div>{error.message}</div>}
         {sports &&
-          sports.map((sportsNews: any) => {
+          sports.map((sportsNews: topNewsDataType) => {
             return <RelatedBlogCard sportsNews={sportsNews} />;
           })}
       </div>

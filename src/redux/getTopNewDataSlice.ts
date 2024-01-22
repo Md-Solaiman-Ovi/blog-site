@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {  AsyncThunk, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { AsyncThunkConfig } from "../appStore/dataType";
 // import { topNewsData } from "../../data/heroData";
 
-export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
+export const fetchPosts: AsyncThunk<any, void, AsyncThunkConfig> = createAsyncThunk("posts/fetchPosts", async () => {
   const res = await axios.get("http://localhost:3000/topNews");
-  console.log("json data", res)
+ 
   return res.data;
 });
 const postSlice = createSlice({

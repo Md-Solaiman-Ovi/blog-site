@@ -6,7 +6,7 @@ export const fetchLatestBlogs = createAsyncThunk(
   "latestBlogs/fetchLatestBlogs",
   async () => {
     const res = await axios.get("http://localhost:3000/latestBlogs");
-    console.log("json data", res);
+    // console.log("json data", res);
     return res.data;
   }
 );

@@ -52,14 +52,14 @@ const Navbar = () => {
             <div className="hover:text-sky-600 cursor-pointer" >Following</div>
           </div>
           <div className="flex justify-evenly items-center space-x-8 ">
-            <Link to={"/home/category/"}><div className="hover:text-sky-600 cursor-pointer">World</div></Link>
-            <Link to={"/home/category/"}><div className="hover:text-sky-600 cursor-pointer">Local</div></Link>
-            <Link to={"/home/category/"}><div className="hover:text-sky-600 cursor-pointer hidden md:block">Business</div></Link>
-            <Link to={"/home/category/"}><div className="hover:text-sky-600 cursor-pointer">Technology</div></Link>
-            <Link to={"/home/category/"}><div className="hover:text-sky-600 cursor-pointer hidden md:block">Entertainment</div></Link>
-            <Link to={"/home/category/"}><div className="hover:text-sky-600 cursor-pointer">Sports</div></Link>
-            <Link to={"/home/category/"}><div className="hover:text-sky-600 cursor-pointer">Sceince</div></Link>
-            <Link to={"/home/category/"}><div className="hover:text-sky-600 cursor-pointer hidden md:block">Health</div></Link>
+            <Link to={"/category/"}><div className="hover:text-sky-600 cursor-pointer">World</div></Link>
+            <Link to={"/category/"}><div className="hover:text-sky-600 cursor-pointer">Local</div></Link>
+            <Link to={"/category/"}><div className="hover:text-sky-600 cursor-pointer hidden md:block">Business</div></Link>
+            <Link to={"/category/"}><div className="hover:text-sky-600 cursor-pointer">Technology</div></Link>
+            <Link to={"/category/"}><div className="hover:text-sky-600 cursor-pointer hidden md:block">Entertainment</div></Link>
+            <Link to={"/category/"}><div className="hover:text-sky-600 cursor-pointer">Sports</div></Link>
+            <Link to={"/category/"}><div className="hover:text-sky-600 cursor-pointer">Sceince</div></Link>
+            <Link to={"/category/"}><div className="hover:text-sky-600 cursor-pointer hidden md:block">Health</div></Link>
           </div>
         </div>
       </div>
