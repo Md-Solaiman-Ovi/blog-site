@@ -2,34 +2,32 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useDispatch, useSelector } from "react-redux";
-import Layout from "../../../custom-components/Layout";
-import LatestCard from "../../card/LatestCard";
-import DetailsMain from "./DetailsMain";
+import Layout from "../custom-components/Layout";
+import LatestCard from "../card/LatestCard";
+import DetailsMain from "../card/DetailsMain";
 import { useEffect } from "react";
-import { fetchLatestBlogs } from "../../../../redux/latestBlogs";
-import { fetchSports } from "../../../../redux/sportsCategory";
-import RelatedBlogCard from "../../card/RelatedBlogCard";
+import { fetchBlogs } from "../../redux/blogSlice";
+// import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useParams } from "react-router-dom";
-
 
 const SingleDetailsPage = () => {
   const params = useParams();
-  console.log("params2", params);
+  console.log("params2", params.slug);
 
-  const { latestBlogs } = useSelector((state: any) => state.latestBlogs);
-  const { sports } = useSelector((state: any) => state.sports);
+  const { blogs } = useSelector((state: any) => state.blogs);
+  console.log("blogs", blogs);
+
   const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
-    dispatch(fetchLatestBlogs());
-    // @ts-ignore
-    dispatch(fetchSports());
-  }, []);
-  const postDetail = sports.find(
+    dispatch(fetchBlogs());
+  }, [dispatch]);
+  const postDetail = blogs.find(
     (item: any) =>
-      item.slug == params.slug && item.category.name == params.category
+      item.slug == params.slug && item.category.name == params.categorySlug
   );
 
+  console.log("postdetails", postDetail);
   return (
     <Layout>
       <div className="container">
@@ -43,9 +41,14 @@ const SingleDetailsPage = () => {
             <div className="font-bold text-start text-xl text-sky-800">
               Latest Blogs
             </div>
-            {latestBlogs.map((latest: any) => (
-              <LatestCard key={latest.id} latest={latest} />
-            ))}
+            {blogs.map((postDetail: any) => {
+              console.log("jsdbfjkkjd", postDetail.category.name);
+              if (postDetail.category.name == "latest") {
+                return (
+                  <LatestCard key={postDetail.id} postDetail={postDetail} />
+                );
+              }
+            })}
           </div>
         </div>
         <div className="flex flex-col gap-4 py-10">
@@ -53,15 +56,15 @@ const SingleDetailsPage = () => {
             Related Blogs
           </div>
           <div className="grid grid-cols-4 gap-4">
-            {sports &&
-              sports.slice(0, 4).map((sportsNews: any) => {
+            {/* {blogs &&
+              blogs.slice(0, 4).map((postDetail: any) => {
+                if(blogs.category.name == 'latest')
                 return (
                   <RelatedBlogCard
-                    key={sportsNews.id}
-                    sportsNews={sportsNews}
+                  key={postDetail.id} postDetail={postDetail}
                   />
                 );
-              })}
+              })} */}
           </div>
         </div>
       </div>

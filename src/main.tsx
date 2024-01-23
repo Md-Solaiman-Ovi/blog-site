@@ -2,10 +2,10 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import CategoryPage from "./components/category/pages/CategoryPage.tsx";
+import CategoryPage from "./components/pages/CategoryPage.tsx";
 import { Provider } from "react-redux";
 import store from "./appStore/store.ts";
-import SingleDetailsPage from "./components/category/pages/single-page/SingleDetailsPage.tsx";
+import SingleDetailsPage from "./components/pages/SingleDetailsPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -13,12 +13,12 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "category/:category/:slug",
+    path: "category/:categorySlug/:slug",
     element: <SingleDetailsPage />,
   },
 
   {
-    path: "category/",
+    path: ":category/:slug",
     element: <CategoryPage />,
   },
 ]);

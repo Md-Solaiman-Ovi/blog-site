@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {  AsyncThunk, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { AsyncThunkConfig } from "../appStore/dataType";
 // import { topNewsData } from "../../data/heroData";
 
-export const fetchPosts: AsyncThunk<any, void, AsyncThunkConfig> = createAsyncThunk("posts/fetchPosts", async () => {
+export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
   const res = await axios.get("http://localhost:3000/topNews");
- 
+
   return res.data;
 });
 const postSlice = createSlice({
@@ -24,15 +23,14 @@ const postSlice = createSlice({
     builder.addCase(fetchPosts.fulfilled, (state: any, action: any) => {
       state.isLoading = false;
       state.posts = action.payload;
-      state.error = null
-      
+      state.error = null;
     });
     builder.addCase(fetchPosts.rejected, (state: any, action: any) => {
       state.isLoading = false;
       state.posts = [];
-      state.error = action.error.message
-    })
-  }
+      state.error = action.error.message;
+    });
+  },
 });
 
 export default postSlice.reducer;

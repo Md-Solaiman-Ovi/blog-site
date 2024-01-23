@@ -2,10 +2,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
 import { useDispatch, useSelector } from "react-redux";
-import Layout from "../../custom-components/Layout";
+import Layout from "../custom-components/Layout";
 import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useEffect } from "react";
-import { fetchSports } from "../../../redux/sportsCategory";
+import { fetchSports } from "../../redux/sportsCategory";
 
 const CategoryPage = () => {
   const { isLoading, sports, error } = useSelector(
@@ -16,7 +16,7 @@ const CategoryPage = () => {
   useEffect(() => {
     // @ts-ignore
     dispatch(fetchSports());
-  }, []);
+  }, [dispatch]);
   return (
     <Layout>
       {/* <div className="p-4 text-start text-xl font-bold text-sky-500">All Local News</div> */}

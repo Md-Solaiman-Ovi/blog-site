@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const RelatedBlogCard = (sportsNews:any) => {
   
   return (
-    <Link to={`/home/category/single-details-page/${sportsNews.id}`}>
+    <Link to={`/category/${sportsNews.id}/${sportsNews.id}`}>
     <div className="flex flex-col  border-1 shadow-xl rounded h-[520px]">
       <div className="flex h-[300px]">
         <img

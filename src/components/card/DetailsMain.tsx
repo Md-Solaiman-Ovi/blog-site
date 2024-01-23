@@ -1,10 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-const DetailsMain = ({postDetail}:any) => {
-  console.log('details main card',postDetail);
+import Tags from "../tag/Tags";
+
+const DetailsMain = ({ postDetail }: any) => {
+  console.log("details main card", postDetail);
   return (
     <div className="border-1 flex flex-col gap-4 w-full md:w-3/5 shadow-lg">
-      <div className="text-2xl font-bold text-start px-4">{postDetail.title}</div>
+      <div className="text-2xl font-bold text-start px-4">
+        {postDetail.title}
+      </div>
 
       <div className="w-full h-[300px] cursor-pointer">
         <img
@@ -18,9 +22,9 @@ const DetailsMain = ({postDetail}:any) => {
         <div>Author: Mahmudul Hasib</div>
       </div>
 
-      <div className="text-justify p-2 ">
-        {postDetail.desc}
-        
+      <div className="text-justify p-2 ">{postDetail.desc}</div>
+      <div className=" rounded  ">
+        <Tags />
       </div>
     </div>
   );

@@ -1,15 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../../redux/getTopNewDataSlice";
-import { topNewsDataType } from "../../appStore/dataType";
 
 const HeroSection = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { isLoading, posts, error } = useSelector((state: any) => state.posts);
   const dispatch = useDispatch();
   useEffect(() => {
+    // @ts-ignore
     dispatch(fetchPosts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 py-0 md:py-10 gap-10  ">
@@ -27,10 +29,9 @@ const HeroSection = () => {
         </div>
       )}
       <div className="w-full grid grid-rows-2 gap-4">
-        {posts.slice(1).map((topNews: topNewsDataType) => (
+        {posts.slice(1).map((topNews: any) => (
           <div
             key={topNews.id}
-            // className={`border-1 flex flex-col justify-end shadow-lg bg-[url('${topNews.image}')] bg-cover`}
             className={`border-1 flex flex-col justify-end shadow-lg bg-cover`}
             style={{ backgroundImage: `url('${topNews.image}')` }}
           >
@@ -46,7 +47,6 @@ const HeroSection = () => {
           </div>
         ))}
       </div>
-      ;
       {/* <div className="w-full grid grid-rows-2 gap-4">
         {posts &&
           posts.map((topNews: any) => {

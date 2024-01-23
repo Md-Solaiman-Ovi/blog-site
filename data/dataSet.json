@@ -22,367 +22,308 @@
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
     }
   ],
-  "sportsCategoryNews": [
-    {
-      "id": 1,
-      "title": "Trevon Diggs makes it clear that his brother, Stefon, should leave Buffalo!",
-      "image": "/public/sportImg1.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque?",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
-    },
-    {
-      "id": 2,
-      "title": "Learn How to Make Your First $1,000 Freelance Writing",
-      "image": "/public/sportImg2.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque?",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
-    },
-    {
-      "id": 3,
-      "title": "'Experience Has Taught Me Well'",
-      "image": "/public/sportImg3.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? ",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
-    },
-    {
-      "id": 4,
-      "title": "Learn How to Make Your First $1,000 Freelance Writing",
-      "image": "/public/sportImg2.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? ",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
-    },
-    {
-      "id": 5,
-      "title": "'Experience Has Taught Me Well'",
-      "image": "/public/sportImg3.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque?",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
-    }
-  ],
-  "latestBlogs": [
+
+  "blogs": [
     {
       "id": 1,
       "title": "Latest blog title 1",
+      "slug": "post-1",
       "image": "/public/sportImg1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+      "category": {
+        "id": 1,
+        "name": "latest"
+      }
     },
     {
       "id": 2,
       "title": "Latest blog title 2",
+      "slug": "post-2",
       "image": "/public/sportImg2.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+      "category": {
+        "id": 1,
+        "name": "latest"
+      }
     },
     {
       "id": 3,
       "title": "Latest blog title 3",
+      "slug": "post-3",
       "image": "/public/sportImg3.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ? ",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+
+      "category": {
+        "id": 1,
+        "name": "latest"
+      }
     },
     {
       "id": 4,
       "title": "Latest blog title 4",
+      "slug": "post-4",
       "image": "/public/sportImg2.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ? ",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+      "category": {
+        "id": 1,
+        "name": "latest"
+      }
     },
     {
       "id": 5,
       "title": "'Latest blog title 5'",
+      "slug": "post-5",
       "image": "/public/sportImg3.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
-    }
-  ],
-  "world": [
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+      "category": {
+        "id": 1,
+        "name": "latest"
+      }
+    },
     {
-      "id": 1,
+      "id": 6,
       "title": "World news title 1",
-      "slug":"post-1",
+      "slug": "post-6",
       "image": "/public/sportImg1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"world"
-        }
-
-      
+      "category": {
+        "id": 2,
+        "name": "world"
+      }
     },
     {
-      "id": 2,
+      "id": 7,
       "title": "World news title 2",
-      "slug":"post-2",
+      "slug": "post-7",
       "image": "/public/sportImg2.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"world"
-        }
+      "category": {
+        "id": 2,
+        "name": "world"
+      }
     },
     {
-      "id": 3,
+      "id": 8,
       "title": "World news title 3",
-      "slug":"post-3",
+      "slug": "post-8",
       "image": "/public/sportImg1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"world"
-        }
-
-      
+      "category": {
+        "id": 2,
+        "name": "world"
+      }
     },
     {
-      "id": 4,
+      "id": 9,
       "title": "World news title 4",
       "image": "/public/sportImg2.jpg",
-      "slug":"post-4",
+      "slug": "post-9",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"world"
-        }
-    },{
-      "id": 5,
-      "title": "World news title 5",
-      "slug":"post-5",
-      "image": "/public/sportImg1.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"world"
-        }
-
-      
-    }
-   
-  ],
-  "Local": [
-    {
-      "id": 1,
-      "title": "Local news title 1",
-      "slug":"post-1",
-      "image": "/public/sportImg1.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Local"
-        }
-
-      
+      "category": {
+        "id": 2,
+        "name": "world"
+      }
     },
     {
-      "id": 2,
+      "id": 10,
+      "title": "World news title 5",
+      "slug": "post-10",
+      "image": "/public/sportImg1.jpg",
+      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+      "category": {
+        "id": 2,
+        "name": "world"
+      }
+    },
+    {
+      "id": 11,
+      "title": "Local news title 1",
+      "slug": "post-11",
+      "image": "/public/sportImg1.jpg",
+      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+      "category": {
+        "id": 3,
+        "name": "local"
+      }
+    },
+    {
+      "id": 12,
       "title": "Local news title 2",
       "image": "/public/sportImg2.jpg",
-      "slug":"post-2",
+      "slug": "post-12",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Local"
-        }
+      "category": {
+        "id": 3,
+        "name": "local"
+      }
     },
     {
-      "id": 3,
+      "id": 13,
       "title": "Local news title 3",
-      "slug":"post-3",
+      "slug": "post-13",
       "image": "/public/sportImg1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Local"
-        }
-
-      
+      "category": {
+        "id": 3,
+        "name": "local"
+      }
     },
     {
-      "id": 4,
+      "id": 14,
       "title": "Local news title 4",
-      "slug":"post-4",
+      "slug": "post-14",
       "image": "/public/sportImg2.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Local"
-        }
-    },{
-      "id": 5,
+      "category": {
+        "id": 3,
+        "name": "local"
+      }
+    },
+    {
+      "id": 15,
       "title": "Local news title 5",
-      "slug":"post-5",
+      "slug": "post-15",
       "image": "/public/sportImg1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Local"
-        }
-
-      
-    }
-  ],
-  "Tech": [
+      "category": {
+        "id": 3,
+        "name": "local"
+      }
+    },
     {
-      "id": 1,
+      "id": 16,
       "title": "Tech news title 1",
-      "slug":"post-1",
+      "slug": "post-16",
       "image": "/public/sportImg1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Tech"
-        }
-
-      
+      "category": {
+        "id": 4,
+        "name": "tech"
+      }
     },
     {
-      "id": 2,
+      "id": 17,
       "title": "Tech news title 2",
-      "slug":"post-2",
+      "slug": "post-17",
       "image": "/public/sportImg2.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Tech"
-        }
+      "category": {
+        "id": 4,
+        "name": "tech"
+      }
     },
     {
-      "id": 3,
+      "id": 18,
       "title": "Tech news title 3",
-      "slug":"post-3",
+      "slug": "post-18",
       "image": "/public/sportImg1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Tech"
-        }
-
-      
+      "category": {
+        "id": 4,
+        "name": "tech"
+      }
     },
     {
-      "id": 4,
+      "id": 19,
       "title": "Tech news title 4",
-      "slug":"post-4",
+      "slug": "post-19",
       "image": "/public/sportImg2.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Tech"
-        }
-    },{
-      "id": 5,
+      "category": {
+        "id": 4,
+        "name": "tech"
+      }
+    },
+    {
+      "id": 20,
       "title": "Tech news title 5",
-      "slug":"post-5",
+      "slug": "post-20",
       "image": "/public/sportImg1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Tech"
-        }
-
-      
-    }
-  ],
-  "Sports": [
+      "category": {
+        "id": 4,
+        "name": "tech"
+      }
+    },
     {
-      "id": 1,
+      "id": 21,
       "title": "Sports news title 1",
-      "slug":"post-1",
+      "slug": "post-21",
       "image": "/public/sportImg1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Sports"
-        }
-
-      
+      "category": {
+        "id": 5,
+        "name": "sports"
+      }
     },
     {
-      "id": 2,
+      "id": 22,
       "title": "Sports news title 2",
-      "slug":"post-2",
+      "slug": "post-22",
       "image": "/public/sportImg2.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Sports"
-        }
+      "category": {
+        "id": 5,
+        "name": "sports"
+      }
     },
     {
-      "id": 3,
+      "id": 23,
       "title": "Sports news title 3",
-      "slug":"post-3",
+      "slug": "post-23",
       "image": "/public/sportImg1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Sports"
-        }
-
-      
+      "category": {
+        "id": 5,
+        "name": "sports"
+      }
     },
     {
-      "id": 4,
+      "id": 24,
       "title": "Sports news title 4",
-      "slug":"post-4",
+      "slug": "post-24",
       "image": "/public/sportImg2.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Sports"
-        }
-    },{
-      "id": 5,
+      "category": {
+        "id": 5,
+        "name": "sports"
+      }
+    },
+    {
+      "id": 25,
       "title": "Sports news title 5",
-      "slug":"post-5",
+      "slug": "post-25",
       "image": "/public/sportImg1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-      "category": 
-        {
-          "id": 1,
-          "name":"Sports"
-        }
-
-      
+      "category": {
+        "id": 5,
+        "name": "sports"
+      }
     }
   ]
 }
