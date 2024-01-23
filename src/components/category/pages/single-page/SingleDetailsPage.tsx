@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useDispatch, useSelector } from "react-redux";
@@ -9,7 +10,7 @@ import { fetchLatestBlogs } from "../../../../redux/latestBlogs";
 import { fetchSports } from "../../../../redux/sportsCategory";
 import RelatedBlogCard from "../../card/RelatedBlogCard";
 import { useParams } from "react-router-dom";
-import { topNewsDataType } from "../../../../appStore/dataType";
+
 
 const SingleDetailsPage = () => {
   const params = useParams();
@@ -19,10 +20,15 @@ const SingleDetailsPage = () => {
   const { sports } = useSelector((state: any) => state.sports);
   const dispatch = useDispatch();
   useEffect(() => {
+    // @ts-ignore
     dispatch(fetchLatestBlogs());
+    // @ts-ignore
     dispatch(fetchSports());
   }, []);
-  const postDetail = sports.find((item:any) => item.slug == params.slug && item.category.name == params.category);
+  const postDetail = sports.find(
+    (item: any) =>
+      item.slug == params.slug && item.category.name == params.category
+  );
 
   return (
     <Layout>
@@ -48,7 +54,7 @@ const SingleDetailsPage = () => {
           </div>
           <div className="grid grid-cols-4 gap-4">
             {sports &&
-              sports.slice(0, 4).map((sportsNews: topNewsDataType) => {
+              sports.slice(0, 4).map((sportsNews: any) => {
                 return (
                   <RelatedBlogCard
                     key={sportsNews.id}

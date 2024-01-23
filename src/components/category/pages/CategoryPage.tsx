@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../../custom-components/Layout";
 import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useEffect } from "react";
 import { fetchSports } from "../../../redux/sportsCategory";
-import { topNewsDataType } from "../../../appStore/dataType";
 
 const CategoryPage = () => {
   const { isLoading, sports, error } = useSelector(
@@ -13,6 +14,7 @@ const CategoryPage = () => {
   );
   const dispatch = useDispatch();
   useEffect(() => {
+    // @ts-ignore
     dispatch(fetchSports());
   }, []);
   return (
@@ -25,7 +27,7 @@ const CategoryPage = () => {
         {isLoading && <div>Loading</div>}
         {error && <div>{error.message}</div>}
         {sports &&
-          sports.map((sportsNews: topNewsDataType) => {
+          sports.map((sportsNews: any) => {
             return <RelatedBlogCard sportsNews={sportsNews} />;
           })}
       </div>

@@ -1,18 +1,18 @@
-
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useDispatch, useSelector } from "react-redux";
 import MainCard from "../card/MainCard";
 import SmallCategoryCard from "../card/SmallCategoryCard";
 import { useEffect } from "react";
 import { fetchSports } from "../../../redux/sportsCategory";
-import { topNewsDataType } from "../../../appStore/dataType";
 const SportsCategory = () => {
   const { isLoading, sports, error } = useSelector(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (state: any) => state.sports
   );
   const dispatch = useDispatch();
   useEffect(() => {
+    // @ts-ignore
     dispatch(fetchSports());
   }, []);
   return (
@@ -27,7 +27,7 @@ const SportsCategory = () => {
           {sports.length > 0 && <MainCard post={sports[0]} />}
         </div>
         <div className="flex flex-col gap-4 md:w-2/5 ">
-          {sports.slice(1).map((sportsNews: topNewsDataType) => (
+          {sports.slice(1).map((sportsNews: any) => (
             <SmallCategoryCard key={sportsNews.id} sportsNews={sportsNews} />
           ))}
         </div>
