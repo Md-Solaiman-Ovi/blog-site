@@ -13,12 +13,12 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "category/:categorySlug/:slug",
+    path: ":categorySlug/:slug",
     element: <SingleDetailsPage />,
   },
 
   {
-    path: ":category/:slug",
+    path: ":category/:id",
     element: <CategoryPage />,
   },
 ]);

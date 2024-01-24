@@ -7,7 +7,7 @@ const MainCard = ({ blogs }: any) => {
 
   return (
     <div>
-      <Link to={`category/${blogs.category.name}/${blogs.slug}`}>
+      <Link to={`${blogs.category.name}/${blogs.slug}`}>
      
         <div className="text-2xl font-bold text-start px-4">{blogs.title}</div>
 

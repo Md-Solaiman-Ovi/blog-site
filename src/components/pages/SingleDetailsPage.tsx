@@ -41,11 +41,11 @@ const SingleDetailsPage = () => {
             <div className="font-bold text-start text-xl text-sky-800">
               Latest Blogs
             </div>
-            {blogs.map((postDetail: any) => {
-              console.log("jsdbfjkkjd", postDetail.category.name);
-              if (postDetail.category.name == "latest") {
+            {blogs.map((postDetailSmall: any) => {
+              console.log("jsdbfjkkjd", postDetailSmall.category.name);
+              if (postDetail.category.name == postDetailSmall.category.name && postDetail.id !== postDetailSmall.id ) {
                 return (
-                  <LatestCard key={postDetail.id} postDetail={postDetail} />
+                  <LatestCard key={postDetailSmall.id} postDetailSmall={postDetailSmall} />
                 );
               }
             })}

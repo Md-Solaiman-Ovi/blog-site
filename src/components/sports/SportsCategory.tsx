@@ -25,23 +25,19 @@ const SportsCategory = () => {
         <div className="border-1 flex flex-col gap-4 w-full md:w-3/5 shadow-lg ">
           {isLoading && <div>Loading</div>}
           {error && <div>{error.message}</div>}
-          
+
           {blogs &&
             blogs.map((blogs: any) => {
-              if (blogs.category.name == 'sports' && blogs.id == 22) {
-                return (
-                  <MainCard
-                    key={blogs.id}
-                    blogs={blogs}
-                  />
-                );
+              if (blogs.category.name == "sports" && blogs.id == 21) {
+                return <MainCard key={blogs.id} blogs={blogs} />;
               }
             })}
         </div>
         <div className="flex flex-col gap-4 md:w-2/5 ">
           {blogs &&
             blogs.map((sportsNews: any) => {
-              if (sportsNews.category.name == 'sports') {
+              if (sportsNews.category.name == "sports" && sportsNews.id != 21) {
+                console.log("small id", sportsNews);
                 return (
                   <SmallCategoryCard
                     key={sportsNews.id}
