@@ -5,7 +5,7 @@ const SmallCategoryCard = ({ sportsNews }: any) => {
   // console.log("small category card", sportsNews);
   return (
     <Link to={`${sportsNews.category.name}/${sportsNews.slug}`}>
-      <div className="flex h-36 items-center gap-4 border-1 bg-gray-50 shadow-xl rounded cursor-pointer">
+      <div className="flex h-36 items-center border-1 bg-gray-50 shadow-xl rounded cursor-pointer">
         <div className="w-1/3">
           <img
             className="object-cover h-36 rounded shadow-lg"
@@ -13,9 +13,9 @@ const SmallCategoryCard = ({ sportsNews }: any) => {
             alt=""
           />
         </div>
-        <div className="flex flex-col text-start w-2/3">
-          <div className="text-lg font-bold">{sportsNews.title}</div>
-          <div className="text-sm">{sportsNews.shortDesc}</div>
+        <div className="flex flex-col text-start w-2/3 p-4">
+          <div className="text-[16px] font-bold">{sportsNews.title}</div>
+          <div className="text-[13px]">{sportsNews.shortDesc}</div>
         </div>
       </div>
     </Link>

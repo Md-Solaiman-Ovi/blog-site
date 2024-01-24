@@ -258,7 +258,7 @@
       "title": "Samsung BKC is a playground to experience Galaxy AI, says Southwest Asia CEO",
       "slug": "post-20",
       "image": "/public/techImg5.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
+      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 4,
@@ -323,6 +323,66 @@
       "category": {
         "id": 5,
         "name": "sports"
+      }
+    },
+    {
+      "id": 26,
+      "title": "Trump makes history again as he powers toward Republican nomination",
+      "slug": "post-26",
+      "image": "/public/relatedImg1.jpg",
+      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+      "category": {
+        "id": 4,
+        "name": "related"
+      }
+    },
+    {
+      "id": 27,
+      "title": "6 things to watch in New Hampshire’s presidential primary",
+      "slug": "post-17",
+      "image": "/public/relatedImg2.jpg",
+      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+      "category": {
+        "id": 4,
+        "name": "related"
+      }
+    },
+    {
+      "id": 28,
+      "title": "Mistral AI vs. Meta: Comparing Top Open-source LLMs",
+      "slug": "post-18",
+      "image": "/public/relatedImg3.jpg",
+      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+      "category": {
+        "id": 4,
+        "name": "related"
+      }
+    },
+    {
+      "id": 29,
+      "title": "Apple Vision Pro AR preview and in-store pickup options",
+      "slug": "post-19",
+      "image": "/public/relatedImg4.jpg",
+      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+      "category": {
+        "id": 4,
+        "name": "related"
+      }
+    },
+    {
+      "id": 30,
+      "title": "Macintosh 40th anniversary: Remembering my own love affair with the original Mac",
+      "slug": "post-20",
+      "image": "/public/relatedImg5.jpg",
+      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet?",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
+      "category": {
+        "id": 4,
+        "name": "related"
       }
     }
   ]

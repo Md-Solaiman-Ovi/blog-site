@@ -7,7 +7,7 @@ import LatestCard from "../card/LatestCard";
 import DetailsMain from "../card/DetailsMain";
 import { useEffect } from "react";
 import { fetchBlogs } from "../../redux/blogSlice";
-// import RelatedBlogCard from "../card/RelatedBlogCard";
+import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useParams } from "react-router-dom";
 
 const SingleDetailsPage = () => {
@@ -42,10 +42,16 @@ const SingleDetailsPage = () => {
               Latest Blogs
             </div>
             {blogs.map((postDetailSmall: any) => {
-              console.log("jsdbfjkkjd", postDetailSmall.category.name);
-              if (postDetail.category.name == postDetailSmall.category.name && postDetail.id !== postDetailSmall.id ) {
+              console.log("Latest card", postDetailSmall.category.name);
+              if (
+                postDetail.category.name == postDetailSmall.category.name &&
+                postDetail.id !== postDetailSmall.id
+              ) {
                 return (
-                  <LatestCard key={postDetailSmall.id} postDetailSmall={postDetailSmall} />
+                  <LatestCard
+                    key={postDetailSmall.id}
+                    postDetailSmall={postDetailSmall}
+                  />
                 );
               }
             })}
@@ -56,15 +62,11 @@ const SingleDetailsPage = () => {
             Related Blogs
           </div>
           <div className="grid grid-cols-4 gap-4">
-            {/* {blogs &&
-              blogs.slice(0, 4).map((postDetail: any) => {
-                if(blogs.category.name == 'latest')
-                return (
-                  <RelatedBlogCard
-                  key={postDetail.id} postDetail={postDetail}
-                  />
-                );
-              })} */}
+            {blogs &&
+              blogs.slice(blogs.id, (blogs.length - 1)).map((blog: any) => {
+                if (blog.category.name == "related")
+                  return <RelatedBlogCard key={blog.id} blog={blog} />;
+              })}
           </div>
         </div>
       </div>

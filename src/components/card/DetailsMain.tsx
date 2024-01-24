@@ -5,8 +5,8 @@ import Tags from "../tag/Tags";
 const DetailsMain = ({ postDetail }: any) => {
   console.log("details main card", postDetail);
   return (
-    <div className="border-1 flex flex-col gap-4 w-full md:w-3/5 shadow-lg">
-      <div className="text-2xl font-bold text-start px-4">
+    <div className="border-1 flex flex-col w-full md:w-3/5 shadow-lg">
+      <div className="text-2xl font-bold text-start p-4">
         {postDetail.title}
       </div>
 
@@ -18,11 +18,11 @@ const DetailsMain = ({ postDetail }: any) => {
         />
       </div>
       <div className="flex justify-between px-2 text-sm text-gray-400">
-        <div>Date: 18.01.2024 Time: 10:30am</div>
+        <div>Published on : 18.01.2024 Time: 10:30am</div>
         <div>Author: Mahmudul Hasib</div>
       </div>
 
-      <div className="text-justify p-2 ">{postDetail.desc}</div>
+      <div className="text-justify p-4 ">{postDetail.desc}</div>
       <div className=" rounded  ">
         <Tags />
       </div>

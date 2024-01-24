@@ -5,30 +5,26 @@ import { useDispatch, useSelector } from "react-redux";
 import Layout from "../custom-components/Layout";
 import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useEffect } from "react";
-import { fetchSports } from "../../redux/sportsCategory";
+import { fetchBlogs } from "../../redux/blogSlice";
 
 const CategoryPage = () => {
-  const { isLoading, sports, error } = useSelector(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (state: any) => state.sports
-  );
+  const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
   const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
-    dispatch(fetchSports());
+    dispatch(fetchBlogs());
   }, [dispatch]);
   return (
     <Layout>
-      {/* <div className="p-4 text-start text-xl font-bold text-sky-500">All Local News</div> */}
       <div className="text-start font-bold text-sm  text-sky-900 py-5">
-        Home {">"}Sports Category {">"} details
+        Home {">"}blogs Category {">"} details
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4 pb-10">
         {isLoading && <div>Loading</div>}
         {error && <div>{error.message}</div>}
-        {sports &&
-          sports.map((sportsNews: any) => {
-            return <RelatedBlogCard sportsNews={sportsNews} />;
+        {blogs &&
+          blogs.map((blog: any) => {
+            return <RelatedBlogCard blog={blog} />;
           })}
       </div>
       <div className=" flex justify-center pb-10">

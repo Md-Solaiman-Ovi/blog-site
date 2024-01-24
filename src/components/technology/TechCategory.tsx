@@ -23,7 +23,7 @@ const TechCategory = () => {
       </div>
       <div className="flex flex-col md:flex-row pt-5 gap-20">
         <div className="border-1 flex flex-col gap-4 w-full md:w-3/5 shadow-lg ">
-          {isLoading && <div>Loading</div>}
+          {isLoading && <div>Loading...</div>}
           {error && <div>{error.message}</div>}
 
           {blogs &&
