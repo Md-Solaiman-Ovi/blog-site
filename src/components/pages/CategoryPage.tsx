@@ -6,8 +6,11 @@ import Layout from "../custom-components/Layout";
 import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useEffect } from "react";
 import { fetchBlogs } from "../../redux/blogSlice";
+import { useParams } from "react-router-dom";
 
 const CategoryPage = () => {
+  const params = useParams();
+  // console.log("category page params", params);
   const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -24,7 +27,11 @@ const CategoryPage = () => {
         {error && <div>{error.message}</div>}
         {blogs &&
           blogs.map((blog: any) => {
-            return <RelatedBlogCard blog={blog} />;
+            if(blog.category.name == params.categorySlug){
+              return <RelatedBlogCard key={blog.id} blog={blog} />;
+            }
+
+            
           })}
       </div>
       <div className=" flex justify-center pb-10">

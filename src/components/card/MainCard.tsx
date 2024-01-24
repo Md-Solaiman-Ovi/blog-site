@@ -2,8 +2,8 @@
 
 import { Link } from "react-router-dom";
 const MainCard = ({ blogs }: any) => {
-  console.log("Main card", blogs.slug);
-  console.log("Main card category", blogs.category.name);
+  // console.log("Main card", blogs.slug);
+  // console.log("Main card category", blogs.category.name);
 
   return (
     <div >

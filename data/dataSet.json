@@ -385,5 +385,48 @@
         "name": "related"
       }
     }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categorySlug": "world",
+      "title": "World"
+    },
+    {
+      "id": 2,
+      "categorySlug": "business",
+      "title": "Business"
+    },
+    {
+      "id": 3,
+      "categorySlug": "local",
+      "title": "Local"
+    },
+    {
+      "id": 4,
+      "categorySlug": "tech",
+      "title": "Technology"
+    },
+    {
+      "id": 5,
+      "categorySlug": "sports",
+      "title": "Sports"
+    },
+    {
+      "id": 6,
+      "categorySlug": "entertainment",
+      "title": "Entertainment"
+    },
+
+    {
+      "id": 7,
+      "categorySlug": "science",
+      "title": "Science"
+    },
+    {
+      "id": 8,
+      "categorySlug": "health",
+      "title": "Health"
+    }
   ]
 }

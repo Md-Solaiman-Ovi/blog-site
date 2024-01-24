@@ -9,8 +9,8 @@ import { fetchBlogs } from "../../redux/blogSlice";
 
 const TechCategory = () => {
   const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
-  console.log("Tech category", blogs);
-  console.log("Tech category 1", blogs[1]);
+  // console.log("Tech category", blogs);
+  // console.log("Tech category 1", blogs[1]);
   const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
@@ -37,7 +37,7 @@ const TechCategory = () => {
           {blogs &&
             blogs.map((techNews: any) => {
               if (techNews.category.name == "tech" && techNews.id != 16) {
-                console.log("small id", techNews);
+                // console.log("small id", techNews);
                 return (
                   <SmallCategoryCard key={techNews.id} sportsNews={techNews} />
                 );

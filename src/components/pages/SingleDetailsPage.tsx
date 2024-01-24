@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 
 const SingleDetailsPage = () => {
   const params = useParams();
-  console.log("params2", params.slug);
+  // console.log("single page params", params.slug);
 
   const { blogs } = useSelector((state: any) => state.blogs);
   console.log("blogs", blogs);
@@ -63,7 +63,7 @@ const SingleDetailsPage = () => {
           </div>
           <div className="grid grid-cols-4 gap-4">
             {blogs &&
-              blogs.slice(blogs.id, (blogs.length - 1)).map((blog: any) => {
+              blogs.slice(blogs.id, blogs.length - 1).map((blog: any) => {
                 if (blog.category.name == "related")
                   return <RelatedBlogCard key={blog.id} blog={blog} />;
               })}
