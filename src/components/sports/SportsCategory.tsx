@@ -16,6 +16,8 @@ const SportsCategory = () => {
     // @ts-ignore
     dispatch(fetchBlogs());
   }, [dispatch]);
+
+ 
   return (
     <div className="py-10 h-full ">
       <div className="text-start font-bold text-4xl font-['Oregano',cursive] text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-sky-900 py-2 ">

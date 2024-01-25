@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Link } from "react-router-dom";
-
+import { getFirstNWords } from "../../redux/globalFunctions";
 const RelatedBlogCard = (blog: any) => {
   return (
     <Link to={`/${blog.blog.category.name}/${blog.blog.slug}`}>
@@ -18,7 +18,7 @@ const RelatedBlogCard = (blog: any) => {
         </div>
         <div className="flex flex-col justify-between ">
           <div className="text-sm text-justify px-4 ">
-            {blog.blog.shortDesc}
+            {getFirstNWords(blog.blog.desc, 20)}
           </div>
           <div className="text-start text-[11px] italic text-gray-400 p-2">
             Published on: 13 Jan 2024

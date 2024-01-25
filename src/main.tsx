@@ -6,6 +6,7 @@ import CategoryPage from "./components/pages/CategoryPage.tsx";
 import { Provider } from "react-redux";
 import store from "./appStore/store.ts";
 import SingleDetailsPage from "./components/pages/SingleDetailsPage.tsx";
+import TagPage from "./components/pages/TagPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: ":categorySlug/:slug",
     element: <SingleDetailsPage />,
+  },
+  {
+    path: ":categorySlug/:tagSlug",
+    element: <TagPage />,
   },
 
   {

@@ -17,9 +17,9 @@ const Navbar = () => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
-  const [selectedDiv, setSelectedDiv] = useState(null);
-  const selectDiv = (id: any) => {
-    setSelectedDiv(id);
+  const [selectedDiv, setSelectedDiv] = useState("home");
+  const selectDiv = (categorySlug: any) => {
+    setSelectedDiv(categorySlug);
   };
 
   return (
@@ -57,12 +57,18 @@ const Navbar = () => {
         <div className="border-b border-sky-200 pt-4 flex flex-col md:flex-row justify-evenly items-center pb-2">
           <div className="flex justify-evenly items-center space-x-8  px-4">
             <Link to={"/"}>
-              <div 
-              className="hover:text-sky-600 cursor-pointer font-bold text-sky-700"
+              <div
+                className={`hover:text-sky-600 cursor-pointer ${
+                  selectedDiv === "home" ? "font-bold text-sky-700" : ""
+                }`}
+                onClick={() => {
+                  selectDiv("home");
+                }}
               >
                 Home
               </div>
             </Link>
+
             <div className="hover:text-sky-600 cursor-pointer">For you</div>
             <div className="hover:text-sky-600 cursor-pointer">Following</div>
           </div>
@@ -73,12 +79,12 @@ const Navbar = () => {
                 <Link to={`/${category.categorySlug}`} key={category.id}>
                   <div
                     className={`hover:text-sky-600 cursor-pointer ${
-                      selectedDiv === category.id
+                      selectedDiv === category.categorySlug
                         ? "font-bold text-sky-700"
                         : ""
                     }`}
                     onClick={() => {
-                      selectDiv(category.id);
+                      selectDiv(category.categorySlug);
                     }}
                   >
                     {category.title}

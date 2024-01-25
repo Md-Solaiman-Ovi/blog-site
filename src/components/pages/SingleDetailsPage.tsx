@@ -9,25 +9,29 @@ import { useEffect } from "react";
 import { fetchBlogs } from "../../redux/blogSlice";
 import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useParams } from "react-router-dom";
+// import { fetchTags } from "../../redux/tagSlice";
 
 const SingleDetailsPage = () => {
   const params = useParams();
   // console.log("single page params", params.slug);
 
   const { blogs } = useSelector((state: any) => state.blogs);
-  console.log("blogs", blogs);
+  const { tags } = useSelector((state: any) => state.tags);
+  // console.log("blogs", blogs);
 
   const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
     dispatch(fetchBlogs());
+    // dispatch(fetchTags());
   }, [dispatch]);
   const postDetail = blogs.find(
     (item: any) =>
       item.slug == params.slug && item.category.name == params.categorySlug
   );
 
-  console.log("postdetails", postDetail);
+  // console.log("postdetails", postDetail);
+  // console.log("postdetails tags", tags);
   return (
     <Layout>
       <div className="container">
@@ -35,14 +39,14 @@ const SingleDetailsPage = () => {
           Home {">"}Sports Category {">"} details
         </div>
         <div className="flex flex-col md:flex-row py-5 gap-20">
-          <DetailsMain postDetail={postDetail} />
+          <DetailsMain postDetail={postDetail} tags={tags} />
 
           <div className="flex flex-col gap-4 w-full md:w-1/3">
             <div className="font-bold text-start text-xl text-sky-800">
               Latest Blogs
             </div>
             {blogs.map((postDetailSmall: any) => {
-              console.log("Latest card", postDetailSmall.category.name);
+              // console.log("Latest card", postDetailSmall.category.name);
               if (
                 postDetail.category.name == postDetailSmall.category.name &&
                 postDetail.id !== postDetailSmall.id

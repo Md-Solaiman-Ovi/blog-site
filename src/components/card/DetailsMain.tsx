@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import Tags from "../tag/Tags";
+import { Link } from "react-router-dom";
 
 const DetailsMain = ({ postDetail }: any) => {
   console.log("details main card", postDetail);
+  console.log("details main card", postDetail.category.name);
+  console.log("details main card tags", postDetail.tags.id);
+
   return (
     <div className="border-1 flex flex-col w-full md:w-3/5 shadow-lg">
       <div className="text-2xl font-bold text-start p-4">
@@ -23,8 +26,18 @@ const DetailsMain = ({ postDetail }: any) => {
       </div>
 
       <div className="text-justify p-4 ">{postDetail.desc}</div>
-      <div className=" rounded  ">
-        <Tags />
+      <div className=" grid grid-cols-3  gap-2 p-4 ">
+        {postDetail.tags.map((tag: any) => {
+          // if(){
+            return (
+              <Link to={`/${postDetail.category.name}/${postDetail.tags.tagSlug}`} >
+              <div className="flex justify-center items-center bg-slate-50 " key={postDetail.id}>
+                <div className=" font-bold text-sky-900">#{tag.tagName} </div>
+              </div></Link>
+            );
+          // }
+          
+        })}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Link } from "react-router-dom";
+import { getFirstNWords } from "../../redux/globalFunctions";
 const SmallCategoryCard = ({ sportsNews }: any) => {
   // console.log("small category card", sportsNews);
   return (
@@ -15,7 +16,7 @@ const SmallCategoryCard = ({ sportsNews }: any) => {
         </div>
         <div className="flex flex-col text-start w-2/3 p-4">
           <div className="text-[16px] font-bold">{sportsNews.title}</div>
-          <div className="text-[13px]">{sportsNews.shortDesc}</div>
+          <div className="text-[13px]">{getFirstNWords(sportsNews.desc, 15)}</div>
         </div>
       </div>
     </Link>

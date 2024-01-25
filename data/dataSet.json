@@ -34,19 +34,68 @@
       "category": {
         "id": 1,
         "name": "latest"
-      }
+      },
+      "tags": [
+        {
+          "id": 1,
+          "tagName": "Mashrafee_Bin_Mortuza",
+          "tagSlug": "mashrafee-bin-mortuza"
+        },
+        {
+          "id": 5,
+          "tagName": "BPL",
+          "tagSlug": "bpl"
+        }
+      ]
     },
     {
       "id": 2,
       "title": "Latest blog title 2",
       "slug": "post-2",
-      "image": "/public/sportImg2.jpg",
+      "image": "/public/sportsImg2.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 1,
         "name": "latest"
-      }
+      },
+      "tags": [
+        {
+          "id": 1,
+          "tagName": "Mashrafee_Bin_Mortuza",
+          "tagSlug": "mashrafee-bin-mortuza"
+        },
+        {
+          "id": 2,
+          "tagName": "Tamim_Iqbal",
+          "tagSlug": "tamim-iqbal"
+        },
+        {
+          "id": 4,
+          "tagName": "Shakib_AL_Hasan ",
+          "tagSlug": "shakib-al-hasan"
+        },
+        {
+          "id": 5,
+          "tagName": "BPL",
+          "tagSlug": "bpl"
+        },
+        {
+          "id": 6,
+          "tagName": "Rangpur Riders",
+          "tagSlug": "rangpur-riders"
+        },
+
+        {
+          "tagName": "Fortune Barisal",
+          "tagSlug": "fortune-barisal"
+        },
+        {
+          "id": 8,
+          "tagName": "T20",
+          "tagSlug": "t20"
+        }
+      ]
     },
     {
       "id": 3,
@@ -59,7 +108,10 @@
       "category": {
         "id": 1,
         "name": "latest"
-      }
+      },
+      "tags": [
+        
+      ]
     },
     {
       "id": 4,
@@ -71,7 +123,34 @@
       "category": {
         "id": 1,
         "name": "latest"
-      }
+      },
+      "tags": [
+        {
+          "id": 2,
+          "tagName": "Tamim_Iqbal",
+          "tagSlug": "tamim-iqbal"
+        },
+        {
+          "id": 4,
+          "tagName": "Shakib_AL_Hasan ",
+          "tagSlug": "shakib-al-hasan"
+        },
+        {
+          "id": 5,
+          "tagName": "BPL",
+          "tagSlug": "bpl"
+        },
+
+        {
+          "tagName": "Fortune_Barisal",
+          "tagSlug": "fortune-barisal"
+        },
+        {
+          "id": 8,
+          "tagName": "T20",
+          "tagSlug": "t20"
+        }
+      ]
     },
     {
       "id": 5,
@@ -83,7 +162,19 @@
       "category": {
         "id": 1,
         "name": "latest"
-      }
+      },
+      "tags": [
+        {
+          "id": 1,
+          "categorySlug": "Mashrafee Bin Mortuza",
+          "title": "mashrafee-bin-mortuza"
+        },
+        {
+          "id": 5,
+          "tagName": "BPL",
+          "tagSlug": "bpl"
+        }
+      ]
     },
     {
       "id": 6,
@@ -95,7 +186,19 @@
       "category": {
         "id": 2,
         "name": "world"
-      }
+      },
+      "tags": [
+        {
+          "id": 9,
+          "tagName": "Israel",
+          "tagSlug": "israel"
+        },
+        {
+          "id": 10,
+          "tagName": "Gaza",
+          "tagSlug": "gaza"
+        }
+      ]
     },
     {
       "id": 7,
@@ -107,7 +210,19 @@
       "category": {
         "id": 2,
         "name": "world"
-      }
+      },
+      "tags": [
+        {
+          "id": 9,
+          "tagName": "Israel",
+          "tagSlug": "israel"
+        },
+        {
+          "id": 10,
+          "tagName": "Gaza",
+          "tagSlug": "gaza"
+        }
+      ]
     },
     {
       "id": 8,
@@ -119,7 +234,19 @@
       "category": {
         "id": 2,
         "name": "world"
-      }
+      },
+      "tags": [
+        {
+          "id": 9,
+          "tagName": "Israel",
+          "tagSlug": "israel"
+        },
+        {
+          "id": 10,
+          "tagName": "Gaza",
+          "tagSlug": "gaza"
+        }
+      ]
     },
     {
       "id": 9,
@@ -131,7 +258,19 @@
       "category": {
         "id": 2,
         "name": "world"
-      }
+      },
+      "tags": [
+        {
+          "id": 9,
+          "tagName": "Israel",
+          "tagSlug": "israel"
+        },
+        {
+          "id": 10,
+          "tagName": "Gaza",
+          "tagSlug": "gaza"
+        }
+      ]
     },
     {
       "id": 10,
@@ -143,7 +282,19 @@
       "category": {
         "id": 2,
         "name": "world"
-      }
+      },
+      "tags": [
+        {
+          "id": 9,
+          "tagName": "Israel",
+          "tagSlug": "israel"
+        },
+        {
+          "id": 10,
+          "tagName": "Gaza",
+          "tagSlug": "gaza"
+        }
+      ]
     },
     {
       "id": 11,
@@ -155,7 +306,19 @@
       "category": {
         "id": 3,
         "name": "local"
-      }
+      },
+      "tags": [
+        {
+          "id": 11,
+          "tagName": "Hasina",
+          "tagSlug": "hasina"
+        },
+        {
+          "id": 12,
+          "tagName": "BNP",
+          "tagSlug": "bnp"
+        }
+      ]
     },
     {
       "id": 12,
@@ -167,7 +330,19 @@
       "category": {
         "id": 3,
         "name": "local"
-      }
+      },
+      "tags": [
+        {
+          "id": 11,
+          "tagName": "Hasina",
+          "tagSlug": "hasina"
+        },
+        {
+          "id": 12,
+          "tagName": "BNP",
+          "tagSlug": "bnp"
+        }
+      ]
     },
     {
       "id": 13,
@@ -179,7 +354,19 @@
       "category": {
         "id": 3,
         "name": "local"
-      }
+      },
+      "tags": [
+        {
+          "id": 11,
+          "tagName": "Hasina",
+          "tagSlug": "hasina"
+        },
+        {
+          "id": 12,
+          "tagName": "BNP",
+          "tagSlug": "bnp"
+        }
+      ]
     },
     {
       "id": 14,
@@ -191,7 +378,19 @@
       "category": {
         "id": 3,
         "name": "local"
-      }
+      },
+      "tags": [
+        {
+          "id": 11,
+          "tagName": "Hasina",
+          "tagSlug": "hasina"
+        },
+        {
+          "id": 12,
+          "tagName": "BNP",
+          "tagSlug": "bnp"
+        }
+      ]
     },
     {
       "id": 15,
@@ -203,7 +402,19 @@
       "category": {
         "id": 3,
         "name": "local"
-      }
+      },
+      "tags": [
+        {
+          "id": 11,
+          "tagName": "Hasina",
+          "tagSlug": "hasina"
+        },
+        {
+          "id": 12,
+          "tagName": "BNP",
+          "tagSlug": "bnp"
+        }
+      ]
     },
     {
       "id": 16,
@@ -215,7 +426,8 @@
       "category": {
         "id": 4,
         "name": "tech"
-      }
+      },
+      "tags": []
     },
     {
       "id": 17,
@@ -227,7 +439,8 @@
       "category": {
         "id": 4,
         "name": "tech"
-      }
+      },
+      "tags": []
     },
     {
       "id": 18,
@@ -239,7 +452,8 @@
       "category": {
         "id": 4,
         "name": "tech"
-      }
+      },
+      "tags": []
     },
     {
       "id": 19,
@@ -251,7 +465,8 @@
       "category": {
         "id": 4,
         "name": "tech"
-      }
+      },
+      "tags": []
     },
     {
       "id": 20,
@@ -263,7 +478,8 @@
       "category": {
         "id": 4,
         "name": "tech"
-      }
+      },
+      "tags": []
     },
     {
       "id": 21,
@@ -275,7 +491,49 @@
       "category": {
         "id": 5,
         "name": "sports"
-      }
+      },
+      "tags": [
+        {
+          "id": 1,
+          "tagName": "Mashrafee_Bin_Mortuza",
+          "tagSlug": "mashrafee-bin-mortuza"
+        },
+        {
+          "id": 2,
+          "tagName": "Tamim_Iqbal",
+          "tagSlug": "tamim-iqbal"
+        },
+        {
+          "id": 3,
+          "tagName": "Mohammad_Amir",
+          "tagSlug": "mohammad-amir"
+        },
+        {
+          "id": 4,
+          "tagName": "Shakib_AL_Hasan ",
+          "tagSlug": "shakib-al-hasan"
+        },
+        {
+          "id": 5,
+          "tagName": "BPL",
+          "tagSlug": "bpl"
+        },
+        {
+          "id": 6,
+          "tagName": "Rangpur_Riders",
+          "tagSlug": "rangpur-riders"
+        },
+
+        {
+          "tagName": "Fortune_Barisal",
+          "tagSlug": "fortune-barisal"
+        },
+        {
+          "id": 8,
+          "tagName": "T20",
+          "tagSlug": "t20"
+        }
+      ]
     },
     {
       "id": 22,
@@ -287,7 +545,49 @@
       "category": {
         "id": 5,
         "name": "sports"
-      }
+      },
+      "tags": [
+        {
+          "id": 1,
+          "tagName": "Mashrafee_Bin_Mortuza",
+          "tagSlug": "mashrafee-bin-mortuza"
+        },
+        {
+          "id": 2,
+          "tagName": "Tamim_Iqbal",
+          "tagSlug": "tamim-iqbal"
+        },
+        {
+          "id": 3,
+          "tagName": "Mohammad_Amir",
+          "tagSlug": "mohammad-amir"
+        },
+        {
+          "id": 4,
+          "tagName": "Shakib_AL_Hasan ",
+          "tagSlug": "shakib-al-hasan"
+        },
+        {
+          "id": 5,
+          "tagName": "BPL",
+          "tagSlug": "bpl"
+        },
+        {
+          "id": 6,
+          "tagName": "Rangpur_Riders",
+          "tagSlug": "rangpur-riders"
+        },
+
+        {
+          "tagName": "Fortune_Barisal",
+          "tagSlug": "fortune-barisal"
+        },
+        {
+          "id": 8,
+          "tagName": "T20",
+          "tagSlug": "t20"
+        }
+      ]
     },
     {
       "id": 23,
@@ -299,7 +599,49 @@
       "category": {
         "id": 5,
         "name": "sports"
-      }
+      },
+      "tags": [
+        {
+          "id": 1,
+          "tagName": "Mashrafee_Bin_Mortuza",
+          "tagSlug": "mashrafee-bin-mortuza"
+        },
+        {
+          "id": 2,
+          "tagName": "Tamim_Iqbal",
+          "tagSlug": "tamim-iqbal"
+        },
+        {
+          "id": 3,
+          "tagName": "Mohammad_Amir",
+          "tagSlug": "mohammad-amir"
+        },
+        {
+          "id": 4,
+          "tagName": "Shakib_AL_Hasan ",
+          "tagSlug": "shakib-al-hasan"
+        },
+        {
+          "id": 5,
+          "tagName": "BPL",
+          "tagSlug": "bpl"
+        },
+        {
+          "id": 6,
+          "tagName": "Rangpur_Riders",
+          "tagSlug": "rangpur-riders"
+        },
+
+        {
+          "tagName": "Fortune_Barisal",
+          "tagSlug": "fortune-barisal"
+        },
+        {
+          "id": 8,
+          "tagName": "T20",
+          "tagSlug": "t20"
+        }
+      ]
     },
     {
       "id": 24,
@@ -311,7 +653,49 @@
       "category": {
         "id": 5,
         "name": "sports"
-      }
+      },
+      "tags": [
+        {
+          "id": 1,
+          "tagName": "Mashrafee_Bin_Mortuza",
+          "tagSlug": "mashrafee-bin-mortuza"
+        },
+        {
+          "id": 2,
+          "tagName": "Tamim_Iqbal",
+          "tagSlug": "tamim-iqbal"
+        },
+        {
+          "id": 3,
+          "tagName": "Mohammad_Amir",
+          "tagSlug": "mohammad-amir"
+        },
+        {
+          "id": 4,
+          "tagName": "Shakib_AL_Hasan ",
+          "tagSlug": "shakib-al-hasan"
+        },
+        {
+          "id": 5,
+          "tagName": "BPL",
+          "tagSlug": "bpl"
+        },
+        {
+          "id": 6,
+          "tagName": "Rangpur_Riders",
+          "tagSlug": "rangpur-riders"
+        },
+
+        {
+          "tagName": "Fortune_Barisal",
+          "tagSlug": "fortune-barisal"
+        },
+        {
+          "id": 8,
+          "tagName": "T20",
+          "tagSlug": "t20"
+        }
+      ]
     },
     {
       "id": 25,
@@ -323,7 +707,49 @@
       "category": {
         "id": 5,
         "name": "sports"
-      }
+      },
+      "tags": [
+        {
+          "id": 1,
+          "tagName": "Mashrafee_Bin_Mortuza",
+          "tagSlug": "mashrafee-bin-mortuza"
+        },
+        {
+          "id": 2,
+          "tagName": "Tamim_Iqbal",
+          "tagSlug": "tamim-iqbal"
+        },
+        {
+          "id": 3,
+          "tagName": "Mohammad_Amir",
+          "tagSlug": "mohammad-amir"
+        },
+        {
+          "id": 4,
+          "tagName": "Shakib_AL_Hasan ",
+          "tagSlug": "shakib-al-hasan"
+        },
+        {
+          "id": 5,
+          "tagName": "BPL",
+          "tagSlug": "bpl"
+        },
+        {
+          "id": 6,
+          "tagName": "Rangpur_Riders",
+          "tagSlug": "rangpur-riders"
+        },
+
+        {
+          "tagName": "Fortune_Barisal",
+          "tagSlug": "fortune-barisal"
+        },
+        {
+          "id": 8,
+          "tagName": "T20",
+          "tagSlug": "t20"
+        }
+      ]
     },
     {
       "id": 26,
@@ -335,7 +761,8 @@
       "category": {
         "id": 4,
         "name": "related"
-      }
+      },
+      "tags": []
     },
     {
       "id": 27,
@@ -347,7 +774,8 @@
       "category": {
         "id": 4,
         "name": "related"
-      }
+      },
+      "tags": []
     },
     {
       "id": 28,
@@ -359,7 +787,8 @@
       "category": {
         "id": 4,
         "name": "related"
-      }
+      },
+      "tags": []
     },
     {
       "id": 29,
@@ -371,7 +800,8 @@
       "category": {
         "id": 4,
         "name": "related"
-      }
+      },
+      "tags": []
     },
     {
       "id": 30,
@@ -383,7 +813,8 @@
       "category": {
         "id": 4,
         "name": "related"
-      }
+      },
+      "tags": []
     }
   ],
   "categories": [
@@ -427,6 +858,108 @@
       "id": 8,
       "categorySlug": "health",
       "title": "Health"
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "tagName": "Mashrafee_Bin_Mortuza",
+      "tagSlug": "mashrafee-bin-mortuza"
+    },
+    {
+      "id": 2,
+      "tagName": "Tamim_Iqbal",
+      "tagSlug": "tamim-iqbal"
+    },
+    {
+      "id": 3,
+      "tagName": "Mohammad_Amir",
+      "tagSlug": "mohammad-amir"
+    },
+    {
+      "id": 4,
+      "tagName": "Shakib_AL_Hasan ",
+      "tagSlug": "shakib-al-hasan"
+    },
+    {
+      "id": 5,
+      "tagName": "BPL",
+      "tagSlug": "bpl"
+    },
+    {
+      "id": 6,
+      "tagName": "Rangpur_Riders",
+      "tagSlug": "rangpur-riders"
+    },
+
+    {
+      "tagName": "Fortune Barisal",
+      "tagSlug": "fortune-barisal"
+    },
+    {
+      "id": 8,
+      "tagName": "T20",
+      "tagSlug": "t20"
+    },
+    {
+      "id": 9,
+      "tagName": "Israel",
+      "tagSlug": "israel"
+    },
+    {
+      "id": 10,
+      "tagName": "Gaza",
+      "tagSlug": "gaza"
+    },
+    {
+      "id": 11,
+      "tagName": "Hasina",
+      "tagSlug": "hasina"
+    },
+    {
+      "id": 12,
+      "tagName": "BNP",
+      "tagSlug": "bnp"
+    },
+    {
+      "id": 13,
+      "tagName": "Mostofa_Sarwar_Farooki",
+      "tagSlug": "mostofa-sarwar-farooki"
+    },
+    {
+      "id": 14,
+      "tagName": "Al_Nassr",
+      "tagSlug": "al-nassr"
+    },
+    {
+      "id": 15,
+      "tagName": "Cristiano_Ronaldo",
+      "tagSlug": "cristiano-ronaldo"
+    },
+    {
+      "id": 16,
+      "tagName": "Lionel_Messi",
+      "tagSlug": "lionel-messi"
+    },
+    {
+      "id": 17,
+      "tagName": "Samsung",
+      "tagSlug": "samsung"
+    },
+    {
+      "id": 18,
+      "tagName": "Instagram",
+      "tagSlug": "instagram"
+    },
+    {
+      "id": 19,
+      "tagName": "Phone",
+      "tagSlug": "phone"
+    },
+    {
+      "id": 20,
+      "tagName": "AI",
+      "tagSlug": "ai"
     }
   ]
 }
