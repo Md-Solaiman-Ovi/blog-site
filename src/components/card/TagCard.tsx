@@ -2,27 +2,23 @@
 
 import { Link } from "react-router-dom";
 import { getFirstNWords } from "../../redux/globalFunctions";
-const TagCard = (blog:any) => {
+const TagCard = (blog: any) => {
   console.log(blog);
   return (
     <Link to={`/${blog.blog.category.name}/${blog.blog.slug}`}>
-      <div className="flex flex-col  border-1 shadow-xl rounded h-[500px]">
-        <div className="flex h-[300px]">
-          <img
-            className="object-cover object-top w-full h-full"
-            src={blog.blog.image}
-            alt=""
-          ></img>
-        </div>
-        <div className="text-lg font-bold text-center p-2 ">{blog.blog.title}</div>
-        <div className="flex flex-col justify-between ">
-          <div className="text-sm text-justify px-4 ">
-            {getFirstNWords(blog.blog.desc, 20)}
-            
+      <div className="flex gap-4 border-b-1  rounded h-[200px] py-4 group">
+        <div className="w-2/3 ">
+          <div className="text-lg font-bold text-start group-hover:text-sky-600  ">{blog.blog.title}</div>
+          <div className="text-sm text-justify  ">
+            {getFirstNWords(blog.blog.desc, 40)}<span className="text-gray-400 hover:text-black">. . . see more</span>
           </div>
-          <div className="text-start text-[11px] italic text-gray-400 p-2">
+          <div className="text-start text-[11px] italic text-gray-400">
             Published on: 13 Jan 2024
           </div>
+        </div>
+
+        <div className="flex h-full w-1/3 group-hover:overflow-hidden">
+          <img className="object-cover w-full  group-hover:scale-[1.05] group-hover:duration-300 " src={blog.blog.image} alt=""></img>
         </div>
       </div>
     </Link>

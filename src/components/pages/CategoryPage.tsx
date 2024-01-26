@@ -20,18 +20,16 @@ const CategoryPage = () => {
   return (
     <Layout>
       <div className="text-start font-bold text-sm  text-sky-900 py-5">
-        home  {">"} {params.categorySlug} {">"}blog list 
+        {params.categorySlug} {">"}blog list
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4 pb-10">
         {isLoading && <div>Loading...</div>}
         {error && <div>{error.message}</div>}
         {blogs &&
           blogs.map((blog: any) => {
-            if(blog.category.name == params.categorySlug){
+            if (blog.category.name == params.categorySlug) {
               return <RelatedBlogCard key={blog.id} blog={blog} />;
             }
-
-            
           })}
       </div>
       <div className=" flex justify-center pb-10">

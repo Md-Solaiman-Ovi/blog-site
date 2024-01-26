@@ -26,13 +26,13 @@ const TagPage = () => {
   }, [dispatch]);
   return (
     <Layout>
-      <div className="text-start font-bold text-sm  text-sky-900 py-5">
-        home {">"} {params.categorySlug} {">"}tagged blog list
-      </div>
-      <div className="text-start font-bold text-sm  text-sky-900 py-5">
+      {/* <div className="text-start font-bold text-sm  text-sky-900 pt-5">
+        topics {">"} {params.tagSlug} {">"}tagged blog list
+      </div> */}
+      <div className="text-start font-bold text-5xl  text-sky-900 py-5 border-b-1  border-sky-600">
         {params.tagSlug}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4 pb-10">
+      <div className="flex flex-col justify-center gap-4 pb-10 mx-64">
         {isLoading && <div>Loading...</div>}
         {error && <div>{error.message}</div>}
         {!isLoading &&
@@ -44,7 +44,6 @@ const TagPage = () => {
                 <TagCard key={blog} blog={blog} />
               </div>
             );
-            
           })}
       </div>
       <div className=" flex justify-center pb-10">
