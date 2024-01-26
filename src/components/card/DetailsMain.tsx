@@ -3,9 +3,9 @@
 import { Link } from "react-router-dom";
 
 const DetailsMain = ({ postDetail }: any) => {
-  console.log("details main card", postDetail);
-  console.log("details main card", postDetail.category.name);
-  console.log("details main card tags", postDetail.tags.id);
+  // console.log("details main card", postDetail);
+  // console.log("details main card", postDetail.category.name);
+  // console.log("details main card tags", postDetail.tags.id);
 
   return (
     <div className="border-1 flex flex-col w-full md:w-3/5 shadow-lg">
@@ -30,7 +30,7 @@ const DetailsMain = ({ postDetail }: any) => {
         {postDetail.tags.map((tag: any) => {
           // if(){
             return (
-              <Link to={`/${postDetail.category.name}/${postDetail.tags.tagSlug}`} >
+              <Link to={`/tag/${tag.tagSlug}`} >
               <div className="flex justify-center items-center bg-slate-50 " key={postDetail.id}>
                 <div className=" font-bold text-sky-900">#{tag.tagName} </div>
               </div></Link>

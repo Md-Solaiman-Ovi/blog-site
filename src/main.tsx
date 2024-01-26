@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     element: <SingleDetailsPage />,
   },
   {
-    path: ":categorySlug/:tagSlug",
+    path: "tag/:tagSlug",
     element: <TagPage />,
   },
 
