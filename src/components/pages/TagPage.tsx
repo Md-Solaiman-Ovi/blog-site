@@ -10,7 +10,7 @@ import TagCard from "../card/TagCard";
 
 const TagPage = () => {
   const params = useParams();
-  console.log("tag page params", params);
+  // console.log("tag page params", params);
   const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
 
   const filteredData = blogs.filter((post: any) => {
@@ -18,7 +18,7 @@ const TagPage = () => {
     return post.tags.some((tag: any) => tag?.tagSlug?.includes(params.tagSlug));
   });
 
-  console.log("tag news", filteredData);
+  // console.log("tag news", filteredData);
   const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
@@ -41,7 +41,7 @@ const TagPage = () => {
             // console.log(blog);
             return (
               <div>
-                <TagCard key={blog} blog={blog} />
+                <TagCard key={blog.id} blog={blog} />
               </div>
             );
           })}

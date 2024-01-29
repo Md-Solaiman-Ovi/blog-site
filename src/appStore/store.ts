@@ -3,6 +3,7 @@ import postSliceReducer from "../redux/getTopNewDataSlice";
 import blogSliceReducer from "../redux/blogSlice";
 import categorySliceReducer from "../redux/categorySlice";
 import tagSliceReducer from "../redux/tagSlice";
+import commentSliceReducer from "../redux/commentSlice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     blogs: blogSliceReducer,
     categories: categorySliceReducer,
     tags: tagSliceReducer,
+    comments: commentSliceReducer,
   },
 });
 

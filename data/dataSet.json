@@ -965,5 +965,64 @@
       "tagName": "Science",
       "tagSlug": "science"
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "post_id": 16,
+      "comment": " Hey, this was so good blog",
+      "parent_comment_id": null
+    },
+
+    {
+      "id": 2,
+      "user_id": 2,
+      "post_id": 16,
+      "comment": " Ami ki bolechi ami nirdush??",
+      "parent_comment_id": null
+    },
+
+    {
+      "id": 3,
+      "user_id": 3,
+      "post_id": 16,
+      "comment": "Na,,,tumi ferdous..",
+      "parent_comment_id": null
+    },
+
+    {
+      "id": 4,
+      "user_id": 4,
+      "post_id": 16,
+      "comment": "My name is hazrat",
+      "parent_comment_id": null
+    }
+  ],
+  "users": [
+    {
+      "user_id": 1,
+      "user_name": "Hazrat Ali",
+      "user_email": "hazrat@gmail.com",
+      "user_password": "hazrat123"
+    },
+    {
+      "user_id": 2,
+      "user_name": "Md Solaiman Ovi",
+      "user_email": "ovi@gmail.com",
+      "user_password": "ovi123"
+    },
+    {
+      "user_id": 3,
+      "user_name": "Remon Rakib",
+      "user_email": "rakib@gmail.com",
+      "user_password": "rakib123"
+    },
+    {
+      "user_id": 4,
+      "user_name": "Mahmudul Hasan",
+      "user_email": "mahmudul@gmail.com",
+      "user_password": "mahmudul123"
+    }
   ]
 }

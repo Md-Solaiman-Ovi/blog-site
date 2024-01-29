@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom";
 import { getFirstNWords } from "../../redux/globalFunctions";
 const RelatedBlogCard = (blog: any) => {
-  console.log(blog)
+  // console.log(blog)
   return (
     <Link to={`/${blog.blog.category.name}/${blog.blog.slug}`}>
       <div className="flex flex-col  border-1 shadow-xl rounded h-[500px]">

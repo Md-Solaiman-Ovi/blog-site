@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Link } from "react-router-dom";
+import Comment from "../comments/CommentHere";
 
 const DetailsMain = ({ postDetail }: any) => {
   // console.log("details main card", postDetail);
@@ -38,6 +39,9 @@ const DetailsMain = ({ postDetail }: any) => {
           // }
           
         })}
+      </div>
+      <div>
+        <Comment postDetail = {postDetail}/>
       </div>
     </div>
   );

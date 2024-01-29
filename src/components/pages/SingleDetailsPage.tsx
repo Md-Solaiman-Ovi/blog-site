@@ -60,6 +60,7 @@ const SingleDetailsPage = () => {
               }
             })}
           </div>
+          
         </div>
         <div className="flex flex-col gap-4 py-10">
           <div className="font-bold text-start text-2xl text-sky-800">
@@ -74,6 +75,7 @@ const SingleDetailsPage = () => {
           </div>
         </div>
       </div>
+      
     </Layout>
   );
 };
