@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../../redux/userSlice";
 import RepliedInput from "./RepliedInput";
 import ViewReply from "./ViewReply";
+import { fetchComments } from "../../redux/commentSlice";
 const ViewComment = (comment: any) => {
   // console.log("comment info", comment.comment);
   const [isOpen, setIsOpen] = useState(false);
@@ -18,13 +19,19 @@ const ViewComment = (comment: any) => {
     setIsOpenReply(!isOpenReply);
   };
   const { users } = useSelector((state: any) => state.users);
+  const { comments } = useSelector((state: any) => state.comments);
   // console.log(users);
   const dispatch = useDispatch();
   useEffect(() => {
     //@ts-ignore
     dispatch(fetchUsers());
+    //@ts-ignore
+    dispatch(fetchComments());
   }, [dispatch]);
-
+  const filteredReply = comments.filter((reply: any) => {
+    return reply.parent_comment_id == comment.comment.id;
+  });
+  console.log("replied comments", filteredReply);
   return (
     <div className="container flex flex-col gap-4">
       {users.map((userinfo: any) => {
@@ -75,12 +82,10 @@ const ViewComment = (comment: any) => {
                 >
                   1 replies
                 </div>
-                {isOpenReply && (
-                  <ViewReply
-                    comment={comment}
-                  
-                  />
-                )}
+                {isOpenReply &&
+                  filteredReply.map((reply: any) => {
+                    return <ViewReply reply={reply} />;
+                  })}
               </div>
             </div>
           );

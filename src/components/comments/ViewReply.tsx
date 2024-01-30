@@ -6,7 +6,7 @@ import { SlLike, SlDislike } from "react-icons/sl";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../../redux/userSlice";
 import RepliedInput from "./RepliedInput";
-const ViewReply = ({ comment }: any) => {
+const ViewReply = ({ reply }: any) => {
   // console.log("comment info", comment.comment);
   const [isOpenReply2, setIsOpenReply2] = useState(false);
   const controlState2 = () => {
@@ -24,12 +24,12 @@ const ViewReply = ({ comment }: any) => {
     <div className="container flex flex-col gap-4">
       {users.map((userinfo: any) => {
         // console.log("user info", userinfo);
-        if (userinfo.user_id == comment.comment.user_id) {
+        if (userinfo.user_id == reply.user_id) {
           return (
-            <div className="flex gap-4 ">
+            <div className="flex gap-4  ">
               <div>
                 <img
-                  className="h-5 w-5 object-cover object-top rounded-full "
+                  className="h-7 w-7 object-cover object-top rounded-full "
                   src={userinfo.user_image}
                   alt=""
                 />
@@ -37,12 +37,12 @@ const ViewReply = ({ comment }: any) => {
               <div className="w-full items-center space-y-1 ">
                 <div className="flex flex-col text-start">
                   <div className="flex gap-2 items-center">
-                    <div className="font-bold text-[12px] ">
+                    <div className="font-bold  ">
                       {userinfo.user_name}
                     </div>
-                    <div className="text-[10px]">11 days ago</div>
+                    <div className="">11 days ago</div>
                   </div>
-                  <div className="text-[14px]">{comment.comment.comment}</div>
+                  <div className="">{reply.comment}</div>
                 </div>
                 <div className="flex items-center">
                   <div className="flex gap-4 items-center">
