@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Link } from "react-router-dom";
-import Comment from "../comments/CommentHere";
+import Comment from "../comments/CommentSection";
 
 const DetailsMain = ({ postDetail }: any) => {
   // console.log("details main card", postDetail);
@@ -9,7 +9,7 @@ const DetailsMain = ({ postDetail }: any) => {
   // console.log("details main card tags", postDetail.tags.id);
 
   return (
-    <div className="border-1 flex flex-col w-full md:w-3/5 shadow-lg">
+    <div className="border-1 flex flex-col w-full md:w-3/5 shadow-lg rounded">
       <div className="text-2xl font-bold text-start p-4">
         {postDetail.title}
       </div>

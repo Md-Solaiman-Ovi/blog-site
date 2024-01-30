@@ -974,7 +974,6 @@
       "comment": " Hey, this was so good blog",
       "parent_comment_id": null
     },
-
     {
       "id": 2,
       "user_id": 2,
@@ -982,7 +981,6 @@
       "comment": " Ami ki bolechi ami nirdush??",
       "parent_comment_id": null
     },
-
     {
       "id": 3,
       "user_id": 3,
@@ -990,37 +988,75 @@
       "comment": "Na,,,tumi ferdous..",
       "parent_comment_id": null
     },
-
     {
       "id": 4,
       "user_id": 4,
-      "post_id": 16,
-      "comment": "My name is hazrat",
+      "post_id": 15,
+      "comment": "My name is hasib. I've a complain on that decision. Why this rules applicable only for schools? why not for empolyer who wake up in the morning to go to their office. angry mood: Bar bar shudhu amr sathei ? ",
       "parent_comment_id": null
+    },
+    {
+      "id": 5,
+      "user_id": 1,
+      "post_id": 21,
+      "comment": " valo hoiche. Ekdom khushi hoichi",
+      "parent_comment_id": null
+    },
+    {
+      "id": 6,
+      "user_id": 2,
+      "post_id": 24,
+      "comment": "One of the best opener in Bangladesh",
+      "parent_comment_id": null
+    },
+    {
+      "id": 7,
+      "user_id": 3,
+      "post_id": 24,
+      "comment": "Dot baba",
+      "parent_comment_id": null
+    },
+    {
+      "id": 8,
+      "user_id": 4,
+      "post_id": 22,
+      "comment": "hahaha....Dada der vore diyeche ",
+      "parent_comment_id": null
+    },
+    {
+      "id": 9,
+      "user_id": 3,
+      "post_id": 15,
+      "comment": "This is reply.",
+      "parent_comment_id": 4
     }
   ],
   "users": [
     {
       "user_id": 1,
       "user_name": "Hazrat Ali",
+      "user_image": "/public/userImg1.jpg",
       "user_email": "hazrat@gmail.com",
       "user_password": "hazrat123"
     },
     {
       "user_id": 2,
       "user_name": "Md Solaiman Ovi",
+      "user_image": "/public/userImg2.jpg",
       "user_email": "ovi@gmail.com",
       "user_password": "ovi123"
     },
     {
       "user_id": 3,
       "user_name": "Remon Rakib",
+      "user_image": "/public/userImg3.jpg",
       "user_email": "rakib@gmail.com",
       "user_password": "rakib123"
     },
     {
       "user_id": 4,
       "user_name": "Mahmudul Hasan",
+      "user_image": "/public/userImg4.jpg",
       "user_email": "mahmudul@gmail.com",
       "user_password": "mahmudul123"
     }

@@ -4,6 +4,7 @@ import blogSliceReducer from "../redux/blogSlice";
 import categorySliceReducer from "../redux/categorySlice";
 import tagSliceReducer from "../redux/tagSlice";
 import commentSliceReducer from "../redux/commentSlice";
+import userSliceReducer from "../redux/userSlice";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     categories: categorySliceReducer,
     tags: tagSliceReducer,
     comments: commentSliceReducer,
+    users: userSliceReducer,
   },
 });
 
