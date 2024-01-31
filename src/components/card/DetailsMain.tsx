@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Comment from "../comments/CommentSection";
 
 const DetailsMain = ({ postDetail }: any) => {
-  // console.log("details main card", postDetail);
+  console.log("details main", postDetail);
   // console.log("details main card", postDetail.category.name);
   // console.log("details main card tags", postDetail.tags.id);
 
@@ -30,18 +30,21 @@ const DetailsMain = ({ postDetail }: any) => {
       <div className=" grid grid-cols-3  gap-2 p-4 ">
         {postDetail.tags.map((tag: any) => {
           // if(){
-            return (
-              <Link to={`/tag/${tag.tagSlug}`} >
-              <div className="flex justify-center items-center bg-slate-50 " key={postDetail.id}>
+          return (
+            <Link to={`/tag/${tag.tagSlug}`}>
+              <div
+                className="flex justify-center items-center bg-slate-50 "
+                key={postDetail.id}
+              >
                 <div className=" font-bold text-sky-900">#{tag.tagName} </div>
-              </div></Link>
-            );
+              </div>
+            </Link>
+          );
           // }
-          
         })}
       </div>
       <div>
-        <Comment postDetail = {postDetail}/>
+        <Comment postDetail={postDetail} />
       </div>
     </div>
   );

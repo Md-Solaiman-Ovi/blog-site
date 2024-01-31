@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import { SlLike, SlDislike } from "react-icons/sl";
-
+import { MdOutlineArrowDropDown } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../../redux/userSlice";
 import RepliedInput from "./RepliedInput";
@@ -28,6 +28,7 @@ const ViewComment = (comment: any) => {
     //@ts-ignore
     dispatch(fetchComments());
   }, [dispatch]);
+
   const filteredReply = comments.filter((reply: any) => {
     return reply.parent_comment_id == comment.comment.id;
   });
@@ -75,13 +76,21 @@ const ViewComment = (comment: any) => {
                     </div>
                   </div>
                 </div>
-                {isOpen && <RepliedInput controlState={controlState} />}
-                <div
-                  className="hover:bg-gray-200 text-gray-500 hover:text-gray-950 text-sm px-2 py-1 rounded-3xl font-bold self-center cursor-pointer text-start"
-                  onClick={() => controlReplyState()}
-                >
-                  1 replies
-                </div>
+                {isOpen && <RepliedInput isOpen={isOpen} setIsOpen={setIsOpen} user={userinfo} controlState={controlState} />}
+                {filteredReply.length > 0 && (
+                  <div
+                    className="flex items-center hover:bg-gray-200 hover:w-24 rounded-full"
+                    onClick={() => controlReplyState()}
+                  >
+                    <MdOutlineArrowDropDown
+                      className={`w-6 h-6 ${isOpenReply ? "rotate-180" : ""}`}
+                    />
+                    <div className=" text-gray-500 hover:text-gray-950 text-sm px-2 py-1 rounded-3xl font-bold self-center cursor-pointer text-start">
+                      {filteredReply.length} replies
+                    </div>
+                  </div>
+                )}
+
                 {isOpenReply &&
                   filteredReply.map((reply: any) => {
                     return <ViewReply reply={reply} />;

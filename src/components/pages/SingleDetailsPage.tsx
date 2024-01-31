@@ -38,7 +38,7 @@ const SingleDetailsPage = () => {
         <div className="text-start font-bold text-sm  text-sky-900 pt-5">
           Home {">"}Sports Category {">"} details
         </div>
-        <div className="flex flex-col md:flex-row py-5 gap-20">
+        <div className="flex flex-col md:flex-row py-5 md:gap-10 lg:gap-20">
           <DetailsMain postDetail={postDetail} tags={tags} />
 
           <div className="flex flex-col gap-4 w-full md:w-1/3">
@@ -66,7 +66,7 @@ const SingleDetailsPage = () => {
           <div className="font-bold text-start text-2xl text-sky-800">
             Related Blogs
           </div>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-1  md:grid-cols-4 gap-4">
             {blogs &&
               blogs.slice(blogs.id, blogs.length - 1).map((blog: any) => {
                 if (blog.category.name == "related")
