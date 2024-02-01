@@ -26,7 +26,7 @@ const ViewReply = ({ reply }: any) => {
         // console.log("user info", userinfo);
         if (userinfo.user_id == reply.user_id) {
           return (
-            <div className="flex gap-4  ">
+            <div className="flex gap-4  " key={userinfo.user_id}>
               <div>
                 <img
                   className="h-7 w-7 object-cover object-top rounded-full "

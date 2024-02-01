@@ -32,14 +32,14 @@ const ViewComment = (comment: any) => {
   const filteredReply = comments.filter((reply: any) => {
     return reply.parent_comment_id == comment.comment.id;
   });
-  console.log("replied comments", filteredReply);
+  // console.log("replied comments", filteredReply);
   return (
     <div className="container flex flex-col gap-4">
       {users.map((userinfo: any) => {
         // console.log("user info", userinfo);
         if (userinfo.user_id == comment.comment.user_id) {
           return (
-            <div className="flex gap-4 ">
+            <div className="flex gap-4 " key={userinfo.user_id}>
               <div>
                 <img
                   className="h-10 w-10 object-cover object-top rounded-full "
@@ -76,7 +76,14 @@ const ViewComment = (comment: any) => {
                     </div>
                   </div>
                 </div>
-                {isOpen && <RepliedInput isOpen={isOpen} setIsOpen={setIsOpen} user={userinfo} controlState={controlState} />}
+                {isOpen && (
+                  <RepliedInput
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
+                    user={userinfo}
+                    controlState={controlState}
+                  />
+                )}
                 {filteredReply.length > 0 && (
                   <div
                     className="flex items-center hover:bg-gray-200 hover:w-24 rounded-full"
@@ -93,7 +100,7 @@ const ViewComment = (comment: any) => {
 
                 {isOpenReply &&
                   filteredReply.map((reply: any) => {
-                    return <ViewReply reply={reply} />;
+                    return <ViewReply key={reply.id} reply={reply} />;
                   })}
               </div>
             </div>

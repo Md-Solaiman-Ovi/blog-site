@@ -39,7 +39,7 @@ const SingleDetailsPage = () => {
           Home {">"}Sports Category {">"} details
         </div>
         <div className="flex flex-col md:flex-row py-5 md:gap-10 lg:gap-20">
-          <DetailsMain postDetail={postDetail} tags={tags} />
+          <DetailsMain key={postDetail.id} postDetail={postDetail} tags={tags} />
 
           <div className="flex flex-col gap-4 w-full md:w-1/3">
             <div className="font-bold text-start text-xl text-sky-800">

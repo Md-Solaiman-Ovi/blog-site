@@ -18,7 +18,7 @@ const CommentSection = (postDetail: any) => {
   const filteredComments = comments.filter((comment: any) => {
     return comment.post_id == postDetail.postDetail.id; // Assuming post_id is the correct property to filter comments by post ID
   });
-  console.log("filtered comments : ", filteredComments);
+  // console.log("filtered comments : ", filteredComments);
   return (
     <div className="container flex flex-col gap-4 p-4">
       <div className="text-start font-bold text-lg">26,637 Comments</div>
@@ -26,7 +26,7 @@ const CommentSection = (postDetail: any) => {
         <CommentInput />
         <div className="flex flex-col gap-2">
           {filteredComments.map((comment: any) => {
-            console.log(comment);
+            // console.log(comment);
             if(comment.parent_comment_id == null){
               return <ViewComment key={comment.id} comment={comment} />;
             }

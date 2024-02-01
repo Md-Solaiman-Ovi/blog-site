@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchComments } from "../../redux/commentSlice";
 
 const RepliedInput = ({ controlState, isOpen, setIsOpen }: any) => {
+  // console.log("user id", user.user_id);
   const inputRef = useRef<any>();
   const { comments } = useSelector((state: any) => state.comments);
   const dispatch = useDispatch();
@@ -16,37 +17,22 @@ const RepliedInput = ({ controlState, isOpen, setIsOpen }: any) => {
 
   const [replyInputValue, setReplyInputValue] = useState("");
   const [commentsNew, setCommentsNew] = useState(comments);
-  console.log("commentsNew before", commentsNew);
-  // const [repliedText, setRepliedText] = useState("");
-  const handleNewReply = () => {
-    // setIsOpenReply2(!isOpenReply2)
-    handleReplyInputChnage;
-    if (replyInputValue.trim() === " ") {
-      return;
-    }
-    const newComment = {
-      id: comments.length + 1,
-      user_id: 1,
-      post_id: 15,
-      comment: replyInputValue,
-      parent_comment_id: 4,
-    };
-    setCommentsNew([...commentsNew, newComment]);
 
-    // setReplyInputValue(" ");
-    setIsOpen(!isOpen);
-  };
-  console.log(handleNewReply);
-  const handleReplyInputChnage = (e: any) => {
-    setReplyInputValue(e.target.value);
-    console.log("replies ", e);
-    // setRepliedText(e.target.value);
-  };
   console.log("After comments", commentsNew);
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    const newComment = {
+      id: commentsNew.length + 1,
+      user_id: 1,
+      post_id: 15,
+      comment: inputRef.current?.value,
+      parent_comment_id: 4,
+    };
+    setCommentsNew([...commentsNew, newComment]);
+    setReplyInputValue("");
+    setIsOpen(!isOpen);
     // setReplyInputValue(inputRef.current?.value)
-    console.log("handle submit", inputRef.current?.value);
+    // console.log("handle submit", inputRef.current?.value);
   };
   return (
     <div className="flex gap-4 ">
@@ -97,7 +83,6 @@ const RepliedInput = ({ controlState, isOpen, setIsOpen }: any) => {
               </button>
             </div>
           </div>
-          {/* <div>{replyInputValue}</div> */}
         </div>
       </form>
     </div>
