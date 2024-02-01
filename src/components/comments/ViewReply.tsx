@@ -5,7 +5,7 @@ import { SlLike, SlDislike } from "react-icons/sl";
 
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../../redux/userSlice";
-import RepliedInput from "./RepliedInput";
+// import RepliedInput from "./RepliedInput";
 const ViewReply = ({ reply }: any) => {
   // console.log("comment info", comment.comment);
   const [isOpenReply2, setIsOpenReply2] = useState(false);
@@ -63,7 +63,7 @@ const ViewReply = ({ reply }: any) => {
                     </div>
                   </div>
                 </div>
-                {isOpenReply2 && <RepliedInput controlState={controlState2} />}
+                {/* {isOpenReply2 && <RepliedInput controlState={controlState2} />} */}
               </div>
             </div>
           );

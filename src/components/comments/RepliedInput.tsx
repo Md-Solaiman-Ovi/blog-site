@@ -5,8 +5,8 @@ import { MdEmojiEmotions } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchComments } from "../../redux/commentSlice";
 
-const RepliedInput = ({ controlState, isOpen, setIsOpen }: any) => {
-  // console.log("user id", user.user_id);
+const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
+  console.log(" repliedCommentInfo ", repliedCommentInfo);
   const inputRef = useRef<any>();
   const { comments } = useSelector((state: any) => state.comments);
   const dispatch = useDispatch();
@@ -18,22 +18,29 @@ const RepliedInput = ({ controlState, isOpen, setIsOpen }: any) => {
   const [replyInputValue, setReplyInputValue] = useState("");
   const [commentsNew, setCommentsNew] = useState(comments);
 
-  console.log("After comments", commentsNew);
+  // console.log("After comments", commentsNew);
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const newComment = {
       id: commentsNew.length + 1,
-      user_id: 1,
-      post_id: 15,
+      user_id: user.user_id,
+      post_id: repliedCommentInfo.comment.post_id,
       comment: inputRef.current?.value,
-      parent_comment_id: 4,
+      parent_comment_id: repliedCommentInfo.comment.id,
     };
     setCommentsNew([...commentsNew, newComment]);
     setReplyInputValue("");
-    setIsOpen(!isOpen);
-    // setReplyInputValue(inputRef.current?.value)
-    // console.log("handle submit", inputRef.current?.value);
+    // controlState();
+    const commentURL = "http://localhost:3000/comments";
+    fetch(commentURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newComment),
+    });
   };
+  console.log("After comments", commentsNew);
   return (
     <div className="flex gap-4 ">
       <div>
@@ -47,18 +54,15 @@ const RepliedInput = ({ controlState, isOpen, setIsOpen }: any) => {
         <div className="w-full items-center space-y-1 ">
           <input
             className="w-full border-b-1 focus:outline-none focus:border-b-2 focus:border-sky-600  "
-            // type={replyInputValue}
             type="text"
             ref={inputRef}
             value={replyInputValue}
             placeholder="Add a comment..."
             // onChange={handleReplyInputChnage}
             onChange={(e) => {
-              setReplyInputValue(e.target.value);
-              console.log(e.target.value);
+              setReplyInputValue(e.target?.value);
             }}
           />
-          {/* <button type></button> */}
           <div className="flex justify-between items-center">
             <div>
               <MdEmojiEmotions className="w-4 h-4 cursor-pointer" />
@@ -74,9 +78,6 @@ const RepliedInput = ({ controlState, isOpen, setIsOpen }: any) => {
                 className={`bg-gray-100 px-2 py-1 text-gray-500 rounded-3xl text-sm font-bold self-center  cursor-pointer ${
                   replyInputValue.length > 0 ? "bg-sky-700 text-white" : ""
                 }`}
-                // onClick={() => {
-                //   handleNewReply;
-                // }}
                 type="submit"
               >
                 Comment

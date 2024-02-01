@@ -82,6 +82,7 @@ const ViewComment = (comment: any) => {
                     setIsOpen={setIsOpen}
                     user={userinfo}
                     controlState={controlState}
+                    repliedCommentInfo= {comment}
                   />
                 )}
                 {filteredReply.length > 0 && (

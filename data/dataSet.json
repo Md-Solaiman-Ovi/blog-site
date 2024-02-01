@@ -1,31 +1,30 @@
 {
   "topNews": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Nikki Haley, Ron DeSantis spar without Trump",
       "image": "/public/img1.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Learn How to Make Your First $1,000 Freelance Writing",
       "image": "/public/img2.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "'Experience Has Taught Me Well'",
       "image": "/public/img3.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!"
     }
   ],
-
   "blogs": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Latest blog title 1",
       "slug": "post-1",
       "image": "/public/sportImg1.jpg",
@@ -38,7 +37,7 @@
       "tags": []
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Latest blog title 2",
       "slug": "post-2",
       "image": "/public/sportsImg2.jpg",
@@ -51,13 +50,12 @@
       "tags": []
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Latest blog title 3",
       "slug": "post-3",
       "image": "/public/sportImg3.jpg",
       "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ? ",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
-
       "category": {
         "id": 1,
         "name": "latest"
@@ -65,7 +63,7 @@
       "tags": []
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Latest blog title 4",
       "slug": "post-4",
       "image": "/public/sportImg2.jpg",
@@ -78,7 +76,7 @@
       "tags": []
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "'Latest blog title 5'",
       "slug": "post-5",
       "image": "/public/sportImg3.jpg",
@@ -102,7 +100,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Tesla: Electric carmaker's shares slide after Musk warns of slowdown",
       "slug": "post-6",
       "image": "/public/worldImg1.jpg",
@@ -120,7 +118,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Qatar 'appalled' by reported criticism from Israel's Netanyahu",
       "slug": "post-7",
       "image": "/public/worldImg2.jpg",
@@ -139,7 +137,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Khan Younis: Israel says forces have encircled Gaza's second city",
       "slug": "post-8",
       "image": "/public/worldImg3.jpg",
@@ -168,7 +166,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Gaza war: ICJ to rule on call for Israel to stop military action",
       "image": "/public/worldImg4.jpg",
       "slug": "post-9",
@@ -197,7 +195,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Australia Day: The 'quiet rebranding' of a controversial national holiday",
       "slug": "post-10",
       "image": "/public/worldImg5.jpg",
@@ -226,7 +224,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Checking price hike: Reward for honesty, penalty for hoarding",
       "slug": "post-11",
       "image": "/public/localImg1.jpg",
@@ -255,7 +253,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Dhaka’s air quality world's worst on Friday morning",
       "image": "/public/localImg2.jpg",
       "slug": "post-12",
@@ -284,7 +282,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "কাদের: বিএনপি বাংলাদেশের ডামি বিরোধী দল",
       "slug": "post-13",
       "image": "/public/localImg3.jpg",
@@ -313,7 +311,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "Tetulia logs winter's lowest temperature at 5.8°C",
       "slug": "post-14",
       "image": "/public/localImg4.jpg",
@@ -342,7 +340,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "Secondary schools allowed to remain closed if max temp falls below 10°C",
       "slug": "post-15",
       "image": "/public/localImg5.jpg",
@@ -371,7 +369,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "Facebook, Instagram may lose legal immunity over fake loan apps advertisements",
       "slug": "post-16",
       "image": "/public/techImg1.jpg",
@@ -410,7 +408,7 @@
       ]
     },
     {
-      "id": 17,
+      "id": "17",
       "title": "Samsung races Apple to develop noninvasive glucose monitoring",
       "slug": "post-17",
       "image": "/public/techImg2.jpg",
@@ -426,7 +424,6 @@
           "tagName": "Samsung",
           "tagSlug": "samsung"
         },
-
         {
           "id": 19,
           "tagName": "Phone",
@@ -440,7 +437,7 @@
       ]
     },
     {
-      "id": 18,
+      "id": "18",
       "title": "OnePlus 12 review: On point, as phones need to be",
       "slug": "post-18",
       "image": "/public/techImg3.jpg",
@@ -474,7 +471,7 @@
       ]
     },
     {
-      "id": 19,
+      "id": "19",
       "title": "Leaked Google document reveals AI ambitions",
       "slug": "post-19",
       "image": "/public/techImg4.jpg",
@@ -503,7 +500,7 @@
       ]
     },
     {
-      "id": 20,
+      "id": "20",
       "title": "Samsung BKC is a playground to experience Galaxy AI, says Southwest Asia CEO",
       "slug": "post-20",
       "image": "/public/techImg5.jpg",
@@ -537,7 +534,7 @@
       ]
     },
     {
-      "id": 21,
+      "id": "21",
       "title": "Al Nassr postpone China friendlies as Cristiano Ronaldo gets injured before Inter Miami clash",
       "slug": "post-21",
       "image": "/public/sportsImg1.jpg",
@@ -556,7 +553,7 @@
       ]
     },
     {
-      "id": 22,
+      "id": "22",
       "title": "Australia beat India to in 2023 World Cup final to become ODI champions for a sixth time",
       "slug": "post-22",
       "image": "/public/sportsImg2.jpg",
@@ -580,7 +577,7 @@
       ]
     },
     {
-      "id": 23,
+      "id": "23",
       "title": "IND vs ENG: India enter Bazball Universe with concerns about efficacy of turning tracks",
       "slug": "post-23",
       "image": "/public/sportsImg3.jpg",
@@ -604,7 +601,7 @@
       ]
     },
     {
-      "id": 24,
+      "id": "24",
       "title": "Tamim Iqbal becomes first batter to score 3000+ runs in BPL history",
       "slug": "post-24",
       "image": "/public/sportsImg4.jpg",
@@ -652,7 +649,7 @@
       ]
     },
     {
-      "id": 25,
+      "id": "25",
       "title": "My national comeback chapter is closed, says Mohammad Amir",
       "slug": "post-25",
       "image": "/public/sportsImg5.jpg",
@@ -668,7 +665,6 @@
           "tagName": "Mohammad_Amir",
           "tagSlug": "mohammad-amir"
         },
-
         {
           "id": 5,
           "tagName": "BPL",
@@ -691,7 +687,7 @@
       ]
     },
     {
-      "id": 26,
+      "id": "26",
       "title": "Trump makes history again as he powers toward Republican nomination",
       "slug": "post-26",
       "image": "/public/relatedImg1.jpg",
@@ -704,7 +700,7 @@
       "tags": []
     },
     {
-      "id": 27,
+      "id": "27",
       "title": "6 things to watch in New Hampshire’s presidential primary",
       "slug": "post-17",
       "image": "/public/relatedImg2.jpg",
@@ -717,7 +713,7 @@
       "tags": []
     },
     {
-      "id": 28,
+      "id": "28",
       "title": "Mistral AI vs. Meta: Comparing Top Open-source LLMs",
       "slug": "post-18",
       "image": "/public/relatedImg3.jpg",
@@ -730,7 +726,7 @@
       "tags": []
     },
     {
-      "id": 29,
+      "id": "29",
       "title": "Apple Vision Pro AR preview and in-store pickup options",
       "slug": "post-19",
       "image": "/public/relatedImg4.jpg",
@@ -743,7 +739,7 @@
       "tags": []
     },
     {
-      "id": 30,
+      "id": "30",
       "title": "Macintosh 40th anniversary: Remembering my own love affair with the original Mac",
       "slug": "post-20",
       "image": "/public/relatedImg5.jpg",
@@ -758,284 +754,304 @@
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "categorySlug": "world",
       "title": "World"
     },
     {
-      "id": 2,
+      "id": "2",
       "categorySlug": "business",
       "title": "Business"
     },
     {
-      "id": 3,
+      "id": "3",
       "categorySlug": "local",
       "title": "Local"
     },
     {
-      "id": 4,
+      "id": "4",
       "categorySlug": "tech",
       "title": "Technology"
     },
     {
-      "id": 5,
+      "id": "5",
       "categorySlug": "sports",
       "title": "Sports"
     },
     {
-      "id": 6,
+      "id": "6",
       "categorySlug": "entertainment",
       "title": "Entertainment"
     },
-
     {
-      "id": 7,
+      "id": "7",
       "categorySlug": "science",
       "title": "Science"
     },
     {
-      "id": 8,
+      "id": "8",
       "categorySlug": "health",
       "title": "Health"
     }
   ],
   "tags": [
     {
-      "id": 1,
+      "id": "1",
       "tagName": "Mashrafee_Bin_Mortuza",
       "tagSlug": "mashrafee-bin-mortuza"
     },
     {
-      "id": 2,
+      "id": "2",
       "tagName": "Tamim_Iqbal",
       "tagSlug": "tamim-iqbal"
     },
     {
-      "id": 3,
+      "id": "3",
       "tagName": "Mohammad_Amir",
       "tagSlug": "mohammad-amir"
     },
     {
-      "id": 4,
+      "id": "4",
       "tagName": "Shakib_AL_Hasan ",
       "tagSlug": "shakib-al-hasan"
     },
     {
-      "id": 5,
+      "id": "5",
       "tagName": "BPL",
       "tagSlug": "bpl"
     },
     {
-      "id": 6,
+      "id": "6",
       "tagName": "Rangpur_Riders",
       "tagSlug": "rangpur-riders"
     },
-
     {
       "tagName": "Fortune Barisal",
-      "tagSlug": "fortune-barisal"
+      "tagSlug": "fortune-barisal",
+      "id": "e953"
     },
     {
-      "id": 8,
+      "id": "8",
       "tagName": "T20",
       "tagSlug": "t20"
     },
     {
-      "id": 9,
+      "id": "9",
       "tagName": "Israel",
       "tagSlug": "israel"
     },
     {
-      "id": 10,
+      "id": "10",
       "tagName": "Gaza",
       "tagSlug": "gaza"
     },
     {
-      "id": 11,
+      "id": "11",
       "tagName": "Hasina",
       "tagSlug": "hasina"
     },
     {
-      "id": 12,
+      "id": "12",
       "tagName": "BNP",
       "tagSlug": "bnp"
     },
     {
-      "id": 13,
+      "id": "13",
       "tagName": "Mostofa_Sarwar_Farooki",
       "tagSlug": "mostofa-sarwar-farooki"
     },
     {
-      "id": 14,
+      "id": "14",
       "tagName": "Al_Nassr",
       "tagSlug": "al-nassr"
     },
     {
-      "id": 15,
+      "id": "15",
       "tagName": "Cristiano_Ronaldo",
       "tagSlug": "cristiano-ronaldo"
     },
     {
-      "id": 16,
+      "id": "16",
       "tagName": "Lionel_Messi",
       "tagSlug": "lionel-messi"
     },
     {
-      "id": 17,
+      "id": "17",
       "tagName": "Samsung",
       "tagSlug": "samsung"
     },
     {
-      "id": 18,
+      "id": "18",
       "tagName": "Instagram",
       "tagSlug": "instagram"
     },
     {
-      "id": 19,
+      "id": "19",
       "tagName": "Phone",
       "tagSlug": "phone"
     },
     {
-      "id": 20,
+      "id": "20",
       "tagName": "AI",
       "tagSlug": "ai"
     },
     {
-      "id": 21,
+      "id": "21",
       "tagName": "world",
       "tagSlug": "world"
     },
     {
-      "id": 22,
+      "id": "22",
       "tagName": "Dhaka",
       "tagSlug": "dhaka"
     },
     {
-      "id": 23,
+      "id": "23",
       "tagName": "Air",
       "tagSlug": "air"
     },
     {
-      "id": 24,
+      "id": "24",
       "tagName": "Commodity_Price",
       "tagSlug": "commodity-price"
     },
     {
-      "id": 25,
+      "id": "25",
       "tagName": "Winter",
       "tagSlug": "winter"
     },
     {
-      "id": 26,
+      "id": "26",
       "tagName": "Temparature",
       "tagSlug": "temparature"
     },
     {
-      "id": 27,
+      "id": "27",
       "tagName": "Obaidul_Kader",
       "tagSlug": "obaidul-kader"
     },
     {
-      "id": 28,
+      "id": "28",
       "tagName": "World",
       "tagSlug": "world"
     },
     {
-      "id": 29,
+      "id": "29",
       "tagName": "Local",
       "tagSlug": "local"
     },
     {
-      "id": 30,
+      "id": "30",
       "tagName": "Business",
       "tagSlug": "business"
     },
     {
-      "id": 31,
+      "id": "31",
       "tagName": "Technology",
       "tagSlug": "technology"
     },
     {
-      "id": 32,
+      "id": "32",
       "tagName": "Sports",
       "tagSlug": "sports"
     },
     {
-      "id": 33,
+      "id": "33",
       "tagName": "Science",
       "tagSlug": "science"
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "user_id": 1,
       "post_id": 16,
       "comment": " Hey, this was so good blog",
       "parent_comment_id": null
     },
     {
-      "id": 2,
+      "id": "2",
       "user_id": 2,
       "post_id": 16,
       "comment": " Ami ki bolechi ami nirdush??",
       "parent_comment_id": null
     },
     {
-      "id": 3,
+      "id": "3",
       "user_id": 3,
       "post_id": 16,
       "comment": "Na,,,tumi ferdous..",
       "parent_comment_id": 2
     },
     {
-      "id": 4,
+      "id": "4",
       "user_id": 4,
       "post_id": 15,
       "comment": "My name is hasib. I've a complain on that decision. Why this rules applicable only for schools? why not for empolyer who wake up in the morning to go to their office. angry mood: Bar bar shudhu amr sathei ? ",
       "parent_comment_id": null
     },
     {
-      "id": 5,
+      "id": "5",
       "user_id": 1,
       "post_id": 21,
       "comment": " valo hoiche. Ekdom khushi hoichi",
       "parent_comment_id": null
     },
     {
-      "id": 6,
+      "id": "6",
       "user_id": 2,
       "post_id": 24,
       "comment": "One of the best opener in Bangladesh",
       "parent_comment_id": null
     },
     {
-      "id": 7,
+      "id": "7",
       "user_id": 3,
       "post_id": 24,
       "comment": "Dot baba",
       "parent_comment_id": null
     },
     {
-      "id": 8,
+      "id": "8",
       "user_id": 4,
       "post_id": 22,
       "comment": "hahaha....Dada der vore diyeche ",
       "parent_comment_id": null
     },
     {
-      "id": 9,
+      "id": "9",
       "user_id": 3,
       "post_id": 15,
       "comment": "This is reply.",
       "parent_comment_id": 4
     },
     {
-      "id": 10,
+      "id": "10",
       "user_id": 2,
       "post_id": 15,
       "comment": "This is reply(2).",
       "parent_comment_id": 4
+    },
+    {
+      "id": 11,
+      "user_id": 4,
+      "post_id": 15,
+      "comment": "hi hasib",
+      "parent_comment_id": "4"
+    },
+    {
+      "id": 12,
+      "user_id": 4,
+      "post_id": 15,
+      "comment": "how are you hasib",
+      "parent_comment_id": "4"
+    },
+    {
+      "id": 13,
+      "user_id": 4,
+      "post_id": 15,
+      "comment": "kesa laga mera majak",
+      "parent_comment_id": "4"
     }
   ],
   "users": [
@@ -1044,28 +1060,32 @@
       "user_name": "Hazrat Ali",
       "user_image": "/public/userImg1.jpg",
       "user_email": "hazrat@gmail.com",
-      "user_password": "hazrat123"
+      "user_password": "hazrat123",
+      "id": "ebc2"
     },
     {
       "user_id": 2,
       "user_name": "Md Solaiman Ovi",
       "user_image": "/public/userImg2.jpg",
       "user_email": "ovi@gmail.com",
-      "user_password": "ovi123"
+      "user_password": "ovi123",
+      "id": "26df"
     },
     {
       "user_id": 3,
       "user_name": "Remon Rakib",
       "user_image": "/public/userImg3.jpg",
       "user_email": "rakib@gmail.com",
-      "user_password": "rakib123"
+      "user_password": "rakib123",
+      "id": "59f0"
     },
     {
       "user_id": 4,
       "user_name": "Mahmudul Hasan",
       "user_image": "/public/userImg4.jpg",
       "user_email": "mahmudul@gmail.com",
-      "user_password": "mahmudul123"
+      "user_password": "mahmudul123",
+      "id": "18f3"
     }
   ]
 }

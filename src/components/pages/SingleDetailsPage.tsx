@@ -15,7 +15,7 @@ const SingleDetailsPage = () => {
   const params = useParams();
   // console.log("single page params", params.slug);
 
-  const { blogs } = useSelector((state: any) => state.blogs);
+  const { blogs, error } = useSelector((state: any) => state.blogs);
   const { tags } = useSelector((state: any) => state.tags);
   // console.log("blogs", blogs);
 
@@ -39,7 +39,14 @@ const SingleDetailsPage = () => {
           Home {">"}Sports Category {">"} details
         </div>
         <div className="flex flex-col md:flex-row py-5 md:gap-10 lg:gap-20">
-          <DetailsMain key={postDetail.id} postDetail={postDetail} tags={tags} />
+          {error && <div>Loading...</div>}
+          {postDetail && (
+            <DetailsMain
+              key={postDetail.id}
+              postDetail={postDetail}
+              tags={tags}
+            />
+          )}
 
           <div className="flex flex-col gap-4 w-full md:w-1/3">
             <div className="font-bold text-start text-xl text-sky-800">
@@ -60,7 +67,6 @@ const SingleDetailsPage = () => {
               }
             })}
           </div>
-          
         </div>
         <div className="flex flex-col gap-4 py-10">
           <div className="font-bold text-start text-2xl text-sky-800">
@@ -75,7 +81,6 @@ const SingleDetailsPage = () => {
           </div>
         </div>
       </div>
-      
     </Layout>
   );
 };
