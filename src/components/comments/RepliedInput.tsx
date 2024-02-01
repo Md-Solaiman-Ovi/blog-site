@@ -19,7 +19,7 @@ const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
   const [commentsNew, setCommentsNew] = useState(comments);
 
   // console.log("After comments", commentsNew);
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const newComment = {
       id: commentsNew.length + 1,
@@ -32,13 +32,15 @@ const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
     setReplyInputValue("");
     // controlState();
     const commentURL = "http://localhost:3000/comments";
-    fetch(commentURL, {
+    await fetch(commentURL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newComment),
     });
+    // @ts-ignore
+    dispatch(fetchComments());
   };
   console.log("After comments", commentsNew);
   return (

@@ -26,11 +26,12 @@ const Navbar = () => {
     <nav className=" bg-gray-50 top-0 sticky px-4 z-50">
       <div className="container pt-4">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">
-            <span className=" font-['Oregano',cursive] text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-sky-900  ">
+          <Link to={"/"}>
+            <div className="text-2xl font-bold font-['Oregano',cursive] text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-sky-900  ">
               AriSaf Blogs
-            </span>
-          </h1>
+            </div>
+          </Link>
+
           <div className="lg:flex hidden w-full max-w-[500px] ">
             <input
               className="border-2 border-sky-700 px-6 py-1 w-full"
