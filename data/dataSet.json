@@ -1076,38 +1076,31 @@
     },
     {
       "id": 14,
-      "user_id": 4,
-      "post_id": 15,
-      "comment": "hello",
-      "parent_comment_id": "4"
+      "user_id": 2,
+      "post_id": 24,
+      "comment": "hi ovi",
+      "parent_comment_id": "6"
     },
     {
       "id": 15,
-      "user_id": 4,
-      "post_id": 15,
-      "comment": "hello",
-      "parent_comment_id": "4"
+      "user_id": 3,
+      "post_id": 24,
+      "comment": "hi rakib",
+      "parent_comment_id": "7"
     },
     {
       "id": 16,
-      "user_id": 4,
-      "post_id": 15,
-      "comment": "hello2",
-      "parent_comment_id": "4"
+      "user_id": 3,
+      "post_id": 24,
+      "comment": "this is reply to rakib",
+      "parent_comment_id": "7"
     },
     {
       "id": 17,
-      "user_id": 4,
-      "post_id": 15,
-      "comment": "hi",
-      "parent_comment_id": "4"
-    },
-    {
-      "id": 18,
-      "user_id": 4,
-      "post_id": 15,
-      "comment": "reply 10",
-      "parent_comment_id": "4"
+      "user_id": 2,
+      "post_id": 24,
+      "comment": "this is reply to ovi",
+      "parent_comment_id": "6"
     }
   ],
   "users": [

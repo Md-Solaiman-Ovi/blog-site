@@ -5,6 +5,7 @@ import { SlLike, SlDislike } from "react-icons/sl";
 
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../../redux/userSlice";
+import RepliedInput from "./RepliedInput";
 // import RepliedInput from "./RepliedInput";
 const ViewReply = ({ reply }: any) => {
   // console.log("comment info", comment.comment);
@@ -37,9 +38,7 @@ const ViewReply = ({ reply }: any) => {
               <div className="w-full items-center space-y-1 ">
                 <div className="flex flex-col text-start">
                   <div className="flex gap-2 items-center">
-                    <div className="font-bold  ">
-                      {userinfo.user_name}
-                    </div>
+                    <div className="font-bold  ">{userinfo.user_name}</div>
                     <div className="">11 days ago</div>
                   </div>
                   <div className="">{reply.comment}</div>
@@ -63,7 +62,14 @@ const ViewReply = ({ reply }: any) => {
                     </div>
                   </div>
                 </div>
-                {/* {isOpenReply2 && <RepliedInput controlState={controlState2} />} */}
+                {isOpenReply2 && (
+                  <RepliedInput
+                    controlState={controlState2}
+                    user={userinfo}
+                    // controlState={controlState2}
+                    repliedCommentInfo={reply}
+                  />
+                )}
               </div>
             </div>
           );

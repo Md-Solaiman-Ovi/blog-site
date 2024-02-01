@@ -27,10 +27,9 @@ const CommentSection = (postDetail: any) => {
         <div className="flex flex-col gap-2">
           {filteredComments.map((comment: any) => {
             // console.log(comment);
-            if(comment.parent_comment_id == null){
+            if (comment.parent_comment_id == null) {
               return <ViewComment key={comment.id} comment={comment} />;
             }
-            
           })}
         </div>
       </div>

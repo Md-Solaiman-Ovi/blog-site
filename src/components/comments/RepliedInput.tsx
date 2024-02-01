@@ -39,6 +39,7 @@ const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
       },
       body: JSON.stringify(newComment),
     });
+    controlState();
     // @ts-ignore
     dispatch(fetchComments());
   };
@@ -64,6 +65,7 @@ const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
             onChange={(e) => {
               setReplyInputValue(e.target?.value);
             }}
+            autoFocus={true}
           />
           <div className="flex justify-between items-center">
             <div>

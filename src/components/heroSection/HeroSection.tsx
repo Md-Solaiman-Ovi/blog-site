@@ -41,19 +41,18 @@ const HeroSection = () => {
         {blogs.map((topNews: any) => {
           if (topNews.category.name == "topnews" && topNews.id != 31) {
             return (
-              <Link to={`${topNews.category.name}/${topNews.slug}`}>
-                <div
-                  key={topNews.id}
-                  className={`border-1 flex flex-col justify-end shadow-lg bg-cover`}
-                  style={{ backgroundImage: `url('${topNews.image}')` }}
-                >
-                  <div className="bg-[rgba(0,0,0,0.6)]  z-0  ">
-                    <div className="text-2xl font-bold text-start text-white p-4">
-                      {topNews.title}
-                    </div>
-                    <div className="text-justify text-white text-sm  p-4  ">
-                      {topNews.shortDesc}
-                    </div>
+              <Link
+                to={`${topNews.category.name}/${topNews.slug}`}
+                className={`border-1 flex flex-col justify-end shadow-lg bg-cover`}
+                style={{ backgroundImage: `url('${topNews.image}')` }}
+                key={topNews.id}
+              >
+                <div className="bg-[rgba(0,0,0,0.6)]  z-0  ">
+                  <div className="text-2xl font-bold text-start text-white p-4">
+                    {topNews.title}
+                  </div>
+                  <div className="text-justify text-white text-sm  p-4  ">
+                    {topNews.shortDesc}
                   </div>
                 </div>
               </Link>
