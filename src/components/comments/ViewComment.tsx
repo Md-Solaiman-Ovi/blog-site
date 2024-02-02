@@ -9,17 +9,18 @@ import RepliedInput from "./RepliedInput";
 import ViewReply from "./ViewReply";
 import { fetchComments } from "../../redux/commentSlice";
 const ViewComment = (comment: any) => {
+  // console.log("comment info", comment.comment);
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenReply, setIsOpenReply] = useState(false);
   const controlState = () => {
     setIsOpen(!isOpen);
   };
-
+  const [isOpenReply, setIsOpenReply] = useState(false);
   const controlReplyState = () => {
     setIsOpenReply(!isOpenReply);
   };
   const { users } = useSelector((state: any) => state.users);
   const { comments } = useSelector((state: any) => state.comments);
+  // console.log(users);
   const dispatch = useDispatch();
   useEffect(() => {
     //@ts-ignore
@@ -31,9 +32,11 @@ const ViewComment = (comment: any) => {
   const filteredReply = comments.filter((reply: any) => {
     return reply.parent_comment_id == comment.comment.id;
   });
+  // console.log("replied comments", filteredReply);
   return (
     <div className="container flex flex-col gap-4">
       {users.map((userinfo: any) => {
+        // console.log("user info", userinfo);
         if (userinfo.user_id == comment.comment.user_id) {
           return (
             <div className="flex gap-4 " key={userinfo.user_id}>
@@ -73,6 +76,27 @@ const ViewComment = (comment: any) => {
                     </div>
                   </div>
                 </div>
+
+                {filteredReply.length > 0 && (
+                  <div
+                    className="flex items-center hover:bg-gray-200 hover:w-24 rounded-full"
+                    onClick={() => controlState()}
+                  >
+                    <MdOutlineArrowDropDown
+                      className={`w-6 h-6 ${isOpen ? "rotate-180" : ""}`}
+                    />
+                    <div className=" text-gray-500 hover:text-gray-950 text-sm px-2 py-1 rounded-3xl font-bold self-center cursor-pointer text-start">
+                      {filteredReply.length} replies
+                    </div>
+                  </div>
+                )}
+
+                {isOpen &&
+                  filteredReply.map((reply: any) => {
+                    console.log("filteredReply", filteredReply);
+                    return <ViewReply key={reply.id} reply={reply} />;
+                  })}
+
                 {isOpen && (
                   <RepliedInput
                     isOpen={isOpen}
@@ -82,24 +106,6 @@ const ViewComment = (comment: any) => {
                     repliedCommentInfo={comment}
                   />
                 )}
-                {filteredReply.length > 0 && (
-                  <div
-                    className="flex items-center hover:bg-gray-200 hover:w-24 rounded-full"
-                    onClick={() => controlReplyState()}
-                  >
-                    <MdOutlineArrowDropDown
-                      className={`w-6 h-6 ${isOpenReply ? "rotate-180" : ""}`}
-                    />
-                    <div className=" text-gray-500 hover:text-gray-950 text-sm px-2 py-1 rounded-3xl font-bold self-center cursor-pointer text-start">
-                      {filteredReply.length} replies
-                    </div>
-                  </div>
-                )}
-
-                {isOpenReply &&
-                  filteredReply.map((reply: any) => {
-                    return <ViewReply key={reply.id} reply={reply} />;
-                  })}
               </div>
             </div>
           );

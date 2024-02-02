@@ -16,19 +16,19 @@ const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
   }, [dispatch]);
 
   const [replyInputValue, setReplyInputValue] = useState("");
-  const [commentsNew, setCommentsNew] = useState(comments);
+  // const [commentsNew, setCommentsNew] = useState(comments);
 
   // console.log("After comments", commentsNew);
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const newComment = {
-      id: commentsNew.length + 1,
+      id: comments.length + 1,
       user_id: user.user_id,
       post_id: repliedCommentInfo.comment.post_id,
       comment: inputRef.current?.value,
       parent_comment_id: repliedCommentInfo.comment.id,
     };
-    setCommentsNew([...commentsNew, newComment]);
+    // setCommentsNew([...commentsNew, newComment]);
     setReplyInputValue("");
     const commentURL = "http://localhost:3000/comments";
     await fetch(commentURL, {

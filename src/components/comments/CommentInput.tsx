@@ -10,8 +10,6 @@ const CommentInput = (comments: any) => {
   // console.log("comments list", comments.comments);
   const inputRef = useRef<any>();
   const [inputValue, setInputValue] = useState("");
-  // const [commentsNew, setCommentsNew2] = useState(comments.comments);
-
   const dispatch = useDispatch();
 
   const handleInputChnage = (e: any) => {
@@ -37,7 +35,6 @@ const CommentInput = (comments: any) => {
       },
       body: JSON.stringify(newComment),
     });
-
     // @ts-ignore
     dispatch(fetchComments());
   };

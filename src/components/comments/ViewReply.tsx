@@ -8,7 +8,7 @@ import { fetchUsers } from "../../redux/userSlice";
 import RepliedInput from "./RepliedInput";
 // import RepliedInput from "./RepliedInput";
 const ViewReply = ({ reply }: any) => {
-  // console.log("comment info", comment.comment);
+  console.log("reply info", reply);
   const [isOpenReply2, setIsOpenReply2] = useState(false);
   const controlState2 = () => {
     setIsOpenReply2(!isOpenReply2);

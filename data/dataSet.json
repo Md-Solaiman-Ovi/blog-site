@@ -1188,6 +1188,68 @@
       "post_id": 15,
       "comment": "sdfsdf",
       "parent_comment_id": 27
+    },
+    {
+      "id": 31,
+      "user_id": 4,
+      "post_id": 15,
+      "comment": "hi",
+      "parent_comment_id": 20
+    },
+    {
+      "id": 32,
+      "user_id": 4,
+      "comment": "hi2"
+    },
+    {
+      "id": 33,
+      "user_id": 4,
+      "post_id": 15,
+      "comment": "hi",
+      "parent_comment_id": 20
+    },
+    {
+      "id": 34,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "parent comment ",
+      "parent_comment_id": null
+    },
+    {
+      "id": 35,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "child comment",
+      "parent_comment_id": 34
+    },
+    {
+      "id": 36,
+      "user_id": 1,
+      "comment": "child comment 2"
+    },
+    {
+      "id": 37,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hello",
+      "parent_comment_id": null
+    },
+    {
+      "id": 38,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi",
+      "parent_comment_id": 37
+    },
+    {
+      "id": 39,
+      "user_id": 4,
+      "comment": "hi3"
+    },
+    {
+      "id": 40,
+      "user_id": 1,
+      "comment": "hellp"
     }
   ],
   "users": [
