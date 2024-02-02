@@ -6,10 +6,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchComments } from "../../redux/commentSlice";
 import CommentInput from "./CommentInput";
 import ViewComment from "./ViewComment";
-// import { fetchUsers } from "../../redux/userSlice";
 
 const CommentSection = (postDetail: any) => {
-  const { comments } = useSelector((state: any) => state.comments);
+  const { comments } = useSelector((state: any) => state.comments); //calling all the comments
+
   const dispatch = useDispatch();
   useEffect(() => {
     //@ts-ignore
@@ -23,7 +23,7 @@ const CommentSection = (postDetail: any) => {
     <div className="container flex flex-col gap-4 p-4">
       <div className="text-start font-bold text-lg">26,637 Comments</div>
       <div className="flex flex-col gap-4">
-        <CommentInput />
+        <CommentInput comments={comments} />
         <div className="flex flex-col gap-2">
           {filteredComments.map((comment: any) => {
             // console.log(comment);

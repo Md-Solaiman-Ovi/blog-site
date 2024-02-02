@@ -30,7 +30,6 @@ const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
     };
     setCommentsNew([...commentsNew, newComment]);
     setReplyInputValue("");
-    // controlState();
     const commentURL = "http://localhost:3000/comments";
     await fetch(commentURL, {
       method: "POST",
@@ -43,7 +42,7 @@ const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
     // @ts-ignore
     dispatch(fetchComments());
   };
-  console.log("After comments", commentsNew);
+  // console.log("After comments", commentsNew);
   return (
     <div className="flex gap-4 ">
       <div>
@@ -61,7 +60,6 @@ const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
             ref={inputRef}
             value={replyInputValue}
             placeholder="Add a comment..."
-            // onChange={handleReplyInputChnage}
             onChange={(e) => {
               setReplyInputValue(e.target?.value);
             }}

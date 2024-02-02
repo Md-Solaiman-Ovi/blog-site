@@ -1,19 +1,48 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MdEmojiEmotions } from "react-icons/md";
-const CommentInput = () => {
+import { useDispatch } from "react-redux";
+import { fetchComments } from "../../redux/commentSlice";
+
+const CommentInput = (comments: any) => {
+  // console.log("comments list", comments.comments);
+  const inputRef = useRef<any>();
   const [inputValue, setInputValue] = useState("");
+  // const [commentsNew, setCommentsNew2] = useState(comments.comments);
+
+  const dispatch = useDispatch();
 
   const handleInputChnage = (e: any) => {
     setInputValue(e.target.value);
   };
   // Function to handle form submit
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Your submit logic here
-    console.log("Submitted");
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    const newComment = {
+      id: comments.comments.length + 1,
+      user_id: 1,
+      post_id: 15,
+      comment: inputRef.current?.value,
+      parent_comment_id: null,
+    };
+    console.log("parent comment", newComment);
+    setInputValue(" ");
+    const commentURL = "http://localhost:3000/comments";
+    await fetch(commentURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newComment),
+    });
+
+    // @ts-ignore
+    dispatch(fetchComments());
   };
+
+  // console.log("after Submitted ", commentsNew2);
   return (
     <div className="flex gap-4 ">
       <div>
@@ -26,7 +55,9 @@ const CommentInput = () => {
       <form onSubmit={handleSubmit} className="w-full items-center space-y-2 ">
         <input
           className="w-full border-b-1 focus:outline-none focus:border-b-2 focus:border-sky-600 "
-          type={inputValue}
+          ref={inputRef}
+          type="text"
+          value={inputValue}
           onChange={handleInputChnage}
           placeholder="Add a comment..."
         />

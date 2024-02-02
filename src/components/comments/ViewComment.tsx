@@ -9,18 +9,17 @@ import RepliedInput from "./RepliedInput";
 import ViewReply from "./ViewReply";
 import { fetchComments } from "../../redux/commentSlice";
 const ViewComment = (comment: any) => {
-  // console.log("comment info", comment.comment);
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenReply, setIsOpenReply] = useState(false);
   const controlState = () => {
     setIsOpen(!isOpen);
   };
-  const [isOpenReply, setIsOpenReply] = useState(false);
+
   const controlReplyState = () => {
     setIsOpenReply(!isOpenReply);
   };
   const { users } = useSelector((state: any) => state.users);
   const { comments } = useSelector((state: any) => state.comments);
-  // console.log(users);
   const dispatch = useDispatch();
   useEffect(() => {
     //@ts-ignore
@@ -32,11 +31,9 @@ const ViewComment = (comment: any) => {
   const filteredReply = comments.filter((reply: any) => {
     return reply.parent_comment_id == comment.comment.id;
   });
-  // console.log("replied comments", filteredReply);
   return (
     <div className="container flex flex-col gap-4">
       {users.map((userinfo: any) => {
-        // console.log("user info", userinfo);
         if (userinfo.user_id == comment.comment.user_id) {
           return (
             <div className="flex gap-4 " key={userinfo.user_id}>
@@ -82,7 +79,7 @@ const ViewComment = (comment: any) => {
                     setIsOpen={setIsOpen}
                     user={userinfo}
                     controlState={controlState}
-                    repliedCommentInfo= {comment}
+                    repliedCommentInfo={comment}
                   />
                 )}
                 {filteredReply.length > 0 && (

@@ -1054,53 +1054,140 @@
       "parent_comment_id": 4
     },
     {
-      "id": 11,
+      "id": "11",
       "user_id": 4,
       "post_id": 15,
       "comment": "hi hasib",
       "parent_comment_id": "4"
     },
     {
-      "id": 12,
+      "id": "12",
       "user_id": 4,
       "post_id": 15,
       "comment": "how are you hasib",
       "parent_comment_id": "4"
     },
     {
-      "id": 13,
+      "id": "13",
       "user_id": 4,
       "post_id": 15,
       "comment": "kesa laga mera majak",
       "parent_comment_id": "4"
     },
     {
-      "id": 14,
+      "id": "14",
       "user_id": 2,
       "post_id": 24,
       "comment": "hi ovi",
       "parent_comment_id": "6"
     },
     {
-      "id": 15,
+      "id": "15",
       "user_id": 3,
       "post_id": 24,
       "comment": "hi rakib",
       "parent_comment_id": "7"
     },
     {
-      "id": 16,
+      "id": "16",
       "user_id": 3,
       "post_id": 24,
       "comment": "this is reply to rakib",
       "parent_comment_id": "7"
     },
     {
-      "id": 17,
+      "id": "17",
       "user_id": 2,
       "post_id": 24,
       "comment": "this is reply to ovi",
       "parent_comment_id": "6"
+    },
+    {
+      "id": "18",
+      "user_id": 2,
+      "comment": "this is nested reply"
+    },
+    {
+      "id": 19,
+      "user_id": 4,
+      "post_id": 15,
+      "comment": "hi",
+      "parent_comment_id": "4"
+    },
+    {
+      "id": 20,
+      "user_id": 4,
+      "post_id": 15,
+      "comment": "hi for schools",
+      "parent_comment_id": null
+    },
+    {
+      "id": 1,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hello",
+      "parent_comment_id": null
+    },
+    {
+      "id": 21,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "sdfsdf",
+      "parent_comment_id": null
+    },
+    {
+      "id": 23,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "asdfasd",
+      "parent_comment_id": null
+    },
+    {
+      "id": 24,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "nnnn",
+      "parent_comment_id": null
+    },
+    {
+      "id": 25,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "another new",
+      "parent_comment_id": null
+    },
+    {
+      "id": 26,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "ekta reply dilam",
+      "parent_comment_id": 25
+    },
+    {
+      "id": 27,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hello1",
+      "parent_comment_id": null
+    },
+    {
+      "id": 28,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "reply 1",
+      "parent_comment_id": 27
+    },
+    {
+      "id": 29,
+      "user_id": 1,
+      "comment": "hello"
+    },
+    {
+      "id": 30,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "sdfsdf",
+      "parent_comment_id": 27
     }
   ],
   "users": [
