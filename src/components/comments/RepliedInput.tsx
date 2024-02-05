@@ -16,9 +16,6 @@ const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
   }, [dispatch]);
 
   const [replyInputValue, setReplyInputValue] = useState("");
-  // const [commentsNew, setCommentsNew] = useState(comments);
-
-  // console.log("After comments", commentsNew);
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const newComment = {
@@ -42,7 +39,6 @@ const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
     // @ts-ignore
     dispatch(fetchComments());
   };
-  // console.log("After comments", comments);
   return (
     <div className="flex gap-4 ">
       <div>

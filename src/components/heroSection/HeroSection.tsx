@@ -2,9 +2,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import { Blogs } from "../../types/dataTypes";
 import { Link } from "react-router-dom";
 import { fetchBlogs } from "../../redux/blogSlice";
+import { getFirstNWords } from "../../redux/globalFunctions";
 
 const HeroSection = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -16,11 +17,10 @@ const HeroSection = () => {
   }, [dispatch]);
 
   return (
-    // <Link to={`${blogs[0].category.name}/${blogs[0].slug}`}>
     <div className="grid grid-cols-1 md:grid-cols-2 py-0 md:py-10 gap-10  ">
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
-      {blogs.map((topNews: any) => {
+      {blogs.map((topNews: Blogs) => {
         if (topNews.category.name == "topnews" && topNews.id == 31) {
           return (
             <Link to={`${topNews.category.name}/${topNews.slug}`}>
@@ -38,7 +38,7 @@ const HeroSection = () => {
         }
       })}
       <div className="w-full grid grid-rows-2 gap-4">
-        {blogs.map((topNews: any) => {
+        {blogs.map((topNews: Blogs) => {
           if (topNews.category.name == "topnews" && topNews.id != 31) {
             return (
               <Link
@@ -52,7 +52,7 @@ const HeroSection = () => {
                     {topNews.title}
                   </div>
                   <div className="text-justify text-white text-sm  p-4  ">
-                    {topNews.shortDesc}
+                    {getFirstNWords(topNews.desc, 30)}
                   </div>
                 </div>
               </Link>
@@ -61,7 +61,6 @@ const HeroSection = () => {
         })}
       </div>
     </div>
-    // </Link>
   );
 };
 

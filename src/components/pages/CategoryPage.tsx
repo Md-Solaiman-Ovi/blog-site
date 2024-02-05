@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../custom-components/Layout";
 import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useEffect } from "react";
 import { fetchBlogs } from "../../redux/blogSlice";
 import { useParams } from "react-router-dom";
+import { Blogs } from "../../types/dataTypes";
 
 const CategoryPage = () => {
   const params = useParams();
@@ -26,7 +26,7 @@ const CategoryPage = () => {
         {isLoading && <div>Loading...</div>}
         {error && <div>{error.message}</div>}
         {blogs &&
-          blogs.map((blog: any) => {
+          blogs.map((blog: Blogs) => {
             if (blog.category.name == params.categorySlug) {
               return <RelatedBlogCard key={blog.id} blog={blog} />;
             }

@@ -6,11 +6,10 @@ import MainCard from "../card/MainCard";
 import SmallCategoryCard from "../card/SmallCategoryCard";
 import { useEffect } from "react";
 import { fetchBlogs } from "../../redux/blogSlice";
+import { Blogs } from "../../types/dataTypes";
 
 const TechCategory = () => {
   const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
-  // console.log("Tech category", blogs);
-  // console.log("Tech category 1", blogs[1]);
   const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
@@ -27,7 +26,7 @@ const TechCategory = () => {
           {error && <div>{error.message}</div>}
 
           {blogs &&
-            blogs.map((blogs: any) => {
+            blogs.map((blogs: Blogs) => {
               if (blogs.category.name == "tech" && blogs.id == 16) {
                 return <MainCard key={blogs.id} blogs={blogs} />;
               }
@@ -35,7 +34,7 @@ const TechCategory = () => {
         </div>
         <div className="flex flex-col gap-4 md:w-2/5 ">
           {blogs &&
-            blogs.map((techNews: any) => {
+            blogs.map((techNews: Blogs) => {
               if (techNews.category.name == "tech" && techNews.id != 16) {
                 // console.log("small id", techNews);
                 return (

@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../../redux/categorySlice";
+import { Categories } from "../../types/dataTypes";
 
 const Navbar = () => {
   const { categories } = useSelector((state: any) => state.categories);
-  // console.log("nav categories", categories);
   const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
@@ -18,7 +18,7 @@ const Navbar = () => {
   }, [dispatch]);
 
   const [selectedDiv, setSelectedDiv] = useState("home");
-  const selectDiv = (categorySlug: any) => {
+  const selectDiv = (categorySlug: string) => {
     setSelectedDiv(categorySlug);
   };
 
@@ -74,8 +74,7 @@ const Navbar = () => {
             <div className="hover:text-sky-600 cursor-pointer">Following</div>
           </div>
           <div className="flex justify-evenly items-center space-x-8 ">
-            {categories.map((category: any) => {
-              // console.log(category.title);
+            {categories.map((category: Categories) => {
               return (
                 <Link to={`/${category.categorySlug}`} key={category.id}>
                   <div

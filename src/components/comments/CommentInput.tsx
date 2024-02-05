@@ -6,7 +6,8 @@ import { MdEmojiEmotions } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { fetchComments } from "../../redux/commentSlice";
 
-const CommentInput = (comments: any) => {
+const CommentInput = ({ comments, postDetail }: any) => {
+  // console.log("post detail ", postDetail);
   // console.log("comments list", comments.comments);
   const inputRef = useRef<any>();
   const [inputValue, setInputValue] = useState("");
@@ -19,9 +20,9 @@ const CommentInput = (comments: any) => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const newComment = {
-      id: comments.comments.length + 1,
-      user_id: 1,
-      post_id: 15,
+      id: comments.length + 1,
+      user_id: 2,
+      post_id: postDetail.postDetail.id,
       comment: inputRef.current?.value,
       parent_comment_id: null,
     };
@@ -39,7 +40,6 @@ const CommentInput = (comments: any) => {
     dispatch(fetchComments());
   };
 
-  // console.log("after Submitted ", commentsNew2);
   return (
     <div className="flex gap-4 ">
       <div>

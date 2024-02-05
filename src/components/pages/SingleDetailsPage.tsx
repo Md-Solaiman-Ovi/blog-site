@@ -9,16 +9,12 @@ import { useEffect } from "react";
 import { fetchBlogs } from "../../redux/blogSlice";
 import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useParams } from "react-router-dom";
-// import { fetchTags } from "../../redux/tagSlice";
+import { Blogs } from "../../types/dataTypes";
 
 const SingleDetailsPage = () => {
   const params = useParams();
-  // console.log("single page params", params.slug);
-
   const { blogs, error } = useSelector((state: any) => state.blogs);
   const { tags } = useSelector((state: any) => state.tags);
-  // console.log("blogs", blogs);
-
   const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
@@ -26,12 +22,9 @@ const SingleDetailsPage = () => {
     // dispatch(fetchTags());
   }, [dispatch]);
   const postDetail = blogs.find(
-    (item: any) =>
+    (item: Blogs) =>
       item.slug == params.slug && item.category.name == params.categorySlug
   );
-
-  // console.log("postdetails", postDetail);
-  // console.log("postdetails tags", tags);
   return (
     <Layout>
       <div className="container">
@@ -52,8 +45,7 @@ const SingleDetailsPage = () => {
             <div className="font-bold text-start text-xl text-sky-800">
               Latest Blogs
             </div>
-            {blogs.map((postDetailSmall: any) => {
-              // console.log("Latest card", postDetailSmall.category.name);
+            {blogs.map((postDetailSmall: Blogs) => {
               if (
                 postDetail.category.name == postDetailSmall.category.name &&
                 postDetail.id !== postDetailSmall.id

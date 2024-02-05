@@ -7,18 +7,15 @@ import { useEffect } from "react";
 import { fetchBlogs } from "../../redux/blogSlice";
 import { useParams } from "react-router-dom";
 import TagCard from "../card/TagCard";
+import { Blogs } from "../../types/dataTypes";
 
 const TagPage = () => {
   const params = useParams();
-  // console.log("tag page params", params);
   const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
-
   const filteredData = blogs.filter((post: any) => {
     // Check if any tagSlug in the post's tags array includes "tamim-iqbal"
     return post.tags.some((tag: any) => tag?.tagSlug?.includes(params.tagSlug));
   });
-
-  // console.log("tag news", filteredData);
   const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
@@ -26,9 +23,6 @@ const TagPage = () => {
   }, [dispatch]);
   return (
     <Layout>
-      {/* <div className="text-start font-bold text-sm  text-sky-900 pt-5">
-        topics {">"} {params.tagSlug} {">"}tagged blog list
-      </div> */}
       <div className="text-start font-bold text-5xl  text-sky-900 py-5 border-b-1  border-sky-600">
         {params.tagSlug}
       </div>
@@ -37,8 +31,7 @@ const TagPage = () => {
         {error && <div>{error.message}</div>}
         {!isLoading &&
           filteredData &&
-          filteredData.map((blog: any) => {
-            // console.log(blog);
+          filteredData.map((blog: Blogs) => {
             return (
               <div>
                 <TagCard key={blog.id} blog={blog} />

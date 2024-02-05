@@ -9,12 +9,10 @@ import { fetchUsers } from "../../redux/userSlice";
 import RepliedInput from "./RepliedInput";
 import ViewReply from "./ViewReply";
 import { fetchComments } from "../../redux/commentSlice";
+import { Comments, Users } from "../../types/dataTypes";
 // import { setIsOpen } from "../../redux/globalStateSlice";
 
 const ViewComment = (comment: any) => {
-  // const isOpen = useSelector((state: any) => state.globalState.isOpen);
-  // console.log("is open", isOpen); // Log the isOpen state variable
-  // console.log("NOt is open", setIsOpen); // Log the isOpen state variable
   const [isInputOpen, setIsInputOpen] = useState(false);
   const [isOpenReply, setIsOpenReply] = useState(false);
   const { users } = useSelector((state: any) => state.users);
@@ -43,15 +41,13 @@ const ViewComment = (comment: any) => {
     dispatch(fetchComments());
   }, [dispatch]);
 
-  const filteredReply = comments.filter((reply: any) => {
+  const filteredReply = comments.filter((reply: Comments) => {
     return reply.parent_comment_id == comment.comment.id;
   });
 
-  // const dispatch = useDispatch()
-
   return (
     <div className="container flex flex-col gap-4">
-      {users.map((userinfo: any) => {
+      {users.map((userinfo: Users) => {
         if (userinfo.user_id == comment.comment.user_id) {
           return (
             <div className="flex gap-4 group " key={userinfo.user_id}>
@@ -112,7 +108,7 @@ const ViewComment = (comment: any) => {
                 )}
 
                 {isOpenReply &&
-                  filteredReply.map((reply: any) => {
+                  filteredReply.map((reply: Comments) => {
                     return (
                       <ViewReply
                         key={reply.id}

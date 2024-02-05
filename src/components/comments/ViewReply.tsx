@@ -6,22 +6,16 @@ import { SlLike, SlDislike } from "react-icons/sl";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../../redux/userSlice";
 import RepliedInput from "./RepliedInput";
-// import { setIsOpen } from "../../redux/globalStateSlice";
+import { Users } from "../../types/dataTypes";
 
-const ViewReply = ({
-  reply,
-  parentComment,
-}: // isInputOpen,
-// setIsInputOpen,
-any) => {
-  console.log("reply info", parentComment);
+const ViewReply = ({ reply, parentComment }: any) => {
+  // console.log("reply info", parentComment);
 
   const [isInputOpen2, setIsInputOpen2] = useState(false);
   const controlState2 = () => {
     setIsInputOpen2(!isInputOpen2);
   };
   const { users } = useSelector((state: any) => state.users);
-  // console.log(users);
   const dispatch = useDispatch();
   useEffect(() => {
     //@ts-ignore
@@ -30,7 +24,7 @@ any) => {
 
   return (
     <div className="container flex flex-col gap-4">
-      {users.map((userinfo: any) => {
+      {users.map((userinfo: Users) => {
         if (userinfo.user_id == reply.user_id) {
           return (
             <>
@@ -77,7 +71,6 @@ any) => {
                 <RepliedInput
                   controlState={controlState2}
                   user={userinfo}
-                  // controlState={controlState2}
                   repliedCommentInfo={parentComment}
                 />
               )}

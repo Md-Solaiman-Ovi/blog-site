@@ -2,12 +2,9 @@
 
 import { Link } from "react-router-dom";
 import Comment from "../comments/CommentSection";
+import { Tags } from "../../types/dataTypes";
 
 const DetailsMain = ({ postDetail }: any) => {
-  // console.log("details main", postDetail);
-  // console.log("details main card", postDetail.category.name);
-  // console.log("details main card tags", postDetail.tags.id);
-
   return (
     <div className="border-1 flex flex-col w-full md:w-3/5 shadow-lg rounded">
       <div className="text-2xl font-bold text-start p-4">
@@ -28,7 +25,7 @@ const DetailsMain = ({ postDetail }: any) => {
 
       <div className="text-justify p-4 ">{postDetail.desc}</div>
       <div className=" grid grid-cols-3  gap-2 p-4 ">
-        {postDetail.tags.map((tag: any) => {
+        {postDetail.tags.map((tag: Tags) => {
           // if(){
           return (
             <Link to={`/tag/${tag.tagSlug}`} key={tag.id}>
