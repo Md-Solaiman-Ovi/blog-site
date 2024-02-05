@@ -3,24 +3,38 @@
 import { useEffect, useState } from "react";
 import { SlLike, SlDislike } from "react-icons/sl";
 import { MdOutlineArrowDropDown } from "react-icons/md";
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../../redux/userSlice";
 import RepliedInput from "./RepliedInput";
 import ViewReply from "./ViewReply";
 import { fetchComments } from "../../redux/commentSlice";
+// import { setIsOpen } from "../../redux/globalStateSlice";
+
 const ViewComment = (comment: any) => {
-  // console.log("comment info", comment.comment);
-  const [isOpen, setIsOpen] = useState(false);
-  const controlState = () => {
-    setIsOpen(!isOpen);
-  };
+  // const isOpen = useSelector((state: any) => state.globalState.isOpen);
+  // console.log("is open", isOpen); // Log the isOpen state variable
+  // console.log("NOt is open", setIsOpen); // Log the isOpen state variable
+  const [isInputOpen, setIsInputOpen] = useState(false);
   const [isOpenReply, setIsOpenReply] = useState(false);
-  const controlReplyState = () => {
-    setIsOpenReply(!isOpenReply);
-  };
   const { users } = useSelector((state: any) => state.users);
   const { comments } = useSelector((state: any) => state.comments);
-  // console.log(users);
+
+  const handleToggle = () => {
+    setIsInputOpen(!isInputOpen);
+    setIsOpenReply(!isOpenReply);
+  };
+  const handleToggleReplies = () => {
+    if (isOpenReply == false) {
+      setIsInputOpen(false);
+      setIsOpenReply(!isOpenReply);
+    } else {
+      setIsOpenReply(!isOpenReply);
+    }
+  };
+  const controlState = () => {
+    setIsInputOpen(!isInputOpen);
+  };
   const dispatch = useDispatch();
   useEffect(() => {
     //@ts-ignore
@@ -32,14 +46,15 @@ const ViewComment = (comment: any) => {
   const filteredReply = comments.filter((reply: any) => {
     return reply.parent_comment_id == comment.comment.id;
   });
-  // console.log("replied comments", filteredReply);
+
+  // const dispatch = useDispatch()
+
   return (
     <div className="container flex flex-col gap-4">
       {users.map((userinfo: any) => {
-        // console.log("user info", userinfo);
         if (userinfo.user_id == comment.comment.user_id) {
           return (
-            <div className="flex gap-4 " key={userinfo.user_id}>
+            <div className="flex gap-4 group " key={userinfo.user_id}>
               <div>
                 <img
                   className="h-10 w-10 object-cover object-top rounded-full "
@@ -49,11 +64,16 @@ const ViewComment = (comment: any) => {
               </div>
               <div className="w-full items-center space-y-1 ">
                 <div className="flex flex-col text-start">
-                  <div className="flex gap-2 items-center">
-                    <div className="font-bold text-[14px] ">
-                      {userinfo.user_name}
+                  <div className="flex justify-between  items-center  w-full">
+                    <div className="flex items-center gap-2">
+                      <div className="font-bold text-[14px] ">
+                        {userinfo.user_name}
+                      </div>
+                      <div className="text-[12px]">11 days ago</div>
                     </div>
-                    <div className="text-[12px]">11 days ago</div>
+                    <div className="hidden group-hover:block cursor-pointer">
+                      <HiOutlineDotsHorizontal />
+                    </div>
                   </div>
                   <div>{comment.comment.comment}</div>
                 </div>
@@ -70,7 +90,7 @@ const ViewComment = (comment: any) => {
 
                     <div
                       className="hover:bg-gray-200 text-gray-500 hover:text-gray-950 text-sm px-2 py-1 rounded-3xl font-bold self-center cursor-pointer"
-                      onClick={() => controlState()}
+                      onClick={() => handleToggle()}
                     >
                       Reply
                     </div>
@@ -80,10 +100,10 @@ const ViewComment = (comment: any) => {
                 {filteredReply.length > 0 && (
                   <div
                     className="flex items-center hover:bg-gray-200 hover:w-24 rounded-full"
-                    onClick={() => controlState()}
+                    onClick={handleToggleReplies} // Call setIsOpen to toggle isOpen
                   >
                     <MdOutlineArrowDropDown
-                      className={`w-6 h-6 ${isOpen ? "rotate-180" : ""}`}
+                      className={`w-6 h-6 ${isOpenReply ? "rotate-180" : ""}`}
                     />
                     <div className=" text-gray-500 hover:text-gray-950 text-sm px-2 py-1 rounded-3xl font-bold self-center cursor-pointer text-start">
                       {filteredReply.length} replies
@@ -91,19 +111,24 @@ const ViewComment = (comment: any) => {
                   </div>
                 )}
 
-                {isOpen &&
+                {isOpenReply &&
                   filteredReply.map((reply: any) => {
-                    console.log("filteredReply", filteredReply);
-                    return <ViewReply key={reply.id} reply={reply} />;
+                    return (
+                      <ViewReply
+                        key={reply.id}
+                        reply={reply}
+                        isInputOpen={isInputOpen}
+                        setIsInputOpen={setIsInputOpen}
+                        parentComment={comment}
+                      />
+                    );
                   })}
 
-                {isOpen && (
+                {isInputOpen && (
                   <RepliedInput
-                    isOpen={isOpen}
-                    setIsOpen={setIsOpen}
                     user={userinfo}
-                    controlState={controlState}
                     repliedCommentInfo={comment}
+                    controlState={controlState}
                   />
                 )}
               </div>

@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchComments } from "../../redux/commentSlice";
 
 const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
-  console.log(" repliedCommentInfo ", repliedCommentInfo);
+  // console.log(" repliedCommentInfo ", repliedCommentInfo);
   const inputRef = useRef<any>();
   const { comments } = useSelector((state: any) => state.comments);
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ const RepliedInput = ({ controlState, user, repliedCommentInfo }: any) => {
     // @ts-ignore
     dispatch(fetchComments());
   };
-  // console.log("After comments", commentsNew);
+  // console.log("After comments", comments);
   return (
     <div className="flex gap-4 ">
       <div>

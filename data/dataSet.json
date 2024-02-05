@@ -5,7 +5,6 @@
       "title": "Latest blog title 1",
       "slug": "post-1",
       "image": "/public/sportImg1.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 1,
@@ -18,7 +17,6 @@
       "title": "Latest blog title 2",
       "slug": "post-2",
       "image": "/public/sportsImg2.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 1,
@@ -31,7 +29,6 @@
       "title": "Latest blog title 3",
       "slug": "post-3",
       "image": "/public/sportImg3.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ? ",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 1,
@@ -44,7 +41,6 @@
       "title": "Latest blog title 4",
       "slug": "post-4",
       "image": "/public/sportImg2.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ? ",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 1,
@@ -57,7 +53,6 @@
       "title": "'Latest blog title 5'",
       "slug": "post-5",
       "image": "/public/sportImg3.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 1,
@@ -99,7 +94,6 @@
       "title": "Qatar 'appalled' by reported criticism from Israel's Netanyahu",
       "slug": "post-7",
       "image": "/public/worldImg2.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 2,
@@ -118,7 +112,6 @@
       "title": "Khan Younis: Israel says forces have encircled Gaza's second city",
       "slug": "post-8",
       "image": "/public/worldImg3.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 2,
@@ -147,7 +140,6 @@
       "title": "Gaza war: ICJ to rule on call for Israel to stop military action",
       "image": "/public/worldImg4.jpg",
       "slug": "post-9",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 2,
@@ -176,7 +168,6 @@
       "title": "Australia Day: The 'quiet rebranding' of a controversial national holiday",
       "slug": "post-10",
       "image": "/public/worldImg5.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 2,
@@ -205,7 +196,6 @@
       "title": "Checking price hike: Reward for honesty, penalty for hoarding",
       "slug": "post-11",
       "image": "/public/localImg1.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 3,
@@ -234,7 +224,6 @@
       "title": "Dhaka’s air quality world's worst on Friday morning",
       "image": "/public/localImg2.jpg",
       "slug": "post-12",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 3,
@@ -263,7 +252,6 @@
       "title": "কাদের: বিএনপি বাংলাদেশের ডামি বিরোধী দল",
       "slug": "post-13",
       "image": "/public/localImg3.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 3,
@@ -292,7 +280,6 @@
       "title": "Tetulia logs winter's lowest temperature at 5.8°C",
       "slug": "post-14",
       "image": "/public/localImg4.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 3,
@@ -321,7 +308,6 @@
       "title": "Secondary schools allowed to remain closed if max temp falls below 10°C",
       "slug": "post-15",
       "image": "/public/localImg5.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 3,
@@ -350,7 +336,6 @@
       "title": "Facebook, Instagram may lose legal immunity over fake loan apps advertisements",
       "slug": "post-16",
       "image": "/public/techImg1.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 4,
@@ -389,7 +374,6 @@
       "title": "Samsung races Apple to develop noninvasive glucose monitoring",
       "slug": "post-17",
       "image": "/public/techImg2.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 4,
@@ -418,7 +402,6 @@
       "title": "OnePlus 12 review: On point, as phones need to be",
       "slug": "post-18",
       "image": "/public/techImg3.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 4,
@@ -452,7 +435,6 @@
       "title": "Leaked Google document reveals AI ambitions",
       "slug": "post-19",
       "image": "/public/techImg4.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 4,
@@ -515,7 +497,6 @@
       "title": "Al Nassr postpone China friendlies as Cristiano Ronaldo gets injured before Inter Miami clash",
       "slug": "post-21",
       "image": "/public/sportsImg1.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 5,
@@ -534,7 +515,6 @@
       "title": "Australia beat India to in 2023 World Cup final to become ODI champions for a sixth time",
       "slug": "post-22",
       "image": "/public/sportsImg2.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 5,
@@ -558,7 +538,6 @@
       "title": "IND vs ENG: India enter Bazball Universe with concerns about efficacy of turning tracks",
       "slug": "post-23",
       "image": "/public/sportsImg3.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 5,
@@ -582,7 +561,6 @@
       "title": "Tamim Iqbal becomes first batter to score 3000+ runs in BPL history",
       "slug": "post-24",
       "image": "/public/sportsImg4.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 5,
@@ -630,7 +608,6 @@
       "title": "My national comeback chapter is closed, says Mohammad Amir",
       "slug": "post-25",
       "image": "/public/sportsImg5.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 5,
@@ -668,7 +645,6 @@
       "title": "Trump makes history again as he powers toward Republican nomination",
       "slug": "post-26",
       "image": "/public/relatedImg1.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 4,
@@ -681,7 +657,6 @@
       "title": "6 things to watch in New Hampshire’s presidential primary",
       "slug": "post-27",
       "image": "/public/relatedImg2.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 4,
@@ -694,7 +669,6 @@
       "title": "Mistral AI vs. Meta: Comparing Top Open-source LLMs",
       "slug": "post-28",
       "image": "/public/relatedImg3.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 4,
@@ -707,7 +681,6 @@
       "title": "Apple Vision Pro AR preview and in-store pickup options",
       "slug": "post-29",
       "image": "/public/relatedImg4.jpg",
-      "shortDesc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum ?",
       "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima eveniet, voluptas ipsum incidunt quae earum voluptatibus eius maiores eaque? Quam maiores vero quas quos deserunt eaque sint sequi commodi!",
       "category": {
         "id": 4,
@@ -1108,148 +1081,267 @@
       "comment": "this is nested reply"
     },
     {
-      "id": 19,
+      "id": "19",
       "user_id": 4,
       "post_id": 15,
       "comment": "hi",
       "parent_comment_id": "4"
     },
     {
-      "id": 20,
+      "id": "20",
       "user_id": 4,
       "post_id": 15,
       "comment": "hi for schools",
       "parent_comment_id": null
     },
     {
-      "id": 1,
+      "id": "1",
       "user_id": 1,
       "post_id": 15,
       "comment": "hello",
       "parent_comment_id": null
     },
     {
-      "id": 21,
+      "id": "21",
       "user_id": 1,
       "post_id": 15,
       "comment": "sdfsdf",
       "parent_comment_id": null
     },
     {
-      "id": 23,
+      "id": "23",
       "user_id": 1,
       "post_id": 15,
       "comment": "asdfasd",
       "parent_comment_id": null
     },
     {
-      "id": 24,
+      "id": "24",
       "user_id": 1,
       "post_id": 15,
       "comment": "nnnn",
       "parent_comment_id": null
     },
     {
-      "id": 25,
+      "id": "25",
       "user_id": 1,
       "post_id": 15,
       "comment": "another new",
       "parent_comment_id": null
     },
     {
-      "id": 26,
+      "id": "26",
       "user_id": 1,
       "post_id": 15,
       "comment": "ekta reply dilam",
       "parent_comment_id": 25
     },
     {
-      "id": 27,
+      "id": "27",
       "user_id": 1,
       "post_id": 15,
       "comment": "hello1",
       "parent_comment_id": null
     },
     {
-      "id": 28,
+      "id": "28",
       "user_id": 1,
       "post_id": 15,
       "comment": "reply 1",
       "parent_comment_id": 27
     },
     {
-      "id": 29,
+      "id": "29",
       "user_id": 1,
       "comment": "hello"
     },
     {
-      "id": 30,
+      "id": "30",
       "user_id": 1,
       "post_id": 15,
       "comment": "sdfsdf",
       "parent_comment_id": 27
     },
     {
-      "id": 31,
+      "id": "31",
       "user_id": 4,
       "post_id": 15,
       "comment": "hi",
       "parent_comment_id": 20
     },
     {
-      "id": 32,
+      "id": "32",
       "user_id": 4,
       "comment": "hi2"
     },
     {
-      "id": 33,
+      "id": "33",
       "user_id": 4,
       "post_id": 15,
       "comment": "hi",
       "parent_comment_id": 20
     },
     {
-      "id": 34,
+      "id": "34",
       "user_id": 1,
       "post_id": 15,
       "comment": "parent comment ",
       "parent_comment_id": null
     },
     {
-      "id": 35,
+      "id": "35",
       "user_id": 1,
       "post_id": 15,
       "comment": "child comment",
       "parent_comment_id": 34
     },
     {
-      "id": 36,
+      "id": "36",
       "user_id": 1,
       "comment": "child comment 2"
     },
     {
-      "id": 37,
+      "id": "37",
       "user_id": 1,
       "post_id": 15,
       "comment": "hello",
       "parent_comment_id": null
     },
     {
-      "id": 38,
+      "id": "38",
       "user_id": 1,
       "post_id": 15,
       "comment": "hi",
       "parent_comment_id": 37
     },
     {
-      "id": 39,
+      "id": "39",
       "user_id": 4,
       "comment": "hi3"
     },
     {
-      "id": 40,
+      "id": "40",
       "user_id": 1,
       "comment": "hellp"
+    },
+    {
+      "id": "41",
+      "user_id": 4,
+      "post_id": 15,
+      "comment": "hi3",
+      "parent_comment_id": "20"
+    },
+    {
+      "id": "42",
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "helo",
+      "parent_comment_id": "21"
+    },
+    {
+      "id": "43",
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hello",
+      "parent_comment_id": "21"
+    },
+    {
+      "id": "44",
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hello hazrat",
+      "parent_comment_id": "1"
+    },
+    {
+      "id": "45",
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi",
+      "parent_comment_id": "21"
+    },
+    {
+      "id": "46",
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi",
+      "parent_comment_id": "21"
+    },
+    {
+      "id": "47",
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hello",
+      "parent_comment_id": "23"
+    },
+    {
+      "id": 48,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi2",
+      "parent_comment_id": "37"
+    },
+    {
+      "id": 49,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi",
+      "parent_comment_id": "34"
+    },
+    {
+      "id": 50,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi",
+      "parent_comment_id": "34"
+    },
+    {
+      "id": 51,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi",
+      "parent_comment_id": "25"
+    },
+    {
+      "id": 52,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi2",
+      "parent_comment_id": "25"
+    },
+    {
+      "id": 53,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi3",
+      "parent_comment_id": "25"
+    },
+    {
+      "id": 54,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi4",
+      "parent_comment_id": "25"
+    },
+    {
+      "id": 55,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi5",
+      "parent_comment_id": "25"
+    },
+    {
+      "id": 56,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi6",
+      "parent_comment_id": "25"
+    },
+    {
+      "id": 57,
+      "user_id": 1,
+      "post_id": 15,
+      "comment": "hi7",
+      "parent_comment_id": "25"
     }
   ],
   "users": [
