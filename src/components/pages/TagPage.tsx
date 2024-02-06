@@ -34,7 +34,16 @@ const TagPage = () => {
           filteredData.map((blog: Blogs) => {
             return (
               <div>
-                <TagCard key={blog.id} blog={blog} />
+                <TagCard
+                  key={blog.id}
+                  id={blog.id}
+                  title={blog.title}
+                  slug={blog.slug}
+                  image={blog.image}
+                  desc={blog.desc}
+                  category={blog.category}
+                  tag={blog.tag}
+                />
               </div>
             );
           })}

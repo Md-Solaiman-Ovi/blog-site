@@ -26,7 +26,6 @@ const DetailsMain = ({ postDetail }: any) => {
       <div className="text-justify p-4 ">{postDetail.desc}</div>
       <div className=" grid grid-cols-3  gap-2 p-4 ">
         {postDetail.tags.map((tag: Tags) => {
-          // if(){
           return (
             <Link to={`/tag/${tag.tagSlug}`} key={tag.id}>
               <div className="flex justify-center items-center bg-slate-50 ">
@@ -34,7 +33,6 @@ const DetailsMain = ({ postDetail }: any) => {
               </div>
             </Link>
           );
-          // }
         })}
       </div>
       <div>

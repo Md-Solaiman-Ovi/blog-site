@@ -33,20 +33,20 @@ export type Comments = {
   user_id: number;
   post_id: number;
   comment: string;
-  parent_comment_id: null | number;
+  parent_comment_id: number;
 };
 
 export type Users = {
-  user_id: string;
+  user_id: number;
   user_name: string;
   user_image: string;
   user_email: string;
   user_password: string;
-  id: string | number;
+  id: number;
 };
 
 export type State = {
   isLoading: boolean;
   users: [Users];
-  error: string | null;
+  error: string;
 };

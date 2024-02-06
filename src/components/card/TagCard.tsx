@@ -1,18 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { Link } from "react-router-dom";
 import { getFirstNWords } from "../../redux/globalFunctions";
-const TagCard = ({ blog }: any) => {
-  // console.log(blog);
+import { Blogs } from "../../types/dataTypes";
+const TagCard = ({ title, slug, image, desc, category }: Blogs) => {
   return (
-    <Link to={`/${blog.category.name}/${blog.slug}`}>
+    <Link to={`/${category.name}/${slug}`}>
       <div className="flex gap-4 border-b-1  rounded h-[200px] py-4 group">
         <div className="w-2/3 ">
           <div className="text-lg font-bold text-start group-hover:text-sky-600  ">
-            {blog.title}
+            {title}
           </div>
           <div className="text-sm text-justify  ">
-            {getFirstNWords(blog.desc, 40)}
+            {getFirstNWords(desc, 40)}
             <span className="text-gray-400 hover:text-black">
               . . . see more
             </span>
@@ -25,7 +23,7 @@ const TagCard = ({ blog }: any) => {
         <div className="flex h-full w-1/3 group-hover:overflow-hidden">
           <img
             className="object-cover w-full  group-hover:scale-[1.05] group-hover:duration-300 "
-            src={blog.image}
+            src={image}
             alt=""
           ></img>
         </div>

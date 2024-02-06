@@ -26,11 +26,21 @@ const CommentSection = (postDetail: any) => {
     <div className="container flex flex-col gap-4 p-4">
       <div className="text-start font-bold text-lg">26,637 Comments</div>
       <div className="flex flex-col gap-4">
-        <CommentInput comments={comments} postDetail={postDetail} />;
+        <CommentInput comments={comments} postDetail={postDetail} />
         <div className="flex flex-col gap-2">
           {filteredComments.map((comment: Comments) => {
             if (comment.parent_comment_id == null) {
-              return <ViewComment key={comment.id} comment={comment} />;
+              return (
+                <ViewComment
+                  key={comment.id}
+                  id={comment.id}
+                  user_id={comment.user_id}
+                  post_id={comment.post_id}
+                  comment={comment.comment}
+                  parent_comment_id={comment.parent_comment_id}
+                  // commentDetails={comment}
+                />
+              );
             }
           })}
         </div>

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchComments = createAsyncThunk(
@@ -18,7 +18,14 @@ const commentSlice = createSlice({
     comments: [],
     error: null,
   },
-  reducers: {},
+  reducers: {
+    removeComments: (state, action: PayloadAction<number>) => {
+      const id = action.payload;
+      state.comments = state.comments.filter(
+        (item: { id: number }) => item.id !== id
+      );
+    },
+  },
   extraReducers: (builder: any) => {
     builder.addCase(fetchComments.pending, (state: any) => {
       state.isLoading = true;
@@ -35,5 +42,5 @@ const commentSlice = createSlice({
     });
   },
 });
-
+export const { removeComments } = commentSlice.actions;
 export default commentSlice.reducer;

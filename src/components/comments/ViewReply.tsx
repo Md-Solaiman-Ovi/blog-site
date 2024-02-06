@@ -2,16 +2,26 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import { SlLike, SlDislike } from "react-icons/sl";
-
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../../redux/userSlice";
 import RepliedInput from "./RepliedInput";
-import { Users } from "../../types/dataTypes";
+import { Comments, Users } from "../../types/dataTypes";
+import EditDeleteOption from "./EditDeleteOption";
+// import EditDeleteOption from "./EditDeleteOption";
 
-const ViewReply = ({ reply, parentComment }: any) => {
+const ViewReply = (
+  { reply }: any,
+  { id, user_id, post_id, comment, parent_comment_id }: Comments
+) => {
   // console.log("reply info", parentComment);
 
   const [isInputOpen2, setIsInputOpen2] = useState(false);
+  const [showOption, setShowOption] = useState(false);
+
+  const handleShowOption = () => {
+    setShowOption(!showOption);
+  };
   const controlState2 = () => {
     setIsInputOpen2(!isInputOpen2);
   };
@@ -36,16 +46,35 @@ const ViewReply = ({ reply, parentComment }: any) => {
                     alt=""
                   />
                 </div>
-                <div className="w-full items-center space-y-1 ">
-                  <div className="flex flex-col text-start">
-                    <div className="flex gap-2 items-center">
+                <div className="flex flex-col w-full  space-y-1 group">
+                  <div className="flex justify-between items-center w-full">
+                    <div className="flex items-center gap-2">
                       <div className="font-bold text-[14px] ">
                         {userinfo.user_name}
                       </div>
                       <div className="text-[12px]">11 days ago</div>
                     </div>
-                    <div className="">{reply.comment}</div>
+                    <div className="flex flex-col relative">
+                      <div
+                        className={`group-hover:block cursor-pointer ${
+                          showOption == true ? "block" : "hidden"
+                        } `}
+                        onClick={() => handleShowOption()}
+                      >
+                        <HiOutlineDotsHorizontal />
+                      </div>
+                      {showOption && (
+                        <EditDeleteOption
+                          id={id}
+                          user_id={user_id}
+                          post_id={post_id}
+                          comment={comment}
+                          parent_comment_id={parent_comment_id}
+                        />
+                      )}
+                    </div>
                   </div>
+                  <div className="text-start">{reply.comment}</div>
                   <div className="flex items-center">
                     <div className="flex gap-4 items-center">
                       <div className="flex gap-2">
@@ -71,7 +100,11 @@ const ViewReply = ({ reply, parentComment }: any) => {
                 <RepliedInput
                   controlState={controlState2}
                   user={userinfo}
-                  repliedCommentInfo={parentComment}
+                  id={id}
+                  user_id={user_id}
+                  post_id={post_id}
+                  comment={comment}
+                  parent_comment_id={parent_comment_id}
                 />
               )}
             </>

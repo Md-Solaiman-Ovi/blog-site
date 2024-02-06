@@ -35,7 +35,7 @@ const SingleDetailsPage = () => {
           {error && <div>Loading...</div>}
           {postDetail && (
             <DetailsMain
-              key={postDetail.id}
+              // key={postDetail.id}
               postDetail={postDetail}
               tags={tags}
             />
@@ -66,9 +66,20 @@ const SingleDetailsPage = () => {
           </div>
           <div className="grid grid-cols-1  md:grid-cols-4 gap-4">
             {blogs &&
-              blogs.slice(blogs.id, blogs.length - 1).map((blog: any) => {
+              blogs.slice(blogs.id, blogs.length - 1).map((blog: Blogs) => {
                 if (blog.category.name == "related")
-                  return <RelatedBlogCard key={blog.id} blog={blog} />;
+                  return (
+                    <RelatedBlogCard
+                      key={blog.id}
+                      id={blog.id}
+                      title={blog.title}
+                      slug={blog.slug}
+                      image={blog.image}
+                      desc={blog.desc}
+                      category={blog.category}
+                      tag={blog.tag}
+                    />
+                  );
               })}
           </div>
         </div>
