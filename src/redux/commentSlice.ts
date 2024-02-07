@@ -2,6 +2,15 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+// Thunk action to delete comment from the server
+export const deleteComment = createAsyncThunk(
+  "comments/deleteComment",
+  async (commentId: number) => {
+    await axios.delete(`http://localhost:3000/comments/${commentId}`);
+    return commentId;
+  }
+);
+
 export const fetchComments = createAsyncThunk(
   "comments/fetchComments",
   async () => {
@@ -39,6 +48,14 @@ const commentSlice = createSlice({
       state.isLoading = false;
       state.comments = [];
       state.error = action.error.message;
+    });
+    builder.addCase(deleteComment.fulfilled, (state: any, action: any) => {
+      state.isLoading = false;
+      // Remove the deleted comment from the state
+      state.comments = state.comments.filter(
+        (comment: any) => comment.id !== action.payload
+      );
+      state.error = null;
     });
   },
 });

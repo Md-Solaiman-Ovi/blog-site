@@ -4,13 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { MdEmojiEmotions } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchComments } from "../../redux/commentSlice";
-import { Comments } from "../../types/dataTypes";
 
-const RepliedInput = (
-  { controlState, user }: any,
-  { id, post_id }: Comments
-) => {
-  console.log(id, post_id);
+const RepliedInput = ({ id, post_id, controlState, user }: any) => {
   const inputRef = useRef<any>();
   const { comments } = useSelector((state: any) => state.comments);
   const dispatch = useDispatch();
@@ -25,7 +20,7 @@ const RepliedInput = (
     const newComment = {
       id: comments.length + 1,
       user_id: user.user_id,
-      post_id: 24, //have to work on it
+      post_id: post_id, //have to work on it
       comment: inputRef.current?.value,
       parent_comment_id: id, //have to work on it
     };

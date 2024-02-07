@@ -1,14 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    {
-      relative: true,
-      transform: (content) => content.replace(/taos:/g, ""),
-      files: ["./src/*.{html,js}"],
-    },
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       borderWidth: {
@@ -17,10 +9,5 @@ export default {
     },
   },
   // eslint-disable-next-line no-undef
-  plugins: [require("taos/plugin")],
-  safelist: [
-    "!duration-[0ms]",
-    "!delay-[0ms]",
-    'html.js :where([class*="taos:"]:not(.taos-init))',
-  ],
+  plugins: [],
 };

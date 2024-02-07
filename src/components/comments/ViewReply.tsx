@@ -6,16 +6,10 @@ import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../../redux/userSlice";
 import RepliedInput from "./RepliedInput";
-import { Comments, Users } from "../../types/dataTypes";
+import { Users } from "../../types/dataTypes";
 import EditDeleteOption from "./EditDeleteOption";
-// import EditDeleteOption from "./EditDeleteOption";
 
-const ViewReply = (
-  { reply }: any,
-  { id, user_id, post_id, comment, parent_comment_id }: Comments
-) => {
-  // console.log("reply info", parentComment);
-
+const ViewReply = ({ id, post_id, reply }: any) => {
   const [isInputOpen2, setIsInputOpen2] = useState(false);
   const [showOption, setShowOption] = useState(false);
 
@@ -61,17 +55,9 @@ const ViewReply = (
                         } `}
                         onClick={() => handleShowOption()}
                       >
-                        <HiOutlineDotsHorizontal />
+                        <HiOutlineDotsHorizontal className="w-5 h-5" />
                       </div>
-                      {showOption && (
-                        <EditDeleteOption
-                          id={id}
-                          user_id={user_id}
-                          post_id={post_id}
-                          comment={comment}
-                          parent_comment_id={parent_comment_id}
-                        />
-                      )}
+                      {showOption && <EditDeleteOption id={reply.id} />}
                     </div>
                   </div>
                   <div className="text-start">{reply.comment}</div>
@@ -101,10 +87,7 @@ const ViewReply = (
                   controlState={controlState2}
                   user={userinfo}
                   id={id}
-                  user_id={user_id}
                   post_id={post_id}
-                  comment={comment}
-                  parent_comment_id={parent_comment_id}
                 />
               )}
             </>

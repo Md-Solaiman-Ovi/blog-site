@@ -7,8 +7,6 @@ import { useDispatch } from "react-redux";
 import { fetchComments } from "../../redux/commentSlice";
 
 const CommentInput = ({ comments, postDetail }: any) => {
-  // console.log("post detail ", postDetail);
-  // console.log("comments list", comments.comments);
   const inputRef = useRef<any>();
   const [inputValue, setInputValue] = useState("");
   const dispatch = useDispatch();
@@ -26,7 +24,7 @@ const CommentInput = ({ comments, postDetail }: any) => {
       comment: inputRef.current?.value,
       parent_comment_id: null,
     };
-    console.log("parent comment", newComment);
+
     setInputValue(" ");
     const commentURL = "http://localhost:3000/comments";
     await fetch(commentURL, {

@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useDispatch } from "react-redux";
-import { Comments } from "../../types/dataTypes";
+// import { Comments } from "../../types/dataTypes";
 import { removeComments } from "../../redux/commentSlice";
 
-const EditDeleteOption = ({ id, post_id, user_id }: Comments) => {
+const EditDeleteOption = ({ id }: any) => {
   const dispatch = useDispatch();
-  console.log("nothing", post_id, user_id);
+  console.log("nothing", id);
 
   return (
     <div className="absolute flex flex-col border-1 rounded-sm w-20 items-center -translate-x-16 translate-y-5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.3)]">

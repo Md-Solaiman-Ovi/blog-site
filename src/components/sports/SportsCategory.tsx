@@ -22,10 +22,7 @@ const SportsCategory = () => {
         Sports Category
       </div>
       <div className="flex flex-col md:flex-row pt-5 gap-20 ">
-        <div
-          className="border-1 flex flex-col gap-4 w-full md:w-3/5 shadow-lg delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0 "
-          data-taos-offset="400"
-        >
+        <div className="border-1 flex flex-col gap-4 w-full md:w-3/5 shadow-lg ">
           {isLoading && <div>Loading</div>}
           {error && <div>{error.message}</div>}
 
