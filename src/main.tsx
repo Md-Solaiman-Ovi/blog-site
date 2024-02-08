@@ -7,11 +7,16 @@ import { Provider } from "react-redux";
 import store from "./appStore/store.ts";
 import SingleDetailsPage from "./components/pages/SingleDetailsPage.tsx";
 import TagPage from "./components/pages/TagPage.tsx";
+import SignInSignUpPage from "./components/pages/SignInSignUpPage.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/SignInSignUpPage",
+    element: <SignInSignUpPage />,
   },
   {
     path: ":categorySlug/:slug",

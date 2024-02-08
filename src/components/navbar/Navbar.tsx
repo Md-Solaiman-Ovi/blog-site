@@ -45,7 +45,10 @@ const Navbar = () => {
           <div className="flex gap-4 md:gap-8 items-center">
             <div className="md:flex gap-3 hidden ">
               <div className="rounded-full border-2 border-sky-500 text-sky-600 text-[20px] w-[30px] h-[30px] grid place-items-center">
-                <AiOutlineUser />
+                <Link to={"/SignInSignUpPage"}>
+                  {" "}
+                  <AiOutlineUser />
+                </Link>
               </div>
               <div className="flex justify-center items-center">
                 <p className="text-sky-700 font-['Oregano',cursive] ">

@@ -8,12 +8,14 @@ import Test from "./components/test/Test";
 
 function App() {
   return (
-    <Layout>
-      <HeroSection />
-      <SportsCategory />
-      <TechCategory />
-      <Test />
-    </Layout>
+    <div>
+      <Layout>
+        <HeroSection />
+        <SportsCategory />
+        <TechCategory />
+        <Test />
+      </Layout>
+    </div>
   );
 }
 
