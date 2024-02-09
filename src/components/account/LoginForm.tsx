@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { Link } from "react-router-dom";
+
 const LoginForm = ({ toggleForm }: any) => {
   console.log("SignIn Form", toggleForm);
   return (
@@ -34,12 +36,12 @@ const LoginForm = ({ toggleForm }: any) => {
             placeholder="Enter your password"
           />
         </div>
-        <button
-          type="submit"
+        <Link
+          to={"/user-profile"}
           className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300"
         >
           Sign In
-        </button>
+        </Link>
       </div>
       <p className="mt-4 text-sm">
         New to our platform?

@@ -45,7 +45,7 @@ const Navbar = () => {
           <div className="flex gap-4 md:gap-8 items-center">
             <div className="md:flex gap-3 hidden ">
               <div className="rounded-full border-2 border-sky-500 text-sky-600 text-[20px] w-[30px] h-[30px] grid place-items-center">
-                <Link to={"/SignInSignUpPage"}>
+                <Link to={"/signin-signup-page"}>
                   {" "}
                   <AiOutlineUser />
                 </Link>
