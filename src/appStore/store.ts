@@ -6,6 +6,7 @@ import tagSliceReducer from "../redux/tagSlice";
 import commentSliceReducer from "../redux/commentSlice";
 import userSliceReducer from "../redux/userSlice";
 import globalStateSliceReducer from "../redux/globalStateSlice";
+import authSliceReducer from "../redux/authSlice";
 
 const store = configureStore({
   reducer: {
@@ -15,7 +16,8 @@ const store = configureStore({
     tags: tagSliceReducer,
     comments: commentSliceReducer,
     users: userSliceReducer,
-    globalState: globalStateSliceReducer
+    globalState: globalStateSliceReducer,
+    auth: authSliceReducer,
   },
 });
 
