@@ -86,11 +86,11 @@ const Login = ({ toggleForm }: any) => {
           >
             {loading ? "Loading..." : "SignIn"}
           </button>
-          {/* {error && (
+          {error && (
             <div className="alert bg-red-200 p-4 rounded" role="alert">
               {error}
             </div>
-          )} */}
+          )}
         </div>
         {/* <redirect */}
         <p className="mt-4 text-sm">

@@ -49,6 +49,10 @@ const Navbar = () => {
                   {" "}
                   <AiOutlineUser />
                 </Link>
+                {/* <Link to={"/login"}>
+                  {" "}
+                  <AiOutlineUser />
+                </Link> */}
               </div>
               <div className="flex justify-center items-center">
                 <p className="text-sky-700 font-['Oregano',cursive] ">

@@ -1,7 +1,26 @@
+import { useState } from "react";
 import Layout2 from "../custom-components/Layout2";
 import { MdOutlineModeEditOutline } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
+  const getUser = () => {
+    let user = localStorage.getItem("user");
+    if (user) {
+      user = JSON.parse(user);
+    } else {
+      user = null;
+    }
+    return user;
+  };
+  const navigate = useNavigate();
+  const [user, setUser] = useState(getUser());
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    navigate("/signin-signup-page");
+  };
+  console.log(user);
   return (
     <Layout2>
       <div className="w-full">
@@ -29,7 +48,10 @@ const UserProfile = () => {
                 <div className=" self-end text-sky-600">.</div>
                 <div>Following 103</div>
               </div>
-              <div className="border-2 border-sky-500 hover:bg-sky-500 hover:text-white rounded-full px-2 p-1">
+              <div
+                className="border-2 border-sky-500 hover:bg-sky-500 hover:text-white rounded-full px-2 p-1"
+                onClick={handleLogout}
+              >
                 Save changes
               </div>
             </div>

@@ -9,11 +9,16 @@ import SingleDetailsPage from "./components/pages/SingleDetailsPage.tsx";
 import TagPage from "./components/pages/TagPage.tsx";
 import SignInSignUpPage from "./components/pages/SignInSignUpPage.tsx";
 import UserProfile from "./components/account/UserProfile.tsx";
+import Login from "./components/account/Login.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/signin-signup-page",

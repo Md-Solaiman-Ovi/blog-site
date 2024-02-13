@@ -31,17 +31,7 @@ const SignInSignUpPage: React.FC = () => {
           >
             <LoginForm toggleForm={toggleForm} />
           </div>
-          {/* ) : (
-          <div
-            className={`w-1/2 flex justify-center  translate-x-36 ${
-              isSignIn ? " " : "visible translate-x-96 scale-100 duration-500 "
-            }  `}
-          >
-            <div className="text-white text-6xl">Join With us</div>
-          </div> */}
-          {/* )}
 
-          {isSignIn != true ? ( */}
           <div
             className={`w-1/2 flex justify-center scale-0  ${
               isSignIn ? " invisible" : "scale-100 duration-700 delay-500 "
@@ -49,17 +39,6 @@ const SignInSignUpPage: React.FC = () => {
           >
             <SignUpForm toggleForm={toggleForm} />
           </div>
-          {/* ) : (
-            <div
-              className={`w-1/2 flex justify-center translate-x-96 ${
-                isSignIn
-                  ? " visible -translate-x-36 scale-100 duration-500"
-                  : ""
-              }  `}
-            >
-              <div className="text-white text-6xl">Welcome </div>
-            </div>
-          )} */}
         </div>
       </div>
     </Layout2>

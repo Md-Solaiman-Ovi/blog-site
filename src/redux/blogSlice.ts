@@ -6,7 +6,6 @@ export const fetchBlogs = createAsyncThunk("blogs/fetchBlogs", async () => {
   const res = await axios.get("http://localhost:3000/blogs");
   // console.log("json data", res);
   return res.data;
- 
 });
 
 const blogSlice = createSlice({
