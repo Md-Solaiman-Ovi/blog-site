@@ -11,6 +11,10 @@ import SignInSignUpPage from "./components/pages/SignInSignUpPage.tsx";
 import UserProfile from "./components/account/UserProfile.tsx";
 import Login from "./components/account/Login.tsx";
 
+const val = localStorage.getItem("user");
+const val2 = document.cookie;
+console.log("cookie", val2);
+// console.log("val ", val)
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,11 +26,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/signin-signup-page",
-    element: <SignInSignUpPage />,
+    element: val ? <App /> : <SignInSignUpPage />,
   },
   {
     path: "/user-profile",
-    element: <UserProfile />,
+    element: val ? <UserProfile /> : <SignInSignUpPage />,
   },
   {
     path: ":categorySlug/:slug",

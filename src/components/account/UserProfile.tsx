@@ -18,7 +18,7 @@ const UserProfile = () => {
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
-    navigate("/signin-signup-page");
+    navigate("/");
   };
   console.log(user);
   return (

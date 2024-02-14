@@ -5,7 +5,7 @@ import axios from "axios";
 export const loginUser = createAsyncThunk(
   "user/loginUser",
   async (userCredentials) => {
-    console.log("hello ", userCredentials);
+    console.log("Credentials: ", userCredentials);
     // axios
     //   .post("http://localhost:5000/api/v1/auth/signin", userCredentials)
     //   .then(function (response) {

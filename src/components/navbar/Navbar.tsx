@@ -21,6 +21,8 @@ const Navbar = () => {
   const selectDiv = (categorySlug: string) => {
     setSelectedDiv(categorySlug);
   };
+  // @ts-ignore
+  const val = JSON.parse(localStorage.getItem("user"));
 
   return (
     <nav className=" bg-gray-50 top-0 sticky px-4 z-50">
@@ -43,23 +45,38 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex gap-4 md:gap-8 items-center">
-            <div className="md:flex gap-3 hidden ">
-              <div className="rounded-full border-2 border-sky-500 text-sky-600 text-[20px] w-[30px] h-[30px] grid place-items-center">
-                <Link to={"/signin-signup-page"}>
-                  {" "}
-                  <AiOutlineUser />
+            {val == null ? (
+              <div className="md:flex gap-3 hidden ">
+                <Link
+                  className="bg-sky-500 hover:bg-sky-600 text-white py-1 px-2 rounded"
+                  to={"/signin-signup-page"}
+                >
+                  Sign In
                 </Link>
-                {/* <Link to={"/login"}>
+                <div className="bg-sky-700 hover:bg-sky-600 text-white py-1 px-2 rounded">
+                  Sign Up
+                </div>
+              </div>
+            ) : (
+              <div className="md:flex gap-3 hidden ">
+                {" "}
+                <div className="rounded-full border-2 border-sky-500 text-sky-600 text-[20px] w-[30px] h-[30px] grid place-items-center">
+                  <Link to={"/user-profile"}>
+                    {" "}
+                    <AiOutlineUser />
+                  </Link>
+                  {/* <Link to={"/login"}>
                   {" "}
                   <AiOutlineUser />
                 </Link> */}
+                </div>
+                <div className="flex justify-center items-center">
+                  <p className="text-sky-700 font-['Oregano',cursive] ">
+                    Hello, {val.name}
+                  </p>
+                </div>{" "}
               </div>
-              <div className="flex justify-center items-center">
-                <p className="text-sky-700 font-['Oregano',cursive] ">
-                  Hello, Ovi
-                </p>
-              </div>
-            </div>
+            )}
           </div>
         </div>
         <div className="border-b border-sky-200 pt-4 flex flex-col md:flex-row justify-evenly items-center pb-2">
