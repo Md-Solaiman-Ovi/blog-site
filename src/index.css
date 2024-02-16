@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.compact-sidebar {
+  transition: width 0.4s;
+}

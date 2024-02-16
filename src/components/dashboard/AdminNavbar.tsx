@@ -1,13 +1,24 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FiMenu } from "react-icons/fi";
 import { IoNotificationsSharp } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
+import { handleToggle } from "@/redux/globalStateSlice";
 const AdminNavbar = () => {
+  const count = useSelector((state: any) => state.globalState.toggleMenu);
+  const dispatch = useDispatch();
+  console.log(" value", count);
   return (
     <div className="flex justify-between items-center self-center text-white w-full">
       <div className="flex items-center gap-8 self-center">
         <div className="text-3xl py-1 font-bold font-['Oregano',cursive]  text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-sky-600  ">
           AriSaf Blogs
         </div>
-        <FiMenu className="w-7 h-7 cursor-pointer" />
+        <div
+          className="cursor-pointer transition delay-150 duration-300 ease-in-out"
+          onClick={() => dispatch(handleToggle())}
+        >
+          <FiMenu className="w-7 h-7  " />
+        </div>
       </div>
       <div className="flex justify-center items-center gap-8">
         <div>

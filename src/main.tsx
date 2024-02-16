@@ -14,6 +14,10 @@ import TagPage from "./components/pages/TagPage.tsx";
 import SignInSignUpPage from "./components/pages/SignInSignUpPage.tsx";
 import UserProfile from "./components/account/UserProfile.tsx";
 import Dashboard from "./components/dashboard/Dashboard.tsx";
+import AdminBlogs from "./components/dashboard/AdminBlogs.tsx";
+import AdminCategories from "./components/dashboard/AdminCategories.tsx";
+import AdminTags from "./components/dashboard/AdminTags.tsx";
+import AdminUsers from "./components/dashboard/AdminUsers.tsx";
 // import Login from "./components/account/Login.tsx";
 
 const val = localStorage.getItem("user");
@@ -22,10 +26,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
   },
   {
     path: "/",
@@ -66,6 +66,28 @@ const router = createBrowserRouter([
   {
     path: "/signin-signup-page",
     element: <SignInSignUpPage />,
+  },
+
+  {
+    path: "/admin-categories",
+    element: <AdminCategories />,
+  },
+  {
+    path: "/admin-tags",
+    element: <AdminTags />,
+  },
+  {
+    path: "/admin-blogs",
+    element: <AdminBlogs />,
+  },
+  {
+    path: "/admin-users",
+    element: <AdminUsers />,
+  },
+
+  {
+    path: "/admin-dashboard",
+    element: <Dashboard />,
   },
 ]);
 

@@ -87,7 +87,7 @@ const Navbar = () => {
                       Your Profile
                     </Link>
                     <Link
-                      to={"/dashboard"}
+                      to={"/admin-dashboard"}
                       className="hover:bg-sky-500 hover:text-white w-full p-1 border-b-1"
                     >
                       Dashboard
