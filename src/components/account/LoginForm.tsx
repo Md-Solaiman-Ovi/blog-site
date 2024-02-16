@@ -24,7 +24,7 @@ const Login = ({ toggleForm }: any) => {
       if (result.payload) {
         setEmail("");
         setPassword("");
-        navigate("/");
+        navigate("/dashboard");
       }
     });
   };

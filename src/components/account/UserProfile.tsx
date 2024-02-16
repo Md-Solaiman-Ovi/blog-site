@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Layout2 from "../custom-components/Layout2";
+import Layout from "../custom-components/Layout";
 import { MdOutlineModeEditOutline } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const UserProfile = () => {
   };
   console.log(user);
   return (
-    <Layout2>
+    <Layout>
       <div className="w-full">
         <div className="h-64 ">
           <img
@@ -31,7 +31,7 @@ const UserProfile = () => {
             alt=""
           />
         </div>
-        <div className=" absolute translate-x-40 -translate-y-36 border-4 border-white rounded-full">
+        <div className=" absolute translate-x-24 md:translate-x-24 -translate-y-36 border-4 border-white rounded-full">
           <img
             src="/public/coverImg2.jpg"
             className=" object-cover w-64 h-64 rounded-full"
@@ -39,11 +39,11 @@ const UserProfile = () => {
           />
           <MdOutlineModeEditOutline className="w-10 h-10 translate-x-52 -translate-y-5" />
         </div>
-        <div className="flex flex-col  gap-4 mt-10 justify-center max-w-screen-lg mx-auto relative">
-          <div className="flex flex-col">
+        <div className="flex flex-col p-4 gap-4 mt-28 md:mt-28 justify-center  mx-auto relative">
+          <div className="flex flex-col ">
             <div className="flex text-3xl">Jake Nackos </div>
-            <div className="flex justify-between items-center">
-              <div className="flex gap-4">
+            <div className="flex  justify-between items-center">
+              <div className="flex gap-4 font-bold">
                 <div>Followers 574 </div>
                 <div className=" self-end text-sky-600">.</div>
                 <div>Following 103</div>
@@ -59,9 +59,9 @@ const UserProfile = () => {
           <div className="flex flex-col border-b-1 text-xl py-2 w-full font-bold text-gray-500  text-start ">
             Personal details
           </div>
-          <div className="flex flex-col justify-between gap-4">
-            <div className="flex md:flex-row flex-col ">
-              <div className="w-1/2 text-start">
+          <div className="flex flex-col justify-between gap-4 ">
+            <div className="flex md:flex-row flex-col gap-4 ">
+              <div className="w-full md:w-1/2  text-start">
                 <div>First Name</div>
                 <input
                   type="text"
@@ -69,7 +69,7 @@ const UserProfile = () => {
                   className="border-2 w-full p-2 rounded"
                 />
               </div>
-              <div className="w-1/2 text-start">
+              <div className="w-full md:w-1/2 text-start">
                 <div>First Name</div>
                 <input
                   type="text"
@@ -78,8 +78,8 @@ const UserProfile = () => {
                 />
               </div>
             </div>
-            <div className="flex md:flex-row flex-col">
-              <div className="w-1/2 text-start">
+            <div className="flex md:flex-row flex-col  gap-4">
+              <div className="w-full md:w-1/2 text-start">
                 <div>Mobile Number</div>
                 <input
                   type="text"
@@ -87,7 +87,7 @@ const UserProfile = () => {
                   className="border-2 w-full p-2 rounded"
                 />
               </div>
-              <div className="w-1/2 text-start">
+              <div className="w-full md:w-1/2 text-start">
                 <div>Email</div>
                 <input
                   type="text"
@@ -97,7 +97,7 @@ const UserProfile = () => {
               </div>
             </div>
             <div className="flex md:flex-row flex-col">
-              <div className="w-1/2 text-start">
+              <div className="w-full md:w-1/2 text-start">
                 <div>Service Provider URL</div>
                 <input
                   type="text"
@@ -109,7 +109,7 @@ const UserProfile = () => {
           </div>
         </div>
       </div>
-    </Layout2>
+    </Layout>
   );
 };
 

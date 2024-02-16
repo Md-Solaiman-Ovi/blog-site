@@ -1,20 +1,52 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { registerUser } from "../../redux/loginSlice";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const SignUpForm = ({ toggleForm }: any) => {
   console.log("SignUp Form", toggleForm);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  // const [confirmPass, setConfirmPass] = useState("");
+  const { loading, error } = useSelector((state: any) => state.login);
+  const navigate = useNavigate();
+  console.log("error", error);
+  console.log("error", loading);
+  const dispatch = useDispatch();
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    const userData = {
+      name,
+      email,
+      password,
+    };
+    //@ts-ignore
+    dispatch(registerUser(userData));
+    setName("");
+    setEmail("");
+    setPassword("");
+    navigate("/");
+  };
   return (
-    <div className="bg-white p-8 rounded-lg drop-shadow-[0px_5px_5px_rgba(0,0,0,0.25)] w-96">
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white p-8 rounded-lg drop-shadow-[0px_5px_5px_rgba(0,0,0,0.25)] w-96"
+    >
       <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
       <div className="flex flex-col space-y-4">
         <div className="flex flex-col">
-          <label
-            htmlFor="username"
-            className="text-md text-start font-semibold"
-          >
+          <label htmlFor="name" className="text-md text-start font-semibold">
             Username
           </label>
           <input
             type="text"
-            id="username"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="border px-3 py-2 rounded-lg"
             placeholder="Enter your username"
           />
@@ -26,6 +58,8 @@ const SignUpForm = ({ toggleForm }: any) => {
           <input
             type="email"
             id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="border px-3 py-2 rounded-lg"
             placeholder="Enter your email"
           />
@@ -40,11 +74,13 @@ const SignUpForm = ({ toggleForm }: any) => {
           <input
             type="password"
             id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             className="border px-3 py-2 rounded-lg"
             placeholder="Enter your password"
           />
         </div>
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <label
             htmlFor="confirmPassword"
             className="text-md text-start font-semibold"
@@ -54,10 +90,12 @@ const SignUpForm = ({ toggleForm }: any) => {
           <input
             type="password"
             id="confirmPassword"
+            value={confirmPass}
+            onChange={(e) => setConfirmPass(e.target.value)}
             className="border px-3 py-2 rounded-lg"
             placeholder="Confirm your password"
           />
-        </div>
+        </div> */}
         <button
           type="submit"
           className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300"
@@ -74,7 +112,7 @@ const SignUpForm = ({ toggleForm }: any) => {
           Sign In here
         </button>
       </p>
-    </div>
+    </form>
   );
 };
 

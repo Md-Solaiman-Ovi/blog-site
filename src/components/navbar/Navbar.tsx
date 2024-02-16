@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../../redux/categorySlice";
 import { Categories } from "../../types/dataTypes";
+import EditDeleteOption from "../comments/EditDeleteOption";
 
 const Navbar = () => {
   const { categories } = useSelector((state: any) => state.categories);
@@ -18,6 +19,7 @@ const Navbar = () => {
   }, [dispatch]);
 
   const [selectedDiv, setSelectedDiv] = useState("home");
+  const [dropDown, setDropDown] = useState(false);
   const selectDiv = (categorySlug: string) => {
     setSelectedDiv(categorySlug);
   };
@@ -53,28 +55,51 @@ const Navbar = () => {
                 >
                   Sign In
                 </Link>
-                <div className="bg-sky-700 hover:bg-sky-600 text-white py-1 px-2 rounded">
+                <Link
+                  to={"/signin-signup-page"}
+                  className="bg-sky-700 hover:bg-sky-600 text-white py-1 px-2 rounded"
+                >
                   Sign Up
-                </div>
+                </Link>
               </div>
             ) : (
               <div className="md:flex gap-3 hidden ">
                 {" "}
                 <div className="rounded-full border-2 border-sky-500 text-sky-600 text-[20px] w-[30px] h-[30px] grid place-items-center">
-                  <Link to={"/user-profile"}>
-                    {" "}
-                    <AiOutlineUser />
-                  </Link>
-                  {/* <Link to={"/login"}>
                   {" "}
-                  <AiOutlineUser />
-                </Link> */}
+                  <AiOutlineUser onClick={() => setDropDown(!dropDown)} />
                 </div>
                 <div className="flex justify-center items-center">
                   <p className="text-sky-700 font-['Oregano',cursive] ">
                     Hello, {val.name}
                   </p>
                 </div>{" "}
+                {dropDown && (
+                  <div
+                    className={`bg-gray-100 text-black flex flex-col text-sm absolute top-14 right-52 border-1 
+                     
+                       `}
+                  >
+                    <Link
+                      to={"/user-profile"}
+                      className="hover:bg-sky-500 hover:text-white w-full p-1 border-b-1"
+                    >
+                      Your Profile
+                    </Link>
+                    <Link
+                      to={"/dashboard"}
+                      className="hover:bg-sky-500 hover:text-white w-full p-1 border-b-1"
+                    >
+                      Dashboard
+                    </Link>
+                    <Link
+                      to={"/user-profile"}
+                      className="hover:bg-sky-500 hover:text-white w-full  p-1"
+                    >
+                      Logout
+                    </Link>
+                  </div>
+                )}
               </div>
             )}
           </div>
