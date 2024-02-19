@@ -7,8 +7,8 @@ const AdminLayout = ({ children }: any) => {
   const toggleMenu = useSelector((state: any) => state.globalState.toggleMenu);
 
   return (
-    <div className="h-screen w-screen flex flex-col items-center bg-blue-50 overflow-hidden ">
-      <div className="w-full h-20 flex items-center py-2 px-8 bg-slate-700">
+    <div className="h-screen w-screen flex flex-col items-center bg-blue-50 overflow-hidden">
+      <div className="w-full h-20 flex items-center py-2 px-8 bg-slate-700 ">
         <AdminNavbar />
       </div>
       <div className="w-full flex h-[calc(100%-80px)]">

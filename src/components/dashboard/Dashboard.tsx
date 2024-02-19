@@ -1,8 +1,7 @@
 import AdminLayout from "../custom-components/AdminLayout";
-// import AdminBlogs from "./AdminBlogs";
 
 const Dashboard = () => {
-  return <AdminLayout></AdminLayout>;
+  return <AdminLayout>this is dashboard</AdminLayout>;
 };
 
 export default Dashboard;

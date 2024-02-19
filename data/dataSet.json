@@ -10,7 +10,13 @@
         "id": 1,
         "name": "latest"
       },
-      "tags": []
+      "tags": [
+        {
+          "id": 28,
+          "tagName": "World",
+          "tagSlug": "world"
+        }
+      ]
     },
     {
       "id": "2",
