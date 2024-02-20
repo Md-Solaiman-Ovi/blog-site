@@ -47,14 +47,14 @@ const AdminCategories = () => {
             <tbody className=" bg-white ">
               {categories.map((category: any) => {
                 return (
-                  <tr>
+                  <tr className="border">
                     <td className="border px-4 py-2">{category.id}</td>
                     <td className="border px-4 py-2">{category.title}</td>
 
                     <td className="border px-4 py-2">
                       {category.categorySlug}
                     </td>
-                    <td className="border px-4 py-2 flex justify-center items-center gap-4">
+                    <td className=" px-4 py-2 flex justify-center items-center gap-4">
                       <div className="px-4 py-1 bg-teal-500 text-white rounded ">
                         Edit
                       </div>{" "}

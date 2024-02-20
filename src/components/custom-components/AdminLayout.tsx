@@ -14,7 +14,7 @@ const AdminLayout = ({ children }: any) => {
       <div className="w-full flex h-[calc(100%-80px)]">
         <div
           className={` compact-sidebar bg-slate-600 flex justify-center  ${
-            toggleMenu ? "w-72 duration-1000 delay-200 " : "w-20 duration-1000 "
+            toggleMenu ? "w-64 duration-1000 delay-200 " : "w-20 duration-1000 "
           }`}
         >
           <AdminSidebar />

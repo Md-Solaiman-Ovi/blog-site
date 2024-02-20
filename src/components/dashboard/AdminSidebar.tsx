@@ -12,15 +12,15 @@ const AdminSidebar = () => {
 
   return (
     <div className="my-5 flex flex-col gap-8 w-full  ">
-      <div className="flex flex-col gap-2 text-start text-lg md:text-xl text-white px-2">
+      <div className="flex flex-col gap-2 text-start text-lg md:text-xl text-white px-3">
         <Link
           to={"/admin-dashboard"}
-          className={`flex items-center gap-4 bg-slate-700 font-semibold px-4 py-2 rounded cursor-pointer `}
+          className={`flex items-center gap-4 bg-slate-700 font-semibold px-4 py-1 rounded cursor-pointer `}
         >
           <div>
             <RxDashboard className={` ${toggleMenu ? " " : "w-7 h-7"}`} />
           </div>
-          <div className={` ${toggleMenu ? "block " : "hidden "}`}>
+          <div className={`text-base ${toggleMenu ? "block " : "hidden "}`}>
             Dashboard
           </div>
         </Link>
@@ -31,16 +31,18 @@ const AdminSidebar = () => {
           <div>
             <MdPostAdd className={` ${toggleMenu ? " " : "w-7 h-7"}`} />
           </div>
-          <div className={` ${toggleMenu ? "block " : "hidden "}`}>Blogs</div>
+          <div className={`text-base ${toggleMenu ? "block " : "hidden "}`}>
+            Blogs
+          </div>
         </Link>
         <Link
           to={"/admin-categories"}
-          className="flex items-center gap-4 hover:bg-gray-500 font-semibold px-4 py-1 rounded cursor-pointer"
+          className={`flex items-center gap-4 hover:bg-gray-500 font-semibold px-4 py-1 rounded cursor-pointer `}
         >
           <div>
             <MdCategory className={` ${toggleMenu ? " " : "w-7 h-7"}`} />
           </div>
-          <div className={` ${toggleMenu ? "block " : "hidden "}`}>
+          <div className={`text-base ${toggleMenu ? "block " : "hidden "}`}>
             Categories
           </div>
         </Link>
@@ -51,7 +53,9 @@ const AdminSidebar = () => {
           <div>
             <FaHashtag className={` ${toggleMenu ? " " : "w-7 h-7"}`} />
           </div>
-          <div className={` ${toggleMenu ? "block " : "hidden "}`}>Tags</div>
+          <div className={`text-base ${toggleMenu ? "block " : "hidden "}`}>
+            Tags
+          </div>
         </Link>
         <Link
           to={"/admin-users"}
@@ -60,7 +64,9 @@ const AdminSidebar = () => {
           <div>
             <FaUserSecret className={` ${toggleMenu ? " " : "w-7 h-7"}`} />
           </div>
-          <div className={` ${toggleMenu ? "block " : "hidden "}`}>Users</div>
+          <div className={`text-base ${toggleMenu ? "block " : "hidden "}`}>
+            Users
+          </div>
         </Link>
       </div>
     </div>

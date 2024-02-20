@@ -6,6 +6,7 @@ export const globalStateSlice = createSlice({
   initialState: {
     isOpen: false,
     toggleMenu: true,
+    ActiveDiv: false,
   },
   reducers: {
     isOpenTrue: (state: any) => {
@@ -18,8 +19,12 @@ export const globalStateSlice = createSlice({
     handleToggle: (state: any) => {
       state.toggleMenu = !state.toggleMenu;
     },
+    setActiveDiv: (state: any) => {
+      state.ActiveDiv = !state.ActiveDiv;
+    },
   },
 });
 
-export const { isOpenTrue, setIsOpen, handleToggle } = globalStateSlice.actions;
+export const { isOpenTrue, setIsOpen, handleToggle, setActiveDiv } =
+  globalStateSlice.actions;
 export default globalStateSlice.reducer;

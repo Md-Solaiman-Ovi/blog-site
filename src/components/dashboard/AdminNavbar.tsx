@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FiMenu } from "react-icons/fi";
 import { IoNotificationsSharp } from "react-icons/io5";
+import { TbHomeShare } from "react-icons/tb";
 import { useDispatch, useSelector } from "react-redux";
 import { handleToggle } from "@/redux/globalStateSlice";
+import { Link } from "react-router-dom";
 const AdminNavbar = () => {
   const count = useSelector((state: any) => state.globalState.toggleMenu);
   const dispatch = useDispatch();
@@ -19,6 +21,9 @@ const AdminNavbar = () => {
         >
           <FiMenu className="w-7 h-7  " />
         </div>
+        <Link to={"/"}>
+          <TbHomeShare className="w-7 h-7 " />
+        </Link>
       </div>
       <div className="flex justify-center items-center gap-8">
         <div>

@@ -29,7 +29,7 @@ const AdminTags = () => {
           </Button>
         </div>
 
-        <div className="h-[500px] overflow-auto md:overflow-y-scroll">
+        <div className="h-[700px] overflow-auto md:overflow-y-scroll">
           <table className="table-auto border-collapse rounded w-full ">
             <thead className="sticky top-0">
               <tr>
@@ -43,7 +43,7 @@ const AdminTags = () => {
                 </th>
               </tr>
             </thead>
-            <tbody className=" bg-white ">
+            <tbody className=" bg-white h-screen  ">
               {tags.map((tag: any) => {
                 return (
                   <tr>

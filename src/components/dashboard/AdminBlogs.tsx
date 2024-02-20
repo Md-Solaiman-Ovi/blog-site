@@ -53,7 +53,7 @@ const AdminBlogs = () => {
             <tbody className=" bg-white ">
               {blogs.map((blog: any) => {
                 return (
-                  <tr>
+                  <tr className="border">
                     <td className="border px-4 py-2">{blog.id}</td>
                     <td className="border px-4 py-2">{blog.title}</td>
                     <td className="border px-4 py-2 text-justify ">
@@ -68,7 +68,7 @@ const AdminBlogs = () => {
                       })}
                     </td>
                     <td className="border px-4 py-2">{blog.slug}</td>
-                    <td className="border px-4 py-2 flex justify-center items-center gap-4">
+                    <td className="px-4 py-2 flex justify-center items-center gap-4">
                       <div className="px-4 py-1 bg-teal-500 text-white rounded ">
                         Edit
                       </div>{" "}

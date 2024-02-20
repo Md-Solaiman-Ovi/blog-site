@@ -29,8 +29,8 @@ const AdminUsers = () => {
           </Button>
         </div>
 
-        <div className="h-[500px]  overflow-auto md:overflow-y-scroll">
-          <table className="table-auto border-collapse rounded w-full ">
+        <div className="max-h-96 overflow-y-auto">
+          <table className="border-collapse rounded w-full table-fixed">
             <thead className="sticky top-0">
               <tr>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Id</th>
@@ -41,13 +41,12 @@ const AdminUsers = () => {
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
                   Password
                 </th>
-                {/* <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Image</th> */}
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
                   Actions
                 </th>
               </tr>
             </thead>
-            <tbody className=" bg-white ">
+            <tbody className=" bg-white h-10 overflow-y-auto">
               {users.map((user: any) => {
                 return (
                   <tr>
@@ -55,7 +54,6 @@ const AdminUsers = () => {
                     <td className="border px-4 py-2">{user.user_name}</td>
                     <td className="border px-4 py-2">{user.user_email}</td>
                     <td className="border px-4 py-2">{user.user_password}</td>
-                    {/* <td className="border px-4 py-2">{user.user_image}</td> */}
                     <td className="border px-4 py-2 flex justify-center items-center gap-4">
                       <div className="px-4 py-1 bg-teal-500 text-white rounded ">
                         Edit
@@ -67,8 +65,7 @@ const AdminUsers = () => {
                   </tr>
                 );
               })}
-
-              {/* Add more rows as needed */}
+              Add more rows as needed
             </tbody>
           </table>
         </div>

@@ -5,3 +5,25 @@
 .compact-sidebar {
   transition: width 0.4s;
 }
+
+.tableFixHead {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.tableFixHead tbody {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  height: 200px;
+}
+.tableFixHead thead tr {
+  display: block;
+}
+.tableFixHead th,
+.tableFixHead td {
+  width: 400px;
+  text-align: center;
+}
+th {
+  background: #abdd93;
+}
