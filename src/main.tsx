@@ -18,6 +18,10 @@ import AdminBlogs from "./components/dashboard/AdminBlogs.tsx";
 import AdminCategories from "./components/dashboard/AdminCategories.tsx";
 import AdminTags from "./components/dashboard/AdminTags.tsx";
 import AdminUsers from "./components/dashboard/AdminUsers.tsx";
+import CreateUserForm from "./components/dashboardForm/CreateUserForm.tsx";
+import CreateBlogForm from "./components/dashboardForm/CreateBlogForm.tsx";
+import CreateCategoryForm from "./components/dashboardForm/CreateCategoryForm.tsx";
+import CreateTagForm from "./components/dashboardForm/CreateTagForm.tsx";
 // import Login from "./components/account/Login.tsx";
 
 const val = localStorage.getItem("user");
@@ -88,6 +92,22 @@ const router = createBrowserRouter([
   {
     path: "/admin-dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "/blog-form",
+    element: <CreateBlogForm />,
+  },
+  {
+    path: "/category-form",
+    element: <CreateCategoryForm />,
+  },
+  {
+    path: "/tag-form",
+    element: <CreateTagForm />,
+  },
+  {
+    path: "/user-form",
+    element: <CreateUserForm />,
   },
 ]);
 

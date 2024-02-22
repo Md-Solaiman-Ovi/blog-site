@@ -4,8 +4,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import AdminLayout from "../custom-components/AdminLayout";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 import { fetchTags } from "@/redux/tagSlice";
+import { Link } from "react-router-dom";
 
 const AdminTags = () => {
   const { isLoading, tags, error } = useSelector((state: any) => state.tags);
@@ -24,9 +25,12 @@ const AdminTags = () => {
             placeholder="Search tags here"
             className="border-2 w-1/5 p-2  rounded"
           />
-          <Button className="bg-green-500 hover:bg-blue-600 text-white rounded">
+          <Link
+            to={"/tag-form"}
+            className="bg-green-500 hover:bg-blue-600 text-white rounded px-4 py-2"
+          >
             Add new Tag
-          </Button>
+          </Link>
         </div>
 
         <div className="h-[700px] overflow-auto md:overflow-y-scroll">

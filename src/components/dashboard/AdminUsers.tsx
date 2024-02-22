@@ -4,8 +4,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import AdminLayout from "../custom-components/AdminLayout";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 import { fetchUsers } from "@/redux/userSlice";
+import { Link } from "react-router-dom";
 
 const AdminUsers = () => {
   const { isLoading, users, error } = useSelector((state: any) => state.users);
@@ -24,9 +25,12 @@ const AdminUsers = () => {
             placeholder="Search user here"
             className="border-2 w-1/5 p-2  rounded"
           />
-          <Button className="bg-green-500 hover:bg-blue-600 text-white rounded">
+          <Link
+            to={"/user-form"}
+            className="bg-green-500 hover:bg-blue-600 text-white rounded px-4 py-2"
+          >
             Create new user
-          </Button>
+          </Link>
         </div>
 
         <div className="max-h-96 overflow-y-auto">

@@ -3,12 +3,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../../redux/categorySlice";
 import { Categories } from "../../types/dataTypes";
-import EditDeleteOption from "../comments/EditDeleteOption";
+// import EditDeleteOption from "../comments/EditDeleteOption";
 
 const Navbar = () => {
   const { categories } = useSelector((state: any) => state.categories);
@@ -17,12 +17,10 @@ const Navbar = () => {
     // @ts-ignore
     dispatch(fetchCategories());
   }, [dispatch]);
+  const location = useLocation();
 
-  const [selectedDiv, setSelectedDiv] = useState("home");
   const [dropDown, setDropDown] = useState(false);
-  const selectDiv = (categorySlug: string) => {
-    setSelectedDiv(categorySlug);
-  };
+
   // @ts-ignore
   const val = JSON.parse(localStorage.getItem("user"));
 
@@ -109,11 +107,8 @@ const Navbar = () => {
             <Link to={"/"}>
               <div
                 className={`hover:text-sky-600 cursor-pointer ${
-                  selectedDiv === "home" ? "font-bold text-sky-700" : ""
+                  location.pathname === "/" ? "font-bold text-sky-700" : ""
                 }`}
-                onClick={() => {
-                  selectDiv("home");
-                }}
               >
                 Home
               </div>
@@ -128,13 +123,10 @@ const Navbar = () => {
                 <Link to={`/${category.categorySlug}`} key={category.id}>
                   <div
                     className={`hover:text-sky-600 cursor-pointer ${
-                      selectedDiv === category.categorySlug
+                      location.pathname === `/${category.categorySlug}`
                         ? "font-bold text-sky-700"
                         : ""
                     }`}
-                    onClick={() => {
-                      selectDiv(category.categorySlug);
-                    }}
                   >
                     {category.title}
                   </div>

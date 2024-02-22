@@ -4,9 +4,10 @@ import { fetchBlogs } from "@/redux/blogSlice";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import AdminLayout from "../custom-components/AdminLayout";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 import { getFirstNWords } from "@/redux/globalFunctions";
 import { FaPlusCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const AdminBlogs = () => {
   const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
   console.log(isLoading, error);
@@ -25,10 +26,13 @@ const AdminBlogs = () => {
             placeholder="Search blogs here"
             className="border-2 w-1/5 p-2  rounded"
           />
-          <Button className="bg-green-500 hover:bg-blue-600 text-white rounded">
+          <Link
+            to={"/blog-form"}
+            className="bg-green-500 hover:bg-blue-600 text-white rounded flex gap-2 px-4 py-2 items-center"
+          >
             <FaPlusCircle className="" />
-            Create New
-          </Button>
+            <div> Create New</div>
+          </Link>
         </div>
 
         <div className="h-[600px] md:h-[700px] overflow-auto md:overflow-y-scroll">

@@ -4,7 +4,8 @@ import { fetchCategories } from "@/redux/categorySlice";
 import AdminLayout from "../custom-components/AdminLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
+import { Link } from "react-router-dom";
 
 const AdminCategories = () => {
   const { isLoading, categories, error } = useSelector(
@@ -25,9 +26,12 @@ const AdminCategories = () => {
             placeholder="Search categories here"
             className="border-2 w-1/5 p-2  rounded"
           />
-          <Button className="bg-green-500 hover:bg-blue-600 text-white rounded">
-            Add new category
-          </Button>
+          <Link
+            to={"/category-form"}
+            className="bg-green-500 hover:bg-blue-600 text-white rounded px-4 py-2"
+          >
+            Add new Category
+          </Link>
         </div>
 
         <div className="h-[500px] overflow-auto md:overflow-y-scroll">

@@ -6,7 +6,7 @@
   transition: width 0.4s;
 }
 
-.tableFixHead {
+/* .tableFixHead {
   table-layout: fixed;
   border-collapse: collapse;
 }
@@ -26,4 +26,4 @@
 }
 th {
   background: #abdd93;
-}
+} */
