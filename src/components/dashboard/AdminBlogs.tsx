@@ -83,8 +83,6 @@ const AdminBlogs = () => {
                   </tr>
                 );
               })}
-
-              {/* Add more rows as needed */}
             </tbody>
           </table>
         </div>

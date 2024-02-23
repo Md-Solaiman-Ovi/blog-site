@@ -4,9 +4,16 @@ import axios from "axios";
 
 export const fetchTags = createAsyncThunk("tags/fetchTags", async () => {
   const res = await axios.get("http://localhost:3000/tags");
-
   return res.data;
 });
+
+// export const deleteTag = createAsyncThunk(
+//   "tags/deleteTag",
+//   async (tagId: number) => {
+//     await axios.delete(`http://localhost:3000/comments/${tagId}`);
+//     return tagId;
+//   }
+// );
 
 const tagSlice = createSlice({
   name: "tags",
@@ -30,7 +37,13 @@ const tagSlice = createSlice({
       state.tags = [];
       state.error = action.error.message;
     });
+    // builder.addCase(deleteTag.fulfilled, (state: any, action: any) => {
+    //   state.isLoading = false;
+    //   state.tags = state.tags.filter((tag: any) => tag.id !== action.payload);
+    //   state.error = null;
+    // });
   },
 });
 
+// export const { removeTags } = tagSlice.actions;
 export default tagSlice.reducer;

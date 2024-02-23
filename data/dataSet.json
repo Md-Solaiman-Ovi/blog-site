@@ -788,6 +788,11 @@
       "id": "9",
       "categorySlug": "topnews",
       "title": "Topnews"
+    },
+    {
+      "id": "465e",
+      "title": "New Category",
+      "categorySlug": "new-category"
     }
   ],
   "tags": [
@@ -955,228 +960,29 @@
       "id": "33",
       "tagName": "Science",
       "tagSlug": "science"
+    },
+    {
+      "id": "dab4",
+      "tagName": "new tag",
+      "tagSlug": "new-tag"
+    },
+    {
+      "id": "c4ae",
+      "tagName": "Nothing",
+      "tagSlug": "nothing"
+    },
+    {
+      "id": "ffe0",
+      "categoryName": "Finance",
+      "categorySlug": "finance-slug"
+    },
+    {
+      "id": "d951",
+      "categoryName": "Finance",
+      "categorySlug": "finace-slug"
     }
   ],
   "comments": [
-    {
-      "id": "1",
-      "user_id": 1,
-      "post_id": 16,
-      "comment": " Hey, this was so good blog",
-      "parent_comment_id": null
-    },
-    {
-      "id": "2",
-      "user_id": 2,
-      "post_id": 16,
-      "comment": " Ami ki bolechi ami nirdush??",
-      "parent_comment_id": null
-    },
-    {
-      "id": "3",
-      "user_id": 3,
-      "post_id": 16,
-      "comment": "Na,,,tumi ferdous..",
-      "parent_comment_id": 2
-    },
-    {
-      "id": "4",
-      "user_id": 4,
-      "post_id": 15,
-      "comment": "My name is hasib. I've a complain on that decision. Why this rules applicable only for schools? why not for empolyer who wake up in the morning to go to their office. angry mood: Bar bar shudhu amr sathei ? ",
-      "parent_comment_id": null
-    },
-    {
-      "id": "5",
-      "user_id": 1,
-      "post_id": 21,
-      "comment": " valo hoiche. Ekdom khushi hoichi",
-      "parent_comment_id": null
-    },
-    {
-      "id": "6",
-      "user_id": 2,
-      "post_id": 24,
-      "comment": "One of the best opener in Bangladesh",
-      "parent_comment_id": null
-    },
-    {
-      "id": "7",
-      "user_id": 3,
-      "post_id": 24,
-      "comment": "Dot baba",
-      "parent_comment_id": null
-    },
-    {
-      "id": "8",
-      "user_id": 4,
-      "post_id": 22,
-      "comment": "hahaha....Dada der vore diyeche ",
-      "parent_comment_id": null
-    },
-    {
-      "id": "9",
-      "user_id": 3,
-      "post_id": 15,
-      "comment": "This is reply.",
-      "parent_comment_id": 4
-    },
-    {
-      "id": "10",
-      "user_id": 2,
-      "post_id": 15,
-      "comment": "This is reply(2).",
-      "parent_comment_id": 4
-    },
-    {
-      "id": "11",
-      "user_id": 4,
-      "post_id": 15,
-      "comment": "hi hasib",
-      "parent_comment_id": "4"
-    },
-    {
-      "id": "12",
-      "user_id": 4,
-      "post_id": 15,
-      "comment": "how are you hasib",
-      "parent_comment_id": "4"
-    },
-    {
-      "id": "13",
-      "user_id": 4,
-      "post_id": 15,
-      "comment": "kesa laga mera majak",
-      "parent_comment_id": "4"
-    },
-    {
-      "id": "14",
-      "user_id": 2,
-      "post_id": 24,
-      "comment": "hi ovi",
-      "parent_comment_id": "6"
-    },
-    {
-      "id": "15",
-      "user_id": 3,
-      "post_id": 24,
-      "comment": "hi rakib",
-      "parent_comment_id": "7"
-    },
-    {
-      "id": "16",
-      "user_id": 3,
-      "post_id": 24,
-      "comment": "this is reply to rakib",
-      "parent_comment_id": "7"
-    },
-    {
-      "id": "17",
-      "user_id": 2,
-      "post_id": 24,
-      "comment": "this is reply to ovi",
-      "parent_comment_id": "6"
-    },
-    {
-      "id": "18",
-      "user_id": 2,
-      "comment": "this is nested reply"
-    },
-    {
-      "id": "19",
-      "user_id": 4,
-      "post_id": 15,
-      "comment": "hi",
-      "parent_comment_id": "4"
-    },
-    {
-      "id": "20",
-      "user_id": 4,
-      "post_id": 15,
-      "comment": "hi for schools",
-      "parent_comment_id": null
-    },
-    {
-      "id": "21",
-      "user_id": 2,
-      "post_id": "15",
-      "comment": "hello dear all",
-      "parent_comment_id": null
-    },
-    {
-      "id": "22",
-      "user_id": 2,
-      "post_id": 24,
-      "comment": "hlw"
-    },
-    {
-      "id": "23",
-      "user_id": 4,
-      "post_id": 24,
-      "comment": "hi"
-    },
-    {
-      "id": "24",
-      "user_id": 4,
-      "post_id": 24,
-      "comment": "ok"
-    },
-    {
-      "id": "25",
-      "user_id": 2,
-      "post_id": 24,
-      "comment": "ok"
-    },
-    {
-      "id": "26",
-      "user_id": 2,
-      "post_id": 24,
-      "comment": "hi"
-    },
-    {
-      "id": "27",
-      "user_id": 3,
-      "post_id": 24,
-      "comment": "hi"
-    },
-    {
-      "id": "28",
-      "user_id": 3,
-      "post_id": 24,
-      "comment": "hi",
-      "parent_comment_id": 7
-    },
-    {
-      "id": "29",
-      "user_id": 3,
-      "post_id": 24,
-      "comment": "hi2",
-      "parent_comment_id": 7
-    },
-    {
-      "id": "30",
-      "user_id": 2,
-      "comment": "hi"
-    },
-    {
-      "id": "31",
-      "user_id": 2,
-      "post_id": 24,
-      "comment": "hi",
-      "parent_comment_id": 22
-    },
-    {
-      "id": "32",
-      "user_id": 2,
-      "comment": "hi2"
-    },
-    {
-      "id": "33",
-      "user_id": 2,
-      "post_id": 24,
-      "comment": "hi2",
-      "parent_comment_id": 22
-    },
     {
       "id": "34",
       "user_id": 1,
@@ -1227,14 +1033,14 @@
       "parent_comment_id": "20"
     },
     {
-      "id": 41,
+      "id": "41",
       "user_id": 2,
       "post_id": "30",
       "comment": "hi",
       "parent_comment_id": null
     },
     {
-      "id": 42,
+      "id": "42",
       "user_id": 2,
       "post_id": "30",
       "comment": "hello",
@@ -1275,36 +1081,58 @@
       "id": "18f3"
     },
     {
-      "user_id": 1,
-      "user_name": "Hazrat Ali",
-      "user_image": "/public/userImg1.jpg",
-      "user_email": "hazrat@gmail.com",
-      "user_password": "hazrat123",
-      "id": "ebc2"
+      "id": "995e",
+      "user_name": "Sobuj Molla",
+      "user_email": "sabuj@gmail.com",
+      "user_password": "123456"
     },
     {
-      "user_id": 2,
-      "user_name": "Md Solaiman Ovi",
-      "user_image": "/public/userImg2.jpg",
+      "id": "241b",
+      "user_name": "Ketamat Ali",
+      "user_email": "keramat@gmail.com",
+      "user_password": "123456"
+    },
+    {
+      "id": "617f",
+      "user_name": "Istiak Mahmud",
+      "user_email": "mac@gmail.com",
+      "user_password": "123456"
+    },
+    {
+      "id": "d28a",
+      "user_name": "",
+      "user_email": "",
+      "user_password": ""
+    },
+    {
+      "id": "1321",
+      "user_name": "",
+      "user_email": "",
+      "user_password": ""
+    },
+    {
+      "id": "2a4d",
+      "user_name": "",
+      "user_email": "",
+      "user_password": ""
+    },
+    {
+      "id": "db75",
+      "user_name": "dsjfkdsj",
+      "user_email": "afdfsd@gmail.com",
+      "user_password": "23123"
+    },
+    {
+      "id": "7f33",
+      "user_name": "ovi",
       "user_email": "ovi@gmail.com",
-      "user_password": "ovi123",
-      "id": "26df"
+      "user_password": ";dskfmkd"
     },
     {
-      "user_id": 3,
-      "user_name": "Remon Rakib",
-      "user_image": "/public/userImg3.jpg",
-      "user_email": "rakib@gmail.com",
-      "user_password": "rakib123",
-      "id": "59f0"
-    },
-    {
-      "user_id": 4,
-      "user_name": "Mahmudul Hasan",
-      "user_image": "/public/userImg4.jpg",
-      "user_email": "mahmudul@gmail.com",
-      "user_password": "mahmudul123",
-      "id": "18f3"
+      "id": "8231",
+      "user_name": "",
+      "user_email": "",
+      "user_password": ""
     }
   ]
 }

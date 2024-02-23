@@ -16,6 +16,7 @@ const AdminTags = () => {
     // @ts-ignore
     dispatch(fetchTags());
   }, [dispatch]);
+
   return (
     <AdminLayout>
       <div className="flex flex-col gap-8 m-8 ">
@@ -56,18 +57,19 @@ const AdminTags = () => {
 
                     <td className="border px-4 py-2">{tag.tagSlug}</td>
                     <td className="border px-4 py-2 flex justify-center items-center gap-4">
-                      <div className="px-4 py-1 bg-teal-500 text-white rounded ">
+                      <div className="px-4 py-1 bg-teal-500 text-white rounded cursor-pointer ">
                         Edit
                       </div>{" "}
-                      <div className="px-4 py-1 bg-red-500 text-white rounded ">
+                      <div
+                        className="px-4 py-1 bg-red-500 text-white rounded cursor-pointer "
+                        // onClick={() => dispatch(deleteTag(tag.id))}
+                      >
                         delete
                       </div>
                     </td>
                   </tr>
                 );
               })}
-
-              {/* Add more rows as needed */}
             </tbody>
           </table>
         </div>
