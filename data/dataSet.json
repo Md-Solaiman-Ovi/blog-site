@@ -980,6 +980,11 @@
       "id": "d951",
       "categoryName": "Finance",
       "categorySlug": "finace-slug"
+    },
+    {
+      "id": "a032",
+      "tagName": "hello tag",
+      "tagSlug": "hello-tag"
     }
   ],
   "comments": [
@@ -1099,40 +1104,16 @@
       "user_password": "123456"
     },
     {
-      "id": "d28a",
-      "user_name": "",
-      "user_email": "",
-      "user_password": ""
-    },
-    {
-      "id": "1321",
-      "user_name": "",
-      "user_email": "",
-      "user_password": ""
-    },
-    {
-      "id": "2a4d",
-      "user_name": "",
-      "user_email": "",
-      "user_password": ""
-    },
-    {
-      "id": "db75",
-      "user_name": "dsjfkdsj",
-      "user_email": "afdfsd@gmail.com",
-      "user_password": "23123"
-    },
-    {
       "id": "7f33",
       "user_name": "ovi",
       "user_email": "ovi@gmail.com",
       "user_password": ";dskfmkd"
     },
     {
-      "id": "8231",
-      "user_name": "",
-      "user_email": "",
-      "user_password": ""
+      "id": "715e",
+      "user_name": "Asha",
+      "user_email": "asha@gmail.com",
+      "user_password": "123456"
     }
   ]
 }
