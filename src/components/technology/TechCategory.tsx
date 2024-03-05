@@ -26,19 +26,25 @@ const TechCategory = () => {
           {error && <div>{error.message}</div>}
 
           {blogs &&
-            blogs.map((blogs: Blogs) => {
-              if (blogs.category.name == "tech" && blogs.id == 16) {
-                return <MainCard key={blogs.id} blogs={blogs} />;
+            blogs.map((blogs: Blogs, index: number) => {
+              if (blogs.category.name == "tech" && blogs.slug == "post-16") {
+                return <MainCard key={blogs.id || index} blogs={blogs} />;
               }
             })}
         </div>
         <div className="flex flex-col gap-4 md:w-2/5 ">
           {blogs &&
-            blogs.map((techNews: Blogs) => {
-              if (techNews.category.name == "tech" && techNews.id != 16) {
+            blogs.map((techNews: Blogs, index: number) => {
+              if (
+                techNews.category.name == "tech" &&
+                techNews.slug != "post-16"
+              ) {
                 // console.log("small id", techNews);
                 return (
-                  <SmallCategoryCard key={techNews.id} sportsNews={techNews} />
+                  <SmallCategoryCard
+                    key={techNews.id || index}
+                    sportsNews={techNews}
+                  />
                 );
               }
             })}

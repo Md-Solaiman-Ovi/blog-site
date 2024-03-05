@@ -6,17 +6,17 @@ import { AiOutlineUser } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { fetchCategories } from "../../redux/categorySlice";
+// import { fetchCategories } from "../../redux/categorySlice";
 import { Categories } from "../../types/dataTypes";
 // import EditDeleteOption from "../comments/EditDeleteOption";
 
 const Navbar = () => {
   const { categories } = useSelector((state: any) => state.categories);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
-    dispatch(fetchCategories());
-  }, [dispatch]);
+    // dispatch(fetchCategories());
+  }, [categories]);
   const location = useLocation();
 
   const [dropDown, setDropDown] = useState(false);
@@ -69,13 +69,13 @@ const Navbar = () => {
                 </div>
                 <div className="flex justify-center items-center">
                   <p className="text-sky-700 font-['Oregano',cursive] ">
-                    Hello, {val.name}
+                    Hello, {val.user.name}
                   </p>
                 </div>{" "}
                 {dropDown && (
                   <div
-                    className={`bg-gray-100 text-black flex flex-col text-sm absolute top-14 right-52 border-1 
-                     
+                    className={`bg-gray-100 text-black flex flex-col text-sm absolute top-14 right-52 border-1
+
                        `}
                   >
                     <Link
@@ -119,6 +119,7 @@ const Navbar = () => {
           </div>
           <div className="flex justify-evenly items-center space-x-8 ">
             {categories.map((category: Categories) => {
+              console.log("category list", category);
               return (
                 <Link to={`/${category.categorySlug}`} key={category.id}>
                   <div

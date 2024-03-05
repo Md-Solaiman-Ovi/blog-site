@@ -5,8 +5,6 @@ import SportsCategory from "./components/sports/SportsCategory";
 import TechCategory from "./components/technology/TechCategory";
 import Test from "./components/test/Test";
 
-
-
 function App() {
   return (
     <div>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
@@ -5,9 +6,25 @@ import axios from "axios";
 export const fetchCategories = createAsyncThunk(
   "categories/fetchCategories",
   async () => {
-    const res = await axios.get("http://localhost:3000/categories");
-
-    return res.data;
+    //
+    // @ts-ignore
+    const auth = JSON.parse(localStorage.getItem("user"));
+    // console.log("auth", auth);
+    try {
+      const response = await axios.get(
+        "http://localhost:5000/api/v1/category/allcategories",
+        {
+          headers: {
+            Authorization: "Bearer " + auth.token,
+          },
+        }
+      );
+      return response.data;
+    } catch (error) {
+      // If there's an error, you can handle it here
+      console.log(error);
+      throw error; // Rethrow the error to be caught by the rejection handler
+    }
   }
 );
 

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 // import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const AdminCategories = () => {
   const { isLoading, categories, error } = useSelector(
@@ -13,8 +14,18 @@ const AdminCategories = () => {
   );
   console.log(isLoading, error);
   const dispatch = useDispatch();
+  const deleteCategory = async (id: any) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:5000/api/v1/category/delete/${id}`
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   useEffect(() => {
-    // @ts-ignore
+    // @ts-ignores
     dispatch(fetchCategories());
   }, [dispatch]);
   return (
@@ -38,7 +49,6 @@ const AdminCategories = () => {
           <table className="table-auto border-collapse rounded w-full ">
             <thead className="sticky top-0">
               <tr>
-                <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Id</th>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Title</th>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
                   Category Slug
@@ -49,20 +59,25 @@ const AdminCategories = () => {
               </tr>
             </thead>
             <tbody className=" bg-white ">
-              {categories.map((category: any) => {
+              {categories.map((category: any, index: number) => {
                 return (
-                  <tr className="border">
-                    <td className="border px-4 py-2">{category.id}</td>
+                  <tr className="border" key={index}>
                     <td className="border px-4 py-2">{category.title}</td>
 
                     <td className="border px-4 py-2">
                       {category.categorySlug}
                     </td>
                     <td className=" px-4 py-2 flex justify-center items-center gap-4">
-                      <div className="px-4 py-1 bg-teal-500 text-white rounded ">
+                      <Link
+                        to={`/update-category-form/${category._id}`}
+                        className="px-4 py-1 bg-teal-500 text-white rounded "
+                      >
                         Edit
-                      </div>{" "}
-                      <div className="px-4 py-1 bg-red-500 text-white rounded ">
+                      </Link>{" "}
+                      <div
+                        className="px-4 py-1 bg-red-500 text-white rounded cursor-pointer"
+                        onClick={() => deleteCategory(category._id)}
+                      >
                         delete
                       </div>
                     </td>

@@ -9,9 +9,9 @@ import { useNavigate } from "react-router-dom";
 const Login = ({ toggleForm }: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { loading, error } = useSelector((state: any) => state.login);
+  const { loading } = useSelector((state: any) => state.login);
   const navigate = useNavigate();
-  console.log("error", error);
+  // console.log("error", error);
   const dispatch = useDispatch();
   const handleSubmit = (e: any) => {
     e.preventDefault();

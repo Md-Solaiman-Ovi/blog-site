@@ -1,16 +1,21 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useDispatch, useSelector } from "react-redux";
 import AdminLayout from "../custom-components/AdminLayout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { fetchCategories } from "@/redux/categorySlice";
 
 const CreateCategoryForm = () => {
   const [categoryName, setCategoryName] = useState("");
   const [categorySlug, setCategorySlug] = useState("");
-  const { tags } = useSelector((state: any) => state.tags);
-  console.log("tags form", tags);
+  const { categories } = useSelector((state: any) => state.categories);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
+  //@ts-ignore
+  const auth = JSON.parse(localStorage.getItem("user"));
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const newCategory = {
@@ -19,19 +24,28 @@ const CreateCategoryForm = () => {
     };
     setCategoryName("");
     setCategorySlug("");
-    const categoryURL = "http://localhost:3000/categories";
-    await fetch(categoryURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newCategory),
-    });
-    console.log("tag handle", newCategory);
-    //@ts-ignore
-    dispatch(fetchTags());
+    navigate("/admin-categories");
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/v1/category/",
+        newCategory,
+        {
+          headers: {
+            Authorization: "Bearer " + auth.token,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error adding new post:", error);
+      throw error;
+    }
   };
-
+  useEffect(() => {
+    //@ts-ignore
+    dispatch(fetchCategories());
+  }, []);
   return (
     <AdminLayout>
       <form

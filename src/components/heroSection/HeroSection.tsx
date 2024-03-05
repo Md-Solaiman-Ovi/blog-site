@@ -20,10 +20,13 @@ const HeroSection = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 py-0 md:py-10 gap-10  ">
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
-      {blogs.map((topNews: Blogs) => {
-        if (topNews.category.name == "topnews" && topNews.id == 31) {
+      {blogs.map((topNews: Blogs, index: number) => {
+        if (topNews.category.name == "topnews" && topNews.slug == "topnews-1") {
           return (
-            <Link to={`${topNews.category.name}/${topNews.slug}`}>
+            <Link
+              to={`${topNews.category.name}/${topNews.slug}`}
+              key={topNews.id || index}
+            >
               <div className="border-1 w-full flex flex-col  shadow-lg">
                 <div className="text-3xl font-bold text-start p-4 bg-gray-50 ">
                   {topNews.title}
@@ -38,14 +41,17 @@ const HeroSection = () => {
         }
       })}
       <div className="w-full grid grid-rows-2 gap-4">
-        {blogs.map((topNews: Blogs) => {
-          if (topNews.category.name == "topnews" && topNews.id != 31) {
+        {blogs.map((topNews: Blogs, index: number) => {
+          if (
+            topNews.category.name == "topnews" &&
+            topNews.slug !== "topnews-1"
+          ) {
             return (
               <Link
                 to={`${topNews.category.name}/${topNews.slug}`}
                 className={`border-1 flex flex-col justify-end shadow-lg bg-cover`}
                 style={{ backgroundImage: `url('${topNews.image}')` }}
-                key={topNews.id}
+                key={topNews.id || index}
               >
                 <div className="bg-[rgba(0,0,0,0.6)]  z-0  ">
                   <div className="text-2xl font-bold text-start text-white p-4">

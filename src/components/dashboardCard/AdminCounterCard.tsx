@@ -11,14 +11,12 @@ const AdminCounterCard = ({ color }: any) => {
           <div className="text-4xl font-bold">150</div>
           <div className="text-lg">User Registrations</div>
         </div>
-        <div className="flex justify-center">
-          <FaUserSecret
-            className={`w-16 h-16 text-${color}-600 self-centerc `}
-          />
+        <div className={`flex justify-center text-${color}-600`}>
+          <FaUserSecret className={`w-16 h-16  self-center `} />
         </div>
       </div>
       <div
-        className={`bg-${color}-600 rounded-b flex justify-center items-center gap-2 py-2 border-t`}
+        className={` bg-${color}-600 rounded-b flex justify-center items-center gap-2 py-2 border-t`}
       >
         <div>More Info </div>
         <FaArrowCircleRight />

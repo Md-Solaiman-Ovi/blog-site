@@ -10,9 +10,9 @@ const Dashboard = () => {
       <div className="flex flex-col gap-4 p-4">
         <div className="text-3xl text-start">Dashboard</div>
         <div className="flex w-full gap-4">
-          {colors.map((color: string) => {
-            console.log("color:", color);
-            return <AdminCounterCard color={color} />;
+          {colors.map((color: string, index: number) => {
+            // console.log("color:", color);
+            return <AdminCounterCard color={color} key={index} />;
           })}
           {/* <AdminCounterCard color="teal" />
           <AdminCounterCard color="green" />

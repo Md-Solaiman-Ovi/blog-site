@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../redux/loginSlice";
 
@@ -12,11 +12,11 @@ const SignUpForm = ({ toggleForm }: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const [confirmPass, setConfirmPass] = useState("");
-  const { loading, error } = useSelector((state: any) => state.login);
+  // const { loading, error } = useSelector((state: any) => state.login);
   const navigate = useNavigate();
-  console.log("error", error);
-  console.log("error", loading);
-  const dispatch = useDispatch();
+  // console.log("error", error);
+  // console.log("error", loading);
+  // const dispatch = useDispatch();
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const userData = {

@@ -1,34 +1,38 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useDispatch, useSelector } from "react-redux";
-import AdminLayout from "../custom-components/AdminLayout";
-import { useEffect, useState } from "react";
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { fetchTags } from "@/redux/tagSlice";
+import AdminLayout from "../custom-components/AdminLayout";
+import { useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
 
-const CreateTagForm = () => {
-  const [tagName, setTagName] = useState("");
-  const [tagSlug, setTagSlug] = useState("");
-  const { tags } = useSelector((state: any) => state.tags);
-  const dispatch = useDispatch();
+const CategoryUpdateForm = () => {
+  const params = useParams();
+  const [categoryName, setCategoryName] = useState("");
+  const [categorySlug, setCategorySlug] = useState("");
+  const { categories } = useSelector((state: any) => state.categories);
+
+  const filteredCategory = categories.find(
+    (item: any) => item._id === params.id
+  );
+
   const navigate = useNavigate();
-  // @ts-ignore
+  //@ts-ignore
   const auth = JSON.parse(localStorage.getItem("user"));
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const newTag = {
-      title: tagName,
-      tagSlug: tagSlug,
+    const newCategory = {
+      catId: params.id,
+      title: categoryName,
+      categorySlug: categorySlug,
     };
-    setTagName("");
-    setTagSlug("");
-    navigate("/admin-tags");
+    setCategoryName("");
+    setCategorySlug("");
+    navigate("/admin-categories");
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/v1/tag",
-        newTag,
+      const response = await axios.put(
+        "http://localhost:5000/api/v1/category/update",
+        newCategory,
         {
           headers: {
             Authorization: "Bearer " + auth.token,
@@ -42,10 +46,6 @@ const CreateTagForm = () => {
       throw error;
     }
   };
-  useEffect(() => {
-    //@ts-ignore
-    dispatch(fetchTags());
-  }, []);
 
   return (
     <AdminLayout>
@@ -54,37 +54,37 @@ const CreateTagForm = () => {
         className="flex flex-col gap-8 m-8 bg-white p-4 rounded"
       >
         <div className=" border-1 rounded flex justify-between items-center bg-gray-500 p-2 text-white font-semibold text-lg">
-          Create Tag
+          Update Category
         </div>
         <div className="flex flex-col gap-4 text-start ">
-          <div>Tag Name</div>
+          <div>Category Name</div>
           <input
             className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
             type="text"
-            value={tagName}
-            onChange={(e) => setTagName(e.target.value)}
-            placeholder="tag name"
+            value={categoryName}
+            onChange={(e) => setCategoryName(e.target.value)}
+            placeholder={filteredCategory.title}
             required
           />
         </div>
         <div className="flex flex-col gap-4 text-start ">
-          <div>Tag Slug</div>
+          <div>Category Slug</div>
           <input
             className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
             type="text"
-            value={tagSlug}
-            onChange={(e) => setTagSlug(e.target.value)}
-            placeholder="tag-slug"
+            value={categorySlug}
+            onChange={(e) => setCategorySlug(e.target.value)}
+            placeholder={filteredCategory.categorySlug}
             required
           />
         </div>
 
         <div className="bg-sky-500 px-4 py-1 hover:bg-sky-600 text-white font-bold rounded  self-start">
-          <button type="submit"> Submit </button>
+          <button type="submit"> Update </button>
         </div>
       </form>
     </AdminLayout>
   );
 };
 
-export default CreateTagForm;
+export default CategoryUpdateForm;

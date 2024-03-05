@@ -7,15 +7,29 @@ import AdminLayout from "../custom-components/AdminLayout";
 // import { Button } from "../ui/button";
 import { fetchUsers } from "@/redux/userSlice";
 import { Link } from "react-router-dom";
+import axios from "axios";
+// import { getFirstNWords } from "@/redux/globalFunctions";
 
 const AdminUsers = () => {
   const { isLoading, users, error } = useSelector((state: any) => state.users);
   console.log(isLoading, error);
   const dispatch = useDispatch();
+
+  const deleteUser = async (id: any) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:5000/api/v1/user/delete/${id}`
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   useEffect(() => {
     // @ts-ignore
     dispatch(fetchUsers());
   }, [dispatch]);
+
   return (
     <AdminLayout>
       <div className="flex flex-col gap-8 m-8 ">
@@ -37,32 +51,32 @@ const AdminUsers = () => {
           <table className="border-collapse rounded w-full table-fixed">
             <thead className="sticky top-0">
               <tr>
-                <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Id</th>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
                   Username
                 </th>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Email</th>
-                <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
-                  Password
-                </th>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
                   Actions
                 </th>
               </tr>
             </thead>
             <tbody className=" bg-white h-10 overflow-y-auto">
-              {users.map((user: any) => {
+              {users.map((user: any, index: number) => {
                 return (
-                  <tr>
-                    <td className="border px-4 py-2">{user.id}</td>
-                    <td className="border px-4 py-2">{user.user_name}</td>
-                    <td className="border px-4 py-2">{user.user_email}</td>
-                    <td className="border px-4 py-2">{user.user_password}</td>
+                  <tr key={index}>
+                    <td className="border px-4 py-2">{user.name}</td>
+                    <td className="border px-4 py-2">{user.email}</td>
                     <td className="border px-4 py-2 flex justify-center items-center gap-4">
-                      <div className="px-4 py-1 bg-teal-500 text-white rounded ">
+                      <Link
+                        to={`/update-user-form/${user._id}`}
+                        className="px-4 py-1 bg-teal-500 text-white rounded "
+                      >
                         Edit
-                      </div>{" "}
-                      <div className="px-4 py-1 bg-red-500 text-white rounded ">
+                      </Link>{" "}
+                      <div
+                        className="px-4 py-1 bg-red-500 text-white rounded cursor-pointer"
+                        onClick={() => deleteUser(user._id)}
+                      >
                         delete
                       </div>
                     </td>

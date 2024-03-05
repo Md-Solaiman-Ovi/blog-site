@@ -5,6 +5,7 @@ export type Blogs = {
   image: string;
   desc: string;
   category: {
+    categoryName: string;
     id: number;
     name: string;
   };

@@ -13,6 +13,7 @@ const AdminNavbar = () => {
   console.log(" value", count);
   //@ts-ignore
   const val = JSON.parse(localStorage.getItem("user"));
+  // console.log("val", val);
   return (
     <div className="flex justify-between items-center self-center text-white w-full">
       <div className="flex items-center gap-8 self-center">
@@ -34,7 +35,7 @@ const AdminNavbar = () => {
           <IoNotificationsSharp className="w-7 h-7 cursor-pointer" />
         </div>
         <div className="flex flex-col cursor-pointer">
-          <div>{val.name}</div>
+          <div>{val.user.name}</div>
           <div className="text-sm">admin</div>
         </div>
       </div>

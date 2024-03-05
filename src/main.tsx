@@ -22,6 +22,10 @@ import CreateUserForm from "./components/dashboardForm/CreateUserForm.tsx";
 import CreateBlogForm from "./components/dashboardForm/CreateBlogForm.tsx";
 import CreateCategoryForm from "./components/dashboardForm/CreateCategoryForm.tsx";
 import CreateTagForm from "./components/dashboardForm/CreateTagForm.tsx";
+import TagUpdateForm from "./components/dashUpdateForm/TagUpdateForm.tsx";
+import CategoryUpdateForm from "./components/dashUpdateForm/CategoryUpdateForm.tsx";
+import UserUpdateForm from "./components/dashUpdateForm/UserUpdateForm.tsx";
+import BlogUpdateForm from "./components/dashUpdateForm/BlogUpdateForm.tsx";
 // import Login from "./components/account/Login.tsx";
 
 const val = localStorage.getItem("user");
@@ -108,6 +112,22 @@ const router = createBrowserRouter([
   {
     path: "/user-form",
     element: <CreateUserForm />,
+  },
+  {
+    path: "/update-tag-form/:id",
+    element: <TagUpdateForm />,
+  },
+  {
+    path: "/update-category-form/:id",
+    element: <CategoryUpdateForm />,
+  },
+  {
+    path: "/update-user-form/:id",
+    element: <UserUpdateForm />,
+  },
+  {
+    path: "/update-blog-form/:id",
+    element: <BlogUpdateForm />,
   },
 ]);
 
