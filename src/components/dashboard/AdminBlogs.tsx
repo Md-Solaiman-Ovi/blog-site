@@ -76,9 +76,11 @@ const AdminBlogs = () => {
                       {getFirstNWords(blog.desc, 12)}...
                     </td>
                     <td className="border px-4 py-2">{blog.category.name}</td>
-                    <td className="border px-4 py-2">
+                    <td className=" px-4 py-2  gap-1 ">
                       {blog.tags.map((tag: any, index: number) => (
-                        <div key={index}>{tag.tagName} </div>
+                        <div className=" px-1 rounded" key={index}>
+                          {tag.title}{" "}
+                        </div>
                       ))}
                     </td>
                     <td className="border px-4 py-2">{blog.slug}</td>

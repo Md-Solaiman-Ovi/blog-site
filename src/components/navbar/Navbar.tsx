@@ -6,16 +6,16 @@ import { AiOutlineUser } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-// import { fetchCategories } from "../../redux/categorySlice";
+import { fetchCategories } from "../../redux/categorySlice";
 import { Categories } from "../../types/dataTypes";
 // import EditDeleteOption from "../comments/EditDeleteOption";
 
 const Navbar = () => {
   const { categories } = useSelector((state: any) => state.categories);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   useEffect(() => {
     // @ts-ignore
-    // dispatch(fetchCategories());
+    dispatch(fetchCategories());
   }, [categories]);
   const location = useLocation();
 

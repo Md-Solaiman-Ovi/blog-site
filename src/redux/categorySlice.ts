@@ -19,6 +19,7 @@ export const fetchCategories = createAsyncThunk(
           },
         }
       );
+      console.log(response.data);
       return response.data;
     } catch (error) {
       // If there's an error, you can handle it here

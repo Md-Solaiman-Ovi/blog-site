@@ -6,7 +6,12 @@ import AdminLayout from "../custom-components/AdminLayout";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { fetchBlogs } from "@/redux/blogSlice";
+import Multiselect from "multiselect-react-dropdown";
+// import { fetchBlogs } from "@/redux/blogSlice";
+// import Select from "react-select";
+import { fetchCategories } from "@/redux/categorySlice";
+import { fetchTags } from "@/redux/tagSlice";
+import { Categories } from "@/types/dataTypes";
 
 const CreateBlogForm = () => {
   const [titleName, setTitleName] = useState("");
@@ -14,11 +19,30 @@ const CreateBlogForm = () => {
   const [blogImage, setBlogImage] = useState("");
   const [blogDesc, setBlogDesc] = useState("");
   const [blogCategoryName, setBlogCategoryName] = useState("");
-  const [blogTag, setBlogTag] = useState("");
-  const { blogs } = useSelector((state: any) => state.blogs);
-  console.log(blogs);
+
   const { categories } = useSelector((state: any) => state.categories);
-  console.log("categories options: ", categories);
+  const { tags } = useSelector((state: any) => state.tags);
+
+  interface Option {
+    id: number;
+    name: string;
+  }
+  const [options, setOptions] = useState<Option[]>([]);
+  const [catItem, setCatItem] = useState({ id: "", name: "" });
+
+  const [selectedValues, setSelectedValues] = useState<Option[]>([]);
+
+  // Function triggered when an option is selected
+  const onSelect = (selectedList: any, selectedItem: any) => {
+    setSelectedValues(selectedList);
+    console.log("Selected List:", selectedList);
+  };
+
+  // Function triggered when an option is removed
+  const onRemove = (selectedList: any, removedItem: any) => {
+    setSelectedValues(selectedList);
+  };
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   //@ts-ignore
@@ -30,17 +54,15 @@ const CreateBlogForm = () => {
       slug: blogSlug,
       image: blogImage,
       desc: blogDesc,
-      category: {
-        categoryName: blogCategoryName,
-      },
-      tags: blogTag,
+      category: catItem,
+      tags: selectedValues,
     };
     setTitleName("");
     setBlogSlug("");
     setBlogImage("");
     setBlogDesc("");
     setBlogCategoryName("");
-    setBlogTag("");
+    // setBlogTag("");
     navigate("/admin-blogs");
 
     try {
@@ -60,19 +82,37 @@ const CreateBlogForm = () => {
       throw error;
     }
   };
+
   useEffect(() => {
     //@ts-ignore
-    dispatch(fetchBlogs());
-  }, []);
+    dispatch(fetchCategories());
+    //@ts-ignore
+    dispatch(fetchTags());
+    // setOptions(tags);
+    console.log("Tags ", typeof tags);
+    console.log("Tags ", tags.length);
+  }, [dispatch]);
+  const handleSelectCat = (e: any) => {
+    const selectedIndex = e.target.selectedIndex;
+    const selectedItemData = categories[selectedIndex - 1]; // -1 to account for the "select option" default
+
+    // Update state with the selected item data
+    setCatItem({
+      id: selectedItemData._id,
+      name: selectedItemData.title,
+    });
+  };
+
   return (
     <AdminLayout>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-8 m-8 bg-white p-4 rounded"
+        className="flex flex-col gap-8 m-8 bg-white p-4 rounded h-[800px] overflow-y-scroll"
       >
         <div className=" border-1 rounded flex justify-between items-center bg-gray-500 p-2 text-white font-semibold text-lg">
           Create Blog
         </div>
+
         <div className="flex flex-col gap-4 text-start ">
           <div>Title</div>
           <input
@@ -86,11 +126,44 @@ const CreateBlogForm = () => {
         <div className="flex flex-col gap-4 text-start ">
           <div>Description</div>
           <input
-            className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
+            className=" border-[1px] h-28 border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
             type="text"
             value={blogDesc}
             onChange={(e) => setBlogDesc(e.target.value)}
             placeholder="description"
+          />
+        </div>
+        <div className="flex flex-col gap-4 text-start ">
+          <div>Category</div>
+
+          <select
+            className="border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500"
+            onChange={handleSelectCat}
+          >
+            <option className="text-gray-100">select option</option>
+            {/* {categories.map((option: any, index: number) => {
+              setcatItem(option._id);
+              console.log("cat options:", option.title);
+              // return (
+              <option className="" key={index}>
+                {option.title}
+              </option>;
+              // );
+            })} */}
+            {categories.map((item: Categories) => (
+              <option>{item.title}</option>
+            ))}
+          </select>
+        </div>
+        <div className="flex flex-col gap-4 text-start">
+          <h1>Select Tags</h1>
+          <Multiselect
+            options={tags}
+            selectedValues={selectedValues}
+            onSelect={onSelect}
+            onRemove={onRemove}
+            displayValue="title"
+            avoidHighlightFirstOption={true}
           />
         </div>
         <div className="flex flex-col gap-4 text-start ">
@@ -103,6 +176,7 @@ const CreateBlogForm = () => {
             placeholder="slug-1"
           />
         </div>
+
         <div className="flex flex-col gap-4 text-start ">
           <div>Image</div>
           <input
@@ -113,26 +187,7 @@ const CreateBlogForm = () => {
             placeholder="image"
           />
         </div>
-        <div className="flex flex-col gap-4 text-start ">
-          <div>Category</div>
-          <input
-            className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
-            type="text"
-            value={blogCategoryName}
-            onChange={(e) => setBlogCategoryName(e.target.value)}
-            placeholder="category"
-          />
-        </div>
-        <div className="flex flex-col gap-4 text-start ">
-          <div>Tags</div>
-          <input
-            className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
-            type="text"
-            value={blogTag}
-            onChange={(e) => setBlogTag(e.target.value)}
-            placeholder="tags"
-          />
-        </div>
+
         <div className="bg-sky-500 px-4 py-1 hover:bg-sky-600 text-white font-bold rounded  self-start">
           <button> Submit </button>
         </div>
