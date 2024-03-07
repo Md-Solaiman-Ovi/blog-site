@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AdminLayout from "../custom-components/AdminLayout";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Alert from "../dashboardCard/Alert";
+import { fetchUsers } from "@/redux/userSlice";
 
 const UserUpdateForm = () => {
   const params = useParams();
@@ -16,7 +17,7 @@ const UserUpdateForm = () => {
   const { users } = useSelector((state: any) => state.users);
 
   const filteredUser = users.find((item: any) => item._id === params.id);
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   // @ts-ignore
   const auth = JSON.parse(localStorage.getItem("user"));
@@ -51,9 +52,12 @@ const UserUpdateForm = () => {
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);
-      throw error;
     }
   };
+  useEffect(() => {
+    //@ts-ignore
+    dispatch(fetchUsers());
+  }, [dispatch]);
   return (
     <AdminLayout>
       {showAlert && (

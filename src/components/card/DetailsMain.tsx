@@ -25,11 +25,12 @@ const DetailsMain = ({ postDetail }: any) => {
 
       <div className="text-justify p-4 ">{postDetail.desc}</div>
       <div className=" grid grid-cols-3  gap-2 p-4 ">
-        {postDetail.tags.map((tag: Tags) => {
+        {postDetail.tags.map((tag: Tags, index: number) => {
+          // console.log("list of tags", tag);
           return (
-            <Link to={`/tag/${tag.tagSlug}`} key={tag.id}>
+            <Link to={`/tag/${tag.tagSlug}`} key={index}>
               <div className="flex justify-center items-center bg-slate-50 ">
-                <div className=" font-bold text-sky-900">#{tag.tagName} </div>
+                <div className=" font-bold text-sky-900">#{tag.title} </div>
               </div>
             </Link>
           );

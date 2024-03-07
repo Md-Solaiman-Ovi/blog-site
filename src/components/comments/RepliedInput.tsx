@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { MdEmojiEmotions } from "react-icons/md";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchComments } from "../../redux/commentSlice";
+import axios from "axios";
 
-const RepliedInput = ({ id, post_id, controlState, user }: any) => {
-  const inputRef = useRef<any>();
-  const { comments } = useSelector((state: any) => state.comments);
+const RepliedInput = ({ id, postId, controlState }: any) => {
   const dispatch = useDispatch();
   useEffect(() => {
     //@ts-ignore
@@ -15,29 +14,42 @@ const RepliedInput = ({ id, post_id, controlState, user }: any) => {
   }, [dispatch]);
 
   const [replyInputValue, setReplyInputValue] = useState("");
+  //@ts-ignore
+  const auth = JSON.parse(localStorage.getItem("user"));
+
+  // Function to handle form submit
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const newComment = {
-      id: comments.length + 1,
-      user_id: user.user_id,
-      post_id: post_id, //have to work on it
-      comment: inputRef.current?.value,
-      parent_comment_id: id, //have to work on it
+      userId: auth.user.id,
+      postId: postId,
+      comment: replyInputValue,
+      parentCommentId: id,
     };
-
+    console.log("new comment", newComment);
     setReplyInputValue("");
-    const commentURL = "http://localhost:3000/comments";
-    await fetch(commentURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newComment),
-    });
-    controlState();
-    // @ts-ignore
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/v1/comment/",
+        newComment,
+        {
+          headers: {
+            Authorization: "Bearer " + auth.token,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error adding new post:", error);
+    }
+    //@ts-ignore
     dispatch(fetchComments());
   };
+  useEffect(() => {
+    //@ts-ignore
+    dispatch(fetchComments());
+  }, [dispatch]);
   return (
     <div className="flex gap-4 ">
       <div>
@@ -52,12 +64,9 @@ const RepliedInput = ({ id, post_id, controlState, user }: any) => {
           <input
             className="w-full border-b-1 focus:outline-none focus:border-b-2 focus:border-sky-600  "
             type="text"
-            ref={inputRef}
             value={replyInputValue}
+            onChange={(e) => setReplyInputValue(e.target.value)}
             placeholder="Add a comment..."
-            onChange={(e) => {
-              setReplyInputValue(e.target?.value);
-            }}
             autoFocus={true}
           />
           <div className="flex justify-between items-center">

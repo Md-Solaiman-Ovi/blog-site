@@ -8,9 +8,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { handleToggle } from "@/redux/globalStateSlice";
 import { Link } from "react-router-dom";
 const AdminNavbar = () => {
-  const count = useSelector((state: any) => state.globalState.toggleMenu);
+  // const count =
+  useSelector((state: any) => state.globalState.toggleMenu);
   const dispatch = useDispatch();
-  console.log(" value", count);
+  // console.log(" value", count);
   //@ts-ignore
   const val = JSON.parse(localStorage.getItem("user"));
   // console.log("val", val);

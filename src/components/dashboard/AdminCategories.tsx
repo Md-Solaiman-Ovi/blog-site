@@ -12,7 +12,7 @@ const AdminCategories = () => {
   const { isLoading, categories, error } = useSelector(
     (state: any) => state.categories
   );
-  console.log(isLoading, error);
+  // console.log(isLoading, error);
   const dispatch = useDispatch();
   const deleteCategory = async (id: any) => {
     try {
@@ -23,6 +23,8 @@ const AdminCategories = () => {
     } catch (error) {
       console.error(error);
     }
+    // @ts-ignores
+    dispatch(fetchCategories());
   };
   useEffect(() => {
     // @ts-ignores
@@ -30,6 +32,8 @@ const AdminCategories = () => {
   }, [dispatch]);
   return (
     <AdminLayout>
+      {isLoading && <div>Loading...</div>}
+      {error && <div>{error.message}</div>}
       <div className="flex flex-col gap-8 m-8 ">
         <div className=" border-1 rounded  flex justify-between items-center ">
           <input

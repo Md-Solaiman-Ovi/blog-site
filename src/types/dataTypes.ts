@@ -9,7 +9,7 @@ export type Blogs = {
     id: number;
     name: string;
   };
-  tag: [
+  tags: [
     {
       id: number;
       tagName: string;
@@ -25,25 +25,24 @@ export type Categories = {
 };
 export type Tags = {
   id: number;
-  tagName: string;
+  title: string;
   tagSlug: string;
 };
 
 export type Comments = {
-  id: number;
-  user_id: number;
-  post_id: number;
+  postId: string;
+  userId: string;
+  _id: string;
   comment: string;
-  parent_comment_id: number;
+  parentCommentId: string;
 };
 
 export type Users = {
-  user_id: number;
-  user_name: string;
-  user_image: string;
-  user_email: string;
-  user_password: string;
-  id: number;
+  _id: string;
+  name: string;
+  image: string;
+  email: string;
+  password: string;
 };
 
 export type State = {

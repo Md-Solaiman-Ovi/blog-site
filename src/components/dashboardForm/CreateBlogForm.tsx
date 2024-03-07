@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Multiselect from "multiselect-react-dropdown";
 // import { fetchBlogs } from "@/redux/blogSlice";
 // import Select from "react-select";
-import { fetchCategories } from "@/redux/categorySlice";
+// import { fetchCategories } from "@/redux/categorySlice";
 import { fetchTags } from "@/redux/tagSlice";
 import { Categories } from "@/types/dataTypes";
 
@@ -18,7 +18,7 @@ const CreateBlogForm = () => {
   const [blogSlug, setBlogSlug] = useState("");
   const [blogImage, setBlogImage] = useState("");
   const [blogDesc, setBlogDesc] = useState("");
-  const [blogCategoryName, setBlogCategoryName] = useState("");
+  // const [blogCategoryName, setBlogCategoryName] = useState("");
 
   const { categories } = useSelector((state: any) => state.categories);
   const { tags } = useSelector((state: any) => state.tags);
@@ -27,7 +27,7 @@ const CreateBlogForm = () => {
     id: number;
     name: string;
   }
-  const [options, setOptions] = useState<Option[]>([]);
+  // const [options, setOptions] = useState<Option[]>([]);
   const [catItem, setCatItem] = useState({ id: "", name: "" });
 
   const [selectedValues, setSelectedValues] = useState<Option[]>([]);
@@ -61,7 +61,7 @@ const CreateBlogForm = () => {
     setBlogSlug("");
     setBlogImage("");
     setBlogDesc("");
-    setBlogCategoryName("");
+    // setBlogCategoryName("");
     // setBlogTag("");
     navigate("/admin-blogs");
 
@@ -89,8 +89,6 @@ const CreateBlogForm = () => {
     //@ts-ignore
     dispatch(fetchTags());
     // setOptions(tags);
-    console.log("Tags ", typeof tags);
-    console.log("Tags ", tags.length);
   }, [dispatch]);
   const handleSelectCat = (e: any) => {
     const selectedIndex = e.target.selectedIndex;
@@ -99,7 +97,7 @@ const CreateBlogForm = () => {
     // Update state with the selected item data
     setCatItem({
       id: selectedItemData._id,
-      name: selectedItemData.title,
+      name: selectedItemData.categorySlug,
     });
   };
 
@@ -141,17 +139,9 @@ const CreateBlogForm = () => {
             onChange={handleSelectCat}
           >
             <option className="text-gray-100">select option</option>
-            {/* {categories.map((option: any, index: number) => {
-              setcatItem(option._id);
-              console.log("cat options:", option.title);
-              // return (
-              <option className="" key={index}>
-                {option.title}
-              </option>;
-              // );
-            })} */}
-            {categories.map((item: Categories) => (
-              <option>{item.title}</option>
+
+            {categories.map((item: Categories, index: number) => (
+              <option key={index}>{item.title}</option>
             ))}
           </select>
         </div>

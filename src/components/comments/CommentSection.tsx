@@ -9,7 +9,7 @@ import ViewComment from "./ViewComment";
 import { Comments } from "../../types/dataTypes";
 import { fetchUsers } from "../../redux/userSlice";
 
-const CommentSection = (postDetail: any) => {
+const CommentSection = ({ postDetail }: any) => {
   const { comments } = useSelector((state: any) => state.comments); //calling all the comments
 
   const dispatch = useDispatch();
@@ -20,8 +20,9 @@ const CommentSection = (postDetail: any) => {
     dispatch(fetchUsers());
   }, [dispatch]);
   const filteredComments = comments.filter((comment: Comments) => {
-    return comment.post_id == postDetail.postDetail.id; // Assuming post_id is the correct property to filter comments by post ID
+    return comment.postId == postDetail._id; // Assuming post_id is the correct property to filter comments by post ID
   });
+
   return (
     <div className="container flex flex-col gap-4 p-4">
       <div className="text-start font-bold text-lg">26,637 Comments</div>
@@ -29,16 +30,15 @@ const CommentSection = (postDetail: any) => {
         <CommentInput comments={comments} postDetail={postDetail} />
         <div className="flex flex-col gap-2">
           {filteredComments.map((comment: Comments) => {
-            if (comment.parent_comment_id == null) {
+            if (comment.parentCommentId == null) {
               return (
                 <ViewComment
-                  key={comment.id}
-                  id={comment.id}
-                  user_id={comment.user_id}
-                  post_id={comment.post_id}
+                  key={comment._id}
+                  _id={comment._id}
+                  userId={comment.userId}
+                  postId={comment.postId}
                   comment={comment.comment}
-                  parent_comment_id={comment.parent_comment_id}
-                  // commentDetails={comment}
+                  parentCommentId={comment.parentCommentId}
                 />
               );
             }

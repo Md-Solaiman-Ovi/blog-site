@@ -26,18 +26,18 @@ const CategoryPage = () => {
         {isLoading && <div>Loading...</div>}
         {error && <div>{error.message}</div>}
         {blogs &&
-          blogs.map((blog: Blogs) => {
+          blogs.map((blog: Blogs, index: number) => {
             if (blog.category.name == params.categorySlug) {
               return (
                 <RelatedBlogCard
-                  key={blog.id}
+                  key={index}
                   id={blog.id}
                   title={blog.title}
                   slug={blog.slug}
                   image={blog.image}
                   desc={blog.desc}
                   category={blog.category}
-                  tag={blog.tag}
+                  tags={blog.tags}
                 />
               );
             }

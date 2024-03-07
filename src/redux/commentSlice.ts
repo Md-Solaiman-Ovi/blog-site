@@ -1,22 +1,31 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 // Thunk action to delete comment from the server
-export const deleteComment = createAsyncThunk(
-  "comments/deleteComment",
-  async (commentId: number) => {
-    await axios.delete(`http://localhost:3000/comments/${commentId}`);
-    return commentId;
-  }
-);
-
 export const fetchComments = createAsyncThunk(
-  "comments/fetchComments",
+  "comments/deleteComment",
   async () => {
-    const res = await axios.get("http://localhost:3000/comments");
-
-    return res.data;
+    // @ts-ignore
+    const auth = JSON.parse(localStorage.getItem("user"));
+    // console.log("auth", auth);
+    try {
+      const response = await axios.get(
+        "http://localhost:5000/api/v1/comment/allcomments",
+        {
+          headers: {
+            Authorization: "Bearer " + auth.token,
+          },
+        }
+      );
+      // console.log(response.data);
+      return response.data;
+    } catch (error) {
+      // If there's an error, you can handle it here
+      console.log(error);
+      throw error; // Rethrow the error to be caught by the rejection handler
+    }
   }
 );
 
@@ -48,14 +57,6 @@ const commentSlice = createSlice({
       state.isLoading = false;
       state.comments = [];
       state.error = action.error.message;
-    });
-    builder.addCase(deleteComment.fulfilled, (state: any, action: any) => {
-      state.isLoading = false;
-      // Remove the deleted comment from the state
-      state.comments = state.comments.filter(
-        (comment: any) => comment.id !== action.payload
-      );
-      state.error = null;
     });
   },
 });

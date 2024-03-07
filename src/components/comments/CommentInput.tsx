@@ -1,43 +1,52 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { MdEmojiEmotions } from "react-icons/md";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchComments } from "../../redux/commentSlice";
+import axios from "axios";
 
-const CommentInput = ({ comments, postDetail }: any) => {
-  const inputRef = useRef<any>();
+const CommentInput = ({ postDetail }: any) => {
+  useSelector((state: any) => state.tags);
   const [inputValue, setInputValue] = useState("");
   const dispatch = useDispatch();
 
-  const handleInputChnage = (e: any) => {
-    setInputValue(e.target.value);
-  };
+  //@ts-ignore\
+  const auth = JSON.parse(localStorage.getItem("user"));
+
   // Function to handle form submit
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const newComment = {
-      id: comments.length + 1,
-      user_id: 2,
-      post_id: postDetail.postDetail.id,
-      comment: inputRef.current?.value,
-      parent_comment_id: null,
+      userId: auth.user.id,
+      postId: postDetail._id,
+      comment: inputValue,
     };
-
-    setInputValue(" ");
-    const commentURL = "http://localhost:3000/comments";
-    await fetch(commentURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newComment),
-    });
-    // @ts-ignore
+    console.log("new comment", newComment);
+    setInputValue("");
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/v1/comment/",
+        newComment,
+        {
+          headers: {
+            Authorization: "Bearer " + auth.token,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error adding new post:", error);
+    }
+    //@ts-ignore
     dispatch(fetchComments());
   };
-
+  useEffect(() => {
+    //@ts-ignore
+    dispatch(fetchComments());
+  }, [dispatch]);
   return (
     <div className="flex gap-4 ">
       <div>
@@ -50,10 +59,9 @@ const CommentInput = ({ comments, postDetail }: any) => {
       <form onSubmit={handleSubmit} className="w-full items-center space-y-2 ">
         <input
           className="w-full border-b-1 focus:outline-none focus:border-b-2 focus:border-sky-600 "
-          ref={inputRef}
           type="text"
           value={inputValue}
-          onChange={handleInputChnage}
+          onChange={(e) => setInputValue(e.target.value)}
           placeholder="Add a comment..."
         />
         <div className="flex justify-between items-center">

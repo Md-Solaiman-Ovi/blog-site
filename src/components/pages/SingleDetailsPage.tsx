@@ -66,21 +66,24 @@ const SingleDetailsPage = () => {
           </div>
           <div className="grid grid-cols-1  md:grid-cols-4 gap-4">
             {blogs &&
-              blogs.slice(blogs.id, blogs.length - 1).map((blog: Blogs) => {
-                if (blog.category.name == "related")
-                  return (
-                    <RelatedBlogCard
-                      key={blog.id}
-                      id={blog.id}
-                      title={blog.title}
-                      slug={blog.slug}
-                      image={blog.image}
-                      desc={blog.desc}
-                      category={blog.category}
-                      tag={blog.tag}
-                    />
-                  );
-              })}
+              blogs
+                .slice(blogs.id, blogs.length - 1)
+                .map((blog: Blogs, index: number) => {
+                  // console.log("tags in details :", blog.tags);
+                  if (blog.category.name == "related")
+                    return (
+                      <RelatedBlogCard
+                        key={index}
+                        id={blog.id}
+                        title={blog.title}
+                        slug={blog.slug}
+                        image={blog.image}
+                        desc={blog.desc}
+                        category={blog.category}
+                        tags={blog.tags}
+                      />
+                    );
+                })}
           </div>
         </div>
       </div>

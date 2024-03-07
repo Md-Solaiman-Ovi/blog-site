@@ -29,14 +29,14 @@ const ViewReply = ({ id, post_id, reply }: any) => {
   return (
     <div className="container flex flex-col gap-4">
       {users.map((userinfo: Users) => {
-        if (userinfo.user_id == reply.user_id) {
+        if (userinfo._id == reply.userId) {
           return (
             <>
-              <div className="flex gap-4  " key={userinfo.user_id}>
+              <div className="flex gap-4  " key={userinfo._id}>
                 <div>
                   <img
                     className="h-7 w-7 object-cover object-top rounded-full "
-                    src={userinfo.user_image}
+                    src={userinfo.image}
                     alt=""
                   />
                 </div>
@@ -44,7 +44,7 @@ const ViewReply = ({ id, post_id, reply }: any) => {
                   <div className="flex justify-between items-center w-full">
                     <div className="flex items-center gap-2">
                       <div className="font-bold text-[14px] ">
-                        {userinfo.user_name}
+                        {userinfo.name}
                       </div>
                       <div className="text-[12px]">11 days ago</div>
                     </div>
@@ -57,7 +57,7 @@ const ViewReply = ({ id, post_id, reply }: any) => {
                       >
                         <HiOutlineDotsHorizontal className="w-5 h-5" />
                       </div>
-                      {showOption && <EditDeleteOption id={reply.id} />}
+                      {showOption && <EditDeleteOption id={reply._id} />}
                     </div>
                   </div>
                   <div className="text-start">{reply.comment}</div>

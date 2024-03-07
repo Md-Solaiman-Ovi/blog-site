@@ -3,8 +3,9 @@
 import axios from "axios";
 import AdminLayout from "../custom-components/AdminLayout";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { fetchTags } from "@/redux/tagSlice";
 // import { Tags } from "@/types/dataTypes";
 
 const TagUpdateForm = () => {
@@ -15,7 +16,7 @@ const TagUpdateForm = () => {
   const { tags } = useSelector((state: any) => state.tags);
 
   const filteredTag = tags.find((item: any) => item._id === params.id);
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   // @ts-ignore
   const auth = JSON.parse(localStorage.getItem("user"));
@@ -43,9 +44,12 @@ const TagUpdateForm = () => {
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);
-      throw error;
     }
   };
+  useEffect(() => {
+    //@ts-ignore
+    dispatch(fetchTags());
+  }, [dispatch]);
 
   return (
     <AdminLayout>

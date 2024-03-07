@@ -16,7 +16,7 @@ const Navbar = () => {
   useEffect(() => {
     // @ts-ignore
     dispatch(fetchCategories());
-  }, [categories]);
+  }, [dispatch]);
   const location = useLocation();
 
   const [dropDown, setDropDown] = useState(false);
@@ -118,10 +118,10 @@ const Navbar = () => {
             <div className="hover:text-sky-600 cursor-pointer">Following</div>
           </div>
           <div className="flex justify-evenly items-center space-x-8 ">
-            {categories.map((category: Categories) => {
-              console.log("category list", category);
+            {categories.map((category: Categories, index: number) => {
+              // console.log("category list", category);
               return (
-                <Link to={`/${category.categorySlug}`} key={category.id}>
+                <Link to={`/${category.categorySlug}`} key={index}>
                   <div
                     className={`hover:text-sky-600 cursor-pointer ${
                       location.pathname === `/${category.categorySlug}`

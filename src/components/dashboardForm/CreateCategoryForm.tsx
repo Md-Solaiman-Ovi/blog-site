@@ -45,7 +45,7 @@ const CreateCategoryForm = () => {
   useEffect(() => {
     //@ts-ignore
     dispatch(fetchCategories());
-  }, []);
+  }, [dispatch]);
   return (
     <AdminLayout>
       <form

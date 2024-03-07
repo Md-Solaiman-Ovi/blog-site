@@ -12,13 +12,13 @@ import { fetchComments } from "../../redux/commentSlice";
 import { Comments, Users } from "../../types/dataTypes";
 import EditDeleteOption from "./EditDeleteOption";
 
-const ViewComment = ({ id, user_id, comment, post_id }: Comments) => {
+const ViewComment = ({ _id, userId, comment, postId }: Comments) => {
   const [isInputOpen, setIsInputOpen] = useState(false);
   const [isOpenReply, setIsOpenReply] = useState(false);
   const { users } = useSelector((state: any) => state.users);
   const { comments } = useSelector((state: any) => state.comments);
   const [showOption, setShowOption] = useState(false);
-  const handleShowOption = (id: number) => {
+  const handleShowOption = (id: string) => {
     if (id) {
       setShowOption(!showOption);
     }
@@ -47,19 +47,19 @@ const ViewComment = ({ id, user_id, comment, post_id }: Comments) => {
   }, [dispatch]);
 
   const filteredReply = comments.filter((reply: Comments) => {
-    return reply.parent_comment_id == id;
+    return reply.parentCommentId == _id;
   });
 
   return (
     <div className="container flex flex-col gap-4">
       {users.map((userinfo: Users) => {
-        if (userinfo.user_id == user_id) {
+        if (userinfo._id == userId) {
           return (
-            <div className="flex gap-4 " key={userinfo.user_id}>
+            <div className="flex gap-4 " key={userinfo._id}>
               <div>
                 <img
                   className="h-10 w-10 object-cover object-top rounded-full "
-                  src={userinfo.user_image}
+                  src={userinfo.image}
                   alt=""
                 />
               </div>
@@ -68,7 +68,7 @@ const ViewComment = ({ id, user_id, comment, post_id }: Comments) => {
                   <div className="flex justify-between  items-center  w-full">
                     <div className="flex items-center gap-2">
                       <div className="font-bold text-[14px] ">
-                        {userinfo.user_name}
+                        {userinfo.name}
                       </div>
                       <div className="text-[12px]">11 days ago</div>
                     </div>
@@ -77,15 +77,15 @@ const ViewComment = ({ id, user_id, comment, post_id }: Comments) => {
                         className={`group-hover:block cursor-pointer ${
                           showOption == true ? "block" : "hidden"
                         } `}
-                        onClick={() => handleShowOption(id)}
+                        onClick={() => handleShowOption(_id)}
                       >
                         <HiOutlineDotsHorizontal className="w-5 h-5" />
                       </div>
                       {showOption && (
                         <EditDeleteOption
-                          id={id}
-                          post_id={post_id}
-                          user_id={user_id}
+                          id={_id}
+                          post_id={postId}
+                          user_id={userId}
                         />
                       )}
                     </div>
@@ -130,10 +130,10 @@ const ViewComment = ({ id, user_id, comment, post_id }: Comments) => {
                   filteredReply.map((reply: Comments) => {
                     return (
                       <ViewReply
-                        key={reply.id}
-                        id={id}
-                        user_id={user_id}
-                        post_id={post_id}
+                        key={reply._id}
+                        id={_id}
+                        user_id={userId}
+                        post_id={postId}
                         reply={reply}
                         isInputOpen={isInputOpen}
                         setIsInputOpen={setIsInputOpen}
@@ -146,8 +146,8 @@ const ViewComment = ({ id, user_id, comment, post_id }: Comments) => {
                 {isInputOpen && (
                   <RepliedInput
                     user={userinfo}
-                    id={id}
-                    post_id={post_id}
+                    id={_id}
+                    postId={postId}
                     controlState={controlState}
                   />
                 )}

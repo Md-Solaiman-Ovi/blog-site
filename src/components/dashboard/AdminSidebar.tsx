@@ -24,13 +24,13 @@ const AdminSidebar = () => {
     return user;
   };
   const navigate = useNavigate();
-  const [user, setUser] = useState(getUser());
+  const [user, setUser] = useState<any>(getUser());
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
     navigate("/");
   };
-  console.log(user);
+  console.log(user.message);
   return (
     <div className="my-5 flex flex-col gap-8 w-full  ">
       <div className="flex flex-col gap-2 text-start text-lg md:text-xl text-white px-3">

@@ -19,6 +19,8 @@ const AdminTags = () => {
     } catch (error) {
       console.error(error);
     }
+    // @ts-ignore
+    dispatch(fetchTags());
   };
 
   useEffect(() => {

@@ -12,7 +12,7 @@ import axios from "axios";
 
 const AdminUsers = () => {
   const { isLoading, users, error } = useSelector((state: any) => state.users);
-  console.log(isLoading, error);
+  // console.log(isLoading, error);
   const dispatch = useDispatch();
 
   const deleteUser = async (id: any) => {
@@ -24,6 +24,8 @@ const AdminUsers = () => {
     } catch (error) {
       console.error(error);
     }
+    // @ts-ignore
+    dispatch(fetchUsers());
   };
   useEffect(() => {
     // @ts-ignore
@@ -32,6 +34,8 @@ const AdminUsers = () => {
 
   return (
     <AdminLayout>
+      {isLoading && <div>Loading...</div>}
+      {error && <div>{error.message}</div>}
       <div className="flex flex-col gap-8 m-8 ">
         <div className=" border-1 rounded flex justify-between items-center ">
           <input

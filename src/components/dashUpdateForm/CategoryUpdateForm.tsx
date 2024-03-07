@@ -2,9 +2,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import axios from "axios";
 import AdminLayout from "../custom-components/AdminLayout";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { fetchCategories } from "@/redux/categorySlice";
 
 const CategoryUpdateForm = () => {
   const params = useParams();
@@ -15,7 +16,7 @@ const CategoryUpdateForm = () => {
   const filteredCategory = categories.find(
     (item: any) => item._id === params.id
   );
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   //@ts-ignore
   const auth = JSON.parse(localStorage.getItem("user"));
@@ -43,10 +44,14 @@ const CategoryUpdateForm = () => {
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);
-      throw error;
     }
+    //@ts-ignore
+    dispatch(fetchCategories());
   };
-
+  useEffect(() => {
+    //@ts-ignore
+    dispatch(fetchCategories());
+  }, [dispatch]);
   return (
     <AdminLayout>
       <form
