@@ -55,7 +55,7 @@ const CreateUserForm = () => {
   useEffect(() => {
     //@ts-ignore
     dispatch(fetchUsers());
-  }, []);
+  }, [dispatch]);
   // };
   // console.log("user after", users);
   return (
@@ -70,6 +70,9 @@ const CreateUserForm = () => {
       )}
       <form
         onSubmit={handleSubmit}
+        onKeyPress={(e) => {
+          e.key === "Enter" && e.preventDefault();
+        }}
         className="flex flex-col gap-8 m-8 bg-white p-4 rounded"
       >
         <div className=" border-1 rounded flex justify-between items-center bg-gray-500 p-2 text-white font-semibold text-lg">

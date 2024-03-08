@@ -10,13 +10,14 @@ import { fetchUsers } from "@/redux/userSlice";
 
 const UserUpdateForm = () => {
   const params = useParams();
-  const [showAlert, setShowAlert] = useState(false);
-  const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const { users } = useSelector((state: any) => state.users);
 
   const filteredUser = users.find((item: any) => item._id === params.id);
+  const [showAlert, setShowAlert] = useState(false);
+  const [userName, setUserName] = useState(filteredUser.name);
+  const [email, setEmail] = useState(filteredUser.email);
+  const [password, setPassword] = useState(filteredUser.password);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // @ts-ignore
@@ -70,6 +71,9 @@ const UserUpdateForm = () => {
       )}
       <form
         onSubmit={handleSubmit}
+        onKeyPress={(e) => {
+          e.key === "Enter" && e.preventDefault();
+        }}
         className="flex flex-col gap-8 m-8 bg-white p-4 rounded"
       >
         <div className=" border-1 rounded flex justify-between items-center bg-gray-500 p-2 text-white font-semibold text-lg">
@@ -82,7 +86,7 @@ const UserUpdateForm = () => {
             type="text"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
-            placeholder={filteredUser.name}
+            placeholder="Username"
             // required
           />
         </div>
@@ -93,7 +97,7 @@ const UserUpdateForm = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder={filteredUser.email}
+            placeholder="sample@gmail.com"
             // required
           />
         </div>
@@ -104,7 +108,7 @@ const UserUpdateForm = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder={filteredUser.password}
+            placeholder="Enter new password"
             // required
           />
         </div>

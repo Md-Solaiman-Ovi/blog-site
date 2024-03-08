@@ -56,7 +56,9 @@ const AdminBlogs = () => {
             <table className="table-auto border-collapse rounded w-full ">
               <thead className="sticky top-0">
                 <tr>
-                  <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Id</th>
+                  <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
+                    Serial no.
+                  </th>
                   <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
                     Title
                   </th>
@@ -69,6 +71,9 @@ const AdminBlogs = () => {
                   <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Tags</th>
                   <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Slug</th>
                   <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
+                    Image
+                  </th>
+                  <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
                     Actions
                   </th>
                 </tr>
@@ -77,7 +82,7 @@ const AdminBlogs = () => {
                 {blogs.map((blog: any, index: number) => {
                   return (
                     <tr className="border" key={index}>
-                      <td className="border px-4 py-2">{blog._id}</td>
+                      <td className="border px-4 py-2">{index + 1}</td>
                       <td className="border px-4 py-2">{blog.title}</td>
                       <td className="border px-4 py-2 text-justify ">
                         {getFirstNWords(blog.desc, 12)}...
@@ -91,6 +96,7 @@ const AdminBlogs = () => {
                         ))}
                       </td>
                       <td className="border px-4 py-2">{blog.slug}</td>
+                      <td className="border px-4 py-2">{blog.image}</td>
                       <td className="px-4 py-2 flex justify-center items-center gap-4">
                         <Link
                           to={`/update-blog-form/${blog._id}`}
