@@ -12,14 +12,31 @@ const CreateCategoryForm = () => {
   const { categories } = useSelector((state: any) => state.categories);
 
   const [categoryName, setCategoryName] = useState("");
+  const [errors, setErrors] = useState<Errors>({});
   // const [categorySlug, setCategorySlug] = useState("");
 
+  interface Errors {
+    categoryName?: string;
+    // Add more error messages as needed
+  }
   const dispatch = useDispatch();
   const navigate = useNavigate();
   //@ts-ignore
   const auth = JSON.parse(localStorage.getItem("user"));
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    const validationErrors: { [key: string]: string } = {};
+
+    // Validate each field
+    if (categoryName.trim() == "") {
+      validationErrors.categoryName = "title is required *";
+    }
+    // Check if there are any validation errors
+    if (Object.keys(validationErrors).length > 0) {
+      // Set validation errors in state
+      setErrors(validationErrors);
+      return; // Prevent form submission
+    }
     const newCategory = {
       title: categoryName,
       // categorySlug: categorySlug,
@@ -63,25 +80,18 @@ const CreateCategoryForm = () => {
         <div className="flex flex-col gap-4 text-start ">
           <div>Category Name</div>
           <input
-            className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
+            className={`${
+              categoryName == "" ? "border-gray-500 " : "border-green-500"
+            } border-[1px]  p-2 rounded focus:outline-[0.5px] focus:outline-none  `}
             type="text"
             value={categoryName}
             onChange={(e) => setCategoryName(e.target.value)}
             placeholder="Category name"
-            required
           />
+          {categoryName == "" && (
+            <span className="text-red-500">{errors.categoryName}</span>
+          )}
         </div>
-        {/* <div className="flex flex-col gap-4 text-start ">
-          <div>Category Slug</div>
-          <input
-            className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
-            type="text"
-            value={categorySlug}
-            onChange={(e) => setCategorySlug(e.target.value)}
-            placeholder="category-slug"
-            required
-          />
-        </div> */}
 
         <div className="bg-sky-500 px-4 py-1 hover:bg-sky-600 text-white font-bold rounded  self-start">
           <button type="submit"> Submit </button>

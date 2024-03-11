@@ -10,6 +10,7 @@ import { Categories } from "@/types/dataTypes";
 import { fetchTags } from "@/redux/tagSlice";
 import { fetchCategories } from "@/redux/categorySlice";
 import { fetchBlogs } from "@/redux/blogSlice";
+import { CiImageOn } from "react-icons/ci";
 
 const BlogUpdateForm = () => {
   const params = useParams();
@@ -31,8 +32,6 @@ const BlogUpdateForm = () => {
   const [file, setFile] = useState<any>(filteredBlog?.image);
   const [catItem, setCatItem] = useState(filteredBlog?.category);
 
-  // const [blogCategoryName, setBlogCategoryName] = useState("");
-  // const [blogTag, setBlogTag] = useState("");
   function handleChange(e: any) {
     console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
@@ -42,7 +41,7 @@ const BlogUpdateForm = () => {
     name: string;
   }
 
-  console.log("category item for uploads", filteredBlog?.category.name);
+  console.log("category item for uploads", filteredBlog?.category);
   const [selectedValues, setSelectedValues] = useState<Option[]>(
     filteredBlog?.tags
   );
@@ -75,8 +74,7 @@ const BlogUpdateForm = () => {
     setBlogSlug("");
     setBlogImage("");
     setBlogDesc("");
-    // setBlogCategoryName("");
-    // setBlogTag("");
+
     navigate("/admin-blogs");
 
     try {
@@ -97,15 +95,16 @@ const BlogUpdateForm = () => {
   };
   const handleSelectCat = (e: any) => {
     const selectedIndex = e.target.selectedIndex;
-    const selectedItemData = categories[selectedIndex - 1]; // -1 to account for the "select option" default
+    const selectedItemData = categories[selectedIndex]; // -1 to account for the "select option" default
+    console.log("selected item data", selectedItemData);
 
     // Update state with the selected item data
     setCatItem({
-      id: selectedItemData._id,
-      name: selectedItemData.categorySlug,
+      id: selectedItemData?._id,
+      name: selectedItemData?.title,
     });
   };
-
+  console.log("catitem", catItem);
   useEffect(() => {
     //@ts-ignore
     dispatch(fetchBlogs());
@@ -138,7 +137,7 @@ const BlogUpdateForm = () => {
                 placeholder={filteredBlog?.title}
               />
             </div>
-            <div className="flex flex-col gap-4 text-start w-full ">
+            {/* <div className="flex flex-col gap-4 text-start w-full ">
               <div>Slug</div>
               <input
                 className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
@@ -147,44 +146,49 @@ const BlogUpdateForm = () => {
                 onChange={(e) => setBlogSlug(e.target.value)}
                 placeholder={filteredBlog?.slug}
               />
-            </div>
+            </div> */}
           </div>
 
-          <div className="flex flex-col gap-4 text-start ">
-            <div>Description</div>
-            <input
-              className=" border-[1px] h-28 border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
-              type="text"
-              value={blogDesc}
-              onChange={(e) => setBlogDesc(e.target.value)}
-              placeholder={filteredBlog?.desc}
-            />
-          </div>
-          <div className="flex gap-8 w-full">
+          <div className="flex gap-8 ">
             <div className="flex flex-col gap-4 text-start w-full">
-              <div>Category</div>
-
-              <select
-                className="border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500"
-                onChange={handleSelectCat}
-              >
-                <option className="text-gray-100">select option</option>
-
-                {categories.map((item: Categories, index: number) => (
-                  <option key={index}>{item.title}</option>
-                ))}
-              </select>
+              <div>Description</div>
+              <textarea
+                className=" border-[1px] h-full border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
+                // type="text"
+                value={blogDesc}
+                onChange={(e) => setBlogDesc(e.target.value)}
+                placeholder="Write description"
+                cols={30}
+                rows={10}
+              ></textarea>
             </div>
-            <div className="flex flex-col gap-4 text-start w-full">
-              <h1>Select Tags</h1>
-              <Multiselect
-                options={tags}
-                selectedValues={selectedValues}
-                onSelect={onSelect}
-                onRemove={onRemove}
-                displayValue="title"
-                avoidHighlightFirstOption={true}
-              />
+            <div className="flex flex-col gap-8 w-full">
+              <div className="flex flex-col gap-4 text-start ">
+                <div>Category</div>
+
+                <select
+                  className="border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500"
+                  onChange={handleSelectCat}
+                  value={catItem?.name}
+                >
+                  {/* <option className="text-gray-100">select option</option> */}
+
+                  {categories.map((item: Categories, index: number) => (
+                    <option key={index}>{item.title}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="flex flex-col gap-4 text-start">
+                <h1>Select Tags</h1>
+                <Multiselect
+                  options={tags}
+                  selectedValues={selectedValues}
+                  onSelect={onSelect}
+                  onRemove={onRemove}
+                  displayValue="title"
+                  avoidHighlightFirstOption={true}
+                />
+              </div>
             </div>
           </div>
           <div className="flex flex-col gap-4 text-start ">
@@ -201,11 +205,13 @@ const BlogUpdateForm = () => {
                 onChange={handleChange}
               />
 
-              {/* {file ? ( */}
-              <img className="object-cover h-28 rounded-t" src={file} />
-              {/* ) : ( */}
-              {/* <CiImageOn className="h-10 w-10 self-center " /> */}
-              {/* )} */}
+              {file ? (
+                <img className="object-cover h-28 rounded-t" src={file} />
+              ) : (
+                <div className=" flex justify-center items-center self-center border-[1px] w-full h-28 rounded-t">
+                  <CiImageOn className="h-10 w-10 self-center " />
+                </div>
+              )}
 
               <label
                 htmlFor="img"
@@ -215,7 +221,7 @@ const BlogUpdateForm = () => {
               </label>
             </div>
           </div>
-          <div className="flex flex-col gap-4 text-start ">
+          {/* <div className="flex flex-col gap-4 text-start ">
             <div>Image</div>
             <input
               className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
@@ -224,7 +230,7 @@ const BlogUpdateForm = () => {
               onChange={(e) => setBlogImage(e.target.value)}
               placeholder={filteredBlog?.image}
             />
-          </div>
+          </div> */}
 
           <div className="bg-sky-500 px-4 py-1 hover:bg-sky-600 text-white font-bold rounded  self-start">
             <button> Update </button>

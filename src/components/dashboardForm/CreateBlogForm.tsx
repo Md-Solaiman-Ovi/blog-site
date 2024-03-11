@@ -20,6 +20,7 @@ const CreateBlogForm = () => {
   const [blogSlug, setBlogSlug] = useState("");
   const [blogImage, setBlogImage] = useState("");
   const [blogDesc, setBlogDesc] = useState("");
+  const [errors, setErrors] = useState<Errors>({});
   // const [blogCategoryName, setBlogCategoryName] = useState("");
 
   const { categories } = useSelector((state: any) => state.categories);
@@ -28,6 +29,16 @@ const CreateBlogForm = () => {
   interface Option {
     id: number;
     name: string;
+  }
+  interface Errors {
+    titleName?: string;
+    blogSlug?: string;
+    blogDesc?: string;
+    file?: string;
+    selectedValues?: string;
+    catItem?: string;
+
+    // Add more error messages as needed
   }
   // const [options, setOptions] = useState<Option[]>([]);
   const [catItem, setCatItem] = useState({ id: "", name: "" });
@@ -55,6 +66,35 @@ const CreateBlogForm = () => {
   const auth = JSON.parse(localStorage.getItem("user"));
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    // Initialize validation errors object
+    const validationErrors: { [key: string]: string } = {};
+
+    // Validate each field
+    if (!titleName.trim()) {
+      validationErrors.titleName = "Title is required *";
+    }
+    if (!blogSlug.trim()) {
+      validationErrors.blogSlug = "Slug is required *";
+    }
+    if (!blogDesc.trim()) {
+      validationErrors.blogDesc = "Description is required *";
+    }
+    if (!catItem.id) {
+      validationErrors.catItem = "Category is required *";
+    }
+    if (selectedValues.length === 0) {
+      validationErrors.selectedValues = "At least one tag must be selected *";
+    }
+    if (!file) {
+      validationErrors.file = "Image is required *";
+    }
+
+    // Check if there are any validation errors
+    if (Object.keys(validationErrors).length > 0) {
+      // Set validation errors in state
+      setErrors(validationErrors);
+      return; // Prevent form submission
+    }
 
     const newCategory = {
       title: titleName,
@@ -131,6 +171,10 @@ const CreateBlogForm = () => {
               onChange={(e) => setTitleName(e.target.value)}
               placeholder="title"
             />
+
+            {errors.titleName && (
+              <span className="text-red-500">{errors.titleName}</span>
+            )}
           </div>
           <div className="flex flex-col gap-4 text-start  w-full">
             <div>Slug</div>
@@ -143,42 +187,58 @@ const CreateBlogForm = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-4 text-start ">
-          <div>Description</div>
-          <textarea></textarea>
-          <input
-            className=" border-[1px] h-28 border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
-            type="text"
-            value={blogDesc}
-            onChange={(e) => setBlogDesc(e.target.value)}
-            placeholder="description"
-          />
-        </div>
-        <div className="flex gap-8 w-full">
+        <div className="flex gap-8">
           <div className="flex flex-col gap-4 text-start w-full">
-            <div>Category</div>
+            <div>Description</div>
+            <textarea
+              className=" border-[1px] h-full border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
+              // type="text"
+              value={blogDesc}
+              onChange={(e) => setBlogDesc(e.target.value)}
+              placeholder="Write description..."
+              cols={30}
+              rows={10}
+            ></textarea>
 
-            <select
-              className="border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500"
-              onChange={handleSelectCat}
-            >
-              <option className="text-gray-100">select option</option>
-
-              {categories.map((item: Categories, index: number) => (
-                <option key={index}>{item.title}</option>
-              ))}
-            </select>
+            {errors.blogDesc && (
+              <span className="text-red-500">{errors.blogDesc}</span>
+            )}
           </div>
-          <div className="flex flex-col gap-4 text-start w-full">
-            <h1>Select Tags</h1>
-            <Multiselect
-              options={tags}
-              selectedValues={selectedValues}
-              onSelect={onSelect}
-              onRemove={onRemove}
-              displayValue="title"
-              avoidHighlightFirstOption={true}
-            />
+          <div className="flex flex-col gap-8 w-full">
+            <div className="flex flex-col gap-4 text-start w-full">
+              <div>Category</div>
+
+              <select
+                className="border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500"
+                onChange={handleSelectCat}
+              >
+                {/* <option value="" disabled={true}>
+                  select option
+                </option> */}
+
+                {categories.map((item: Categories, index: number) => (
+                  <option key={index}>{item.title}</option>
+                ))}
+              </select>
+              {errors.catItem && (
+                <span className="text-red-500">{errors.catItem}</span>
+              )}
+            </div>
+            <div className="flex flex-col gap-4 text-start w-full">
+              <h1>Select Tags</h1>
+              <Multiselect
+                options={tags}
+                selectedValues={selectedValues}
+                onSelect={onSelect}
+                onRemove={onRemove}
+                displayValue="title"
+                avoidHighlightFirstOption={true}
+                placeholder="select tags"
+              />
+              {errors.selectedValues && (
+                <span className="text-red-500">{errors.selectedValues}</span>
+              )}
+            </div>
           </div>
         </div>
 
@@ -196,11 +256,13 @@ const CreateBlogForm = () => {
               onChange={handleChange}
             />
 
-            {/* {file ? ( */}
-            <img className="object-cover h-28 rounded-t" src={file} />
-            {/* ) : ( */}
-            {/* <CiImageOn className="h-10 w-10 self-center " /> */}
-            {/* )} */}
+            {file ? (
+              <img className="object-cover h-28 rounded-t" src={file} />
+            ) : (
+              <div className=" flex justify-center items-center self-center border-[1px] w-full h-28 rounded-t">
+                <CiImageOn className="h-10 w-10 self-center " />
+              </div>
+            )}
 
             <label
               htmlFor="img"
@@ -209,6 +271,8 @@ const CreateBlogForm = () => {
               Upload
             </label>
           </div>
+
+          {errors.file && <span className="text-red-500">{errors.file}</span>}
         </div>
 
         <div className="bg-sky-500 px-4 py-1 hover:bg-sky-600 text-white font-bold rounded  self-start">
