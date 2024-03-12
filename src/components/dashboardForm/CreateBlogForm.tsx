@@ -15,13 +15,20 @@ import { fetchCategories } from "@/redux/categorySlice";
 import { fetchTags } from "@/redux/tagSlice";
 import { Categories } from "@/types/dataTypes";
 
+import { EditorState } from "draft-js";
+import { Editor } from "react-draft-wysiwyg";
+
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+
 const CreateBlogForm = () => {
   const [titleName, setTitleName] = useState("");
-  const [blogSlug, setBlogSlug] = useState("");
-  const [blogImage, setBlogImage] = useState("");
+  // const [blogImage, setBlogImage] = useState("");
   const [blogDesc, setBlogDesc] = useState("");
   const [errors, setErrors] = useState<Errors>({});
   // const [blogCategoryName, setBlogCategoryName] = useState("");
+  const [editorState, setEditorState] = useState(() =>
+    EditorState.createEmpty()
+  );
 
   const { categories } = useSelector((state: any) => state.categories);
   const { tags } = useSelector((state: any) => state.tags);
@@ -32,7 +39,8 @@ const CreateBlogForm = () => {
   }
   interface Errors {
     titleName?: string;
-    blogSlug?: string;
+
+    editorState?: string;
     blogDesc?: string;
     file?: string;
     selectedValues?: string;
@@ -40,6 +48,7 @@ const CreateBlogForm = () => {
 
     // Add more error messages as needed
   }
+
   // const [options, setOptions] = useState<Option[]>([]);
   const [catItem, setCatItem] = useState({ id: "", name: "" });
 
@@ -73,12 +82,10 @@ const CreateBlogForm = () => {
     if (!titleName.trim()) {
       validationErrors.titleName = "Title is required *";
     }
-    if (!blogSlug.trim()) {
-      validationErrors.blogSlug = "Slug is required *";
-    }
-    if (!blogDesc.trim()) {
-      validationErrors.blogDesc = "Description is required *";
-    }
+
+    // if (!editorState.trim()) {
+    //   validationErrors.editorState = "Description is required *";
+    // }
     if (!catItem.id) {
       validationErrors.catItem = "Category is required *";
     }
@@ -96,17 +103,15 @@ const CreateBlogForm = () => {
       return; // Prevent form submission
     }
 
-    const newCategory = {
+    const newBlog = {
       title: titleName,
-      slug: blogSlug,
       image: file,
-      desc: blogDesc,
+      desc: editorState,
       category: catItem,
       tags: selectedValues,
     };
     setTitleName("");
-    setBlogSlug("");
-    setBlogImage("");
+    // setBlogImage("");
     setBlogDesc("");
     // setBlogCategoryName("");
     // setBlogTag("");
@@ -115,7 +120,7 @@ const CreateBlogForm = () => {
     try {
       const response = await axios.post(
         "http://localhost:5000/api/v1/blog/",
-        newCategory,
+        newBlog,
         {
           headers: {
             Authorization: "Bearer " + auth.token,
@@ -144,7 +149,7 @@ const CreateBlogForm = () => {
     // Update state with the selected item data
     setCatItem({
       id: selectedItemData._id,
-      name: selectedItemData.categorySlug,
+      name: selectedItemData.title,
     });
   };
 
@@ -176,21 +181,11 @@ const CreateBlogForm = () => {
               <span className="text-red-500">{errors.titleName}</span>
             )}
           </div>
-          <div className="flex flex-col gap-4 text-start  w-full">
-            <div>Slug</div>
-            <input
-              className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
-              type="text"
-              value={blogSlug}
-              onChange={(e) => setBlogSlug(e.target.value)}
-              placeholder="slug-1"
-            />
-          </div>
         </div>
         <div className="flex gap-8">
           <div className="flex flex-col gap-4 text-start w-full">
             <div>Description</div>
-            <textarea
+            {/* <textarea
               className=" border-[1px] h-full border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
               // type="text"
               value={blogDesc}
@@ -198,7 +193,14 @@ const CreateBlogForm = () => {
               placeholder="Write description..."
               cols={30}
               rows={10}
-            ></textarea>
+            ></textarea> */}
+            <div className="border-[1px] h-full border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500 ">
+              <Editor
+                editorState={editorState}
+                onEditorStateChange={setEditorState}
+                placeholder="Write description..."
+              />
+            </div>
 
             {errors.blogDesc && (
               <span className="text-red-500">{errors.blogDesc}</span>

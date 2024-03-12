@@ -51,6 +51,9 @@ const AdminTags = () => {
           <table className="table-auto border-collapse rounded w-full ">
             <thead className="sticky top-0">
               <tr>
+                <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
+                  Serial no.
+                </th>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Title</th>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
                   Tag Slug
@@ -61,9 +64,10 @@ const AdminTags = () => {
               </tr>
             </thead>
             <tbody className=" bg-white ">
-              {tags.map((tag: any) => {
+              {tags.map((tag: any, index: number) => {
                 return (
-                  <tr key={tag._id}>
+                  <tr key={index}>
+                    <td className="border px-4 py-2">{index + 1}</td>
                     <td className="border px-4 py-2">{tag.title}</td>
 
                     <td className="border px-4 py-2">{tag.tagSlug}</td>

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { fetchBlogs } from "@/redux/blogSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import AdminLayout from "../custom-components/AdminLayout";
 // import { Button } from "../ui/button";
@@ -9,10 +9,26 @@ import { getFirstNWords } from "@/redux/globalFunctions";
 import { FaPlusCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Blogs } from "@/types/dataTypes";
 const AdminBlogs = () => {
   const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
 
+  const [searchItem, setSearchItem] = useState("");
+  const [filteredBlogs, setFilteredBlogs] = useState(blogs);
   const dispatch = useDispatch();
+
+  const handleInputChnage = (e: any) => {
+    const searchTerm = e.target.value;
+    setSearchItem(searchTerm);
+
+    const filteredItem = blogs.filter((blog: Blogs) => {
+      return blog.title.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    setFilteredBlogs(filteredItem);
+    // Save filtered blogs to localStorage
+    localStorage.setItem("filteredBlogs", JSON.stringify(filteredItem));
+  };
+  // console.log("filtered blogs : ", blogs);
 
   const deleteBlog = async (id: any) => {
     try {
@@ -30,6 +46,9 @@ const AdminBlogs = () => {
     // @ts-ignore
     dispatch(fetchBlogs());
   }, [dispatch]);
+  useEffect(() => {
+    setFilteredBlogs(blogs);
+  }, [blogs]);
 
   return (
     <AdminLayout>
@@ -40,7 +59,9 @@ const AdminBlogs = () => {
           <div className=" border-1 rounded  flex justify-between items-center ">
             <input
               type="text"
-              placeholder="Search blogs here"
+              value={searchItem}
+              onChange={handleInputChnage}
+              placeholder="Type to search"
               className="border-2 w-1/5 p-2  rounded"
             />
             <Link
@@ -79,7 +100,7 @@ const AdminBlogs = () => {
                 </tr>
               </thead>
               <tbody className=" bg-white ">
-                {blogs.map((blog: any, index: number) => {
+                {filteredBlogs.map((blog: any, index: number) => {
                   return (
                     <tr className="border" key={index}>
                       <td className="border px-4 py-2">{index + 1}</td>

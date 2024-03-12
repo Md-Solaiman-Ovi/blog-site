@@ -53,6 +53,9 @@ const AdminCategories = () => {
           <table className="table-auto border-collapse rounded w-full ">
             <thead className="sticky top-0">
               <tr>
+                <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
+                  Serial no.
+                </th>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Title</th>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
                   Category Slug
@@ -66,6 +69,7 @@ const AdminCategories = () => {
               {categories.map((category: any, index: number) => {
                 return (
                   <tr className="border" key={index}>
+                    <td className="border px-4 py-2">{index + 1}</td>
                     <td className="border px-4 py-2">{category.title}</td>
 
                     <td className="border px-4 py-2">

@@ -56,6 +56,9 @@ const AdminUsers = () => {
             <thead className="sticky top-0">
               <tr>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
+                  Serial no.
+                </th>
+                <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
                   Username
                 </th>
                 <th className="px-4 py-2 bg-gray-200 text-gray-600 ">Email</th>
@@ -68,6 +71,7 @@ const AdminUsers = () => {
               {users.map((user: any, index: number) => {
                 return (
                   <tr key={index}>
+                    <td className="border px-4 py-2">{index + 1}</td>
                     <td className="border px-4 py-2">{user.name}</td>
                     <td className="border px-4 py-2">{user.email}</td>
                     <td className="border px-4 py-2 flex justify-center items-center gap-4">
