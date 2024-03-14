@@ -8,67 +8,60 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Multiselect from "multiselect-react-dropdown";
 import { CiImageOn } from "react-icons/ci";
-
-// import { fetchBlogs } from "@/redux/blogSlice";
-// import Select from "react-select";
 import { fetchCategories } from "@/redux/categorySlice";
 import { fetchTags } from "@/redux/tagSlice";
 import { Categories } from "@/types/dataTypes";
 
-import { EditorState } from "draft-js";
-import { Editor } from "react-draft-wysiwyg";
-
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 const CreateBlogForm = () => {
   const [titleName, setTitleName] = useState("");
   // const [blogImage, setBlogImage] = useState("");
   const [blogDesc, setBlogDesc] = useState("");
+  const [catItem, setCatItem] = useState({ id: "", name: "" });
+  const [selectedValues, setSelectedValues] = useState<Option[]>([]);
+  const [file, setFile] = useState<any>();
   const [errors, setErrors] = useState<Errors>({});
-  // const [blogCategoryName, setBlogCategoryName] = useState("");
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
 
   const { categories } = useSelector((state: any) => state.categories);
   const { tags } = useSelector((state: any) => state.tags);
-
   interface Option {
     id: number;
     name: string;
   }
   interface Errors {
     titleName?: string;
-
     editorState?: string;
     blogDesc?: string;
     file?: string;
     selectedValues?: string;
     catItem?: string;
-
-    // Add more error messages as needed
   }
 
-  // const [options, setOptions] = useState<Option[]>([]);
-  const [catItem, setCatItem] = useState({ id: "", name: "" });
-
-  const [selectedValues, setSelectedValues] = useState<Option[]>([]);
-
+  const handleChange = (e: any) => {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+  };
   // Function triggered when an option is selected
   const onSelect = (selectedList: any) => {
     setSelectedValues(selectedList);
     console.log("Selected List:", selectedList);
   };
-
   // Function triggered when an option is removed
   const onRemove = (selectedList: any) => {
     setSelectedValues(selectedList);
   };
-  const [file, setFile] = useState<any>();
-  function handleChange(e: any) {
-    console.log(e.target.files);
-    setFile(URL.createObjectURL(e.target.files[0]));
-  }
+  const handleSelectCat = (e: any) => {
+    const selectedIndex = e.target.selectedIndex;
+    const selectedItemData = categories[selectedIndex - 1]; // -1 to account for the "select option" default
+    // Update state with the selected item data
+    setCatItem({
+      id: selectedItemData._id,
+      name: selectedItemData.title,
+    });
+  };
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   //@ts-ignore
@@ -77,12 +70,10 @@ const CreateBlogForm = () => {
     e.preventDefault();
     // Initialize validation errors object
     const validationErrors: { [key: string]: string } = {};
-
     // Validate each field
     if (!titleName.trim()) {
       validationErrors.titleName = "Title is required *";
     }
-
     // if (!editorState.trim()) {
     //   validationErrors.editorState = "Description is required *";
     // }
@@ -95,7 +86,6 @@ const CreateBlogForm = () => {
     if (!file) {
       validationErrors.file = "Image is required *";
     }
-
     // Check if there are any validation errors
     if (Object.keys(validationErrors).length > 0) {
       // Set validation errors in state
@@ -106,7 +96,7 @@ const CreateBlogForm = () => {
     const newBlog = {
       title: titleName,
       image: file,
-      desc: editorState,
+      desc: blogDesc,
       category: catItem,
       tags: selectedValues,
     };
@@ -116,6 +106,8 @@ const CreateBlogForm = () => {
     // setBlogCategoryName("");
     // setBlogTag("");
     navigate("/admin-blogs");
+    console.log("blog desc:", blogDesc);
+    console.log("blog data:", newBlog);
 
     try {
       const response = await axios.post(
@@ -140,18 +132,7 @@ const CreateBlogForm = () => {
     dispatch(fetchCategories());
     //@ts-ignore
     dispatch(fetchTags());
-    // setOptions(tags);
   }, [dispatch]);
-  const handleSelectCat = (e: any) => {
-    const selectedIndex = e.target.selectedIndex;
-    const selectedItemData = categories[selectedIndex - 1]; // -1 to account for the "select option" default
-
-    // Update state with the selected item data
-    setCatItem({
-      id: selectedItemData._id,
-      name: selectedItemData.title,
-    });
-  };
 
   return (
     <AdminLayout>
@@ -185,23 +166,19 @@ const CreateBlogForm = () => {
         <div className="flex gap-8">
           <div className="flex flex-col gap-4 text-start w-full">
             <div>Description</div>
-            {/* <textarea
-              className=" border-[1px] h-full border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
-              // type="text"
-              value={blogDesc}
-              onChange={(e) => setBlogDesc(e.target.value)}
-              placeholder="Write description..."
-              cols={30}
-              rows={10}
-            ></textarea> */}
-            <div className="border-[1px] h-full border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500 ">
-              <Editor
-                editorState={editorState}
-                onEditorStateChange={setEditorState}
-                placeholder="Write description..."
-              />
-            </div>
-
+            <div className="border-[1px] h-full border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500 "></div>
+            <CKEditor
+              editor={ClassicEditor}
+              data={blogDesc}
+              onReady={(editor) => {
+                // You can store the "editor" and use when it is needed.
+                console.log("Editor is ready to use!", editor);
+              }}
+              onChange={(e: any, editor) => {
+                const data = editor.getData();
+                setBlogDesc(data);
+              }}
+            />
             {errors.blogDesc && (
               <span className="text-red-500">{errors.blogDesc}</span>
             )}

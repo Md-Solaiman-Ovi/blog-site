@@ -11,6 +11,8 @@ import { fetchTags } from "@/redux/tagSlice";
 import { fetchCategories } from "@/redux/categorySlice";
 import { fetchBlogs } from "@/redux/blogSlice";
 import { CiImageOn } from "react-icons/ci";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 const BlogUpdateForm = () => {
   const params = useParams();
@@ -26,7 +28,6 @@ const BlogUpdateForm = () => {
   // const [blog, setBlog] = useState({});
 
   const [titleName, setTitleName] = useState(filteredBlog?.title);
-  const [blogSlug, setBlogSlug] = useState(filteredBlog?.slug);
   const [blogImage, setBlogImage] = useState(filteredBlog?.image);
   const [blogDesc, setBlogDesc] = useState(filteredBlog?.desc);
   const [file, setFile] = useState<any>(filteredBlog?.image);
@@ -61,26 +62,23 @@ const BlogUpdateForm = () => {
   const auth = JSON.parse(localStorage.getItem("user"));
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const newCategory = {
+    const newBlog = {
       postId: params.id,
       title: titleName,
-      slug: blogSlug,
-      image: blogImage,
       desc: blogDesc,
+      image: blogImage,
       category: catItem,
       tags: selectedValues,
     };
     setTitleName("");
-    setBlogSlug("");
     setBlogImage("");
-    setBlogDesc("");
 
     navigate("/admin-blogs");
 
     try {
       const response = await axios.put(
         "http://localhost:5000/api/v1/blog/update",
-        newCategory,
+        newBlog,
         {
           headers: {
             Authorization: "Bearer " + auth.token,
@@ -137,20 +135,10 @@ const BlogUpdateForm = () => {
                 placeholder={filteredBlog?.title}
               />
             </div>
-            {/* <div className="flex flex-col gap-4 text-start w-full ">
-              <div>Slug</div>
-              <input
-                className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
-                type="text"
-                value={blogSlug}
-                onChange={(e) => setBlogSlug(e.target.value)}
-                placeholder={filteredBlog?.slug}
-              />
-            </div> */}
           </div>
 
           <div className="flex gap-8 ">
-            <div className="flex flex-col gap-4 text-start w-full">
+            {/* <div className="flex flex-col gap-4 text-start w-full">
               <div>Description</div>
               <textarea
                 className=" border-[1px] h-full border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
@@ -161,6 +149,22 @@ const BlogUpdateForm = () => {
                 cols={30}
                 rows={10}
               ></textarea>
+            </div> */}
+            <div className="flex flex-col gap-4 text-start w-full">
+              <div>Description</div>
+              <div className="border-[1px] h-full border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500 "></div>
+              <CKEditor
+                editor={ClassicEditor}
+                data={blogDesc}
+                onReady={(editor) => {
+                  // You can store the "editor" and use when it is needed.
+                  console.log("Editor is ready to use!", editor);
+                }}
+                onChange={(e: any, editor) => {
+                  const data = editor.getData();
+                  setBlogDesc(data);
+                }}
+              />
             </div>
             <div className="flex flex-col gap-8 w-full">
               <div className="flex flex-col gap-4 text-start ">

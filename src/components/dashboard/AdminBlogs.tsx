@@ -10,6 +10,7 @@ import { FaPlusCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Blogs } from "@/types/dataTypes";
+import ReactHtmlParser from "react-html-parser";
 const AdminBlogs = () => {
   const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
 
@@ -74,7 +75,7 @@ const AdminBlogs = () => {
           </div>
 
           <div className="h-[600px] md:h-[700px] overflow-auto md:overflow-y-scroll">
-            <table className="table-auto border-collapse rounded w-full ">
+            <table className="table-auto border-collapse rounded ">
               <thead className="sticky top-0">
                 <tr>
                   <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
@@ -105,8 +106,11 @@ const AdminBlogs = () => {
                     <tr className="border" key={index}>
                       <td className="border px-4 py-2">{index + 1}</td>
                       <td className="border px-4 py-2">{blog.title}</td>
+                      {/* <td className="border px-4 py-2">
+                        {ReactHtmlParser(blog.desc)}
+                      </td> */}
                       <td className="border px-4 py-2 text-justify ">
-                        {getFirstNWords(blog.desc, 12)}...
+                        {ReactHtmlParser(getFirstNWords(blog.desc, 12))}...
                       </td>
                       <td className="border px-4 py-2">{blog.category.name}</td>
                       <td className=" px-4 py-2  gap-1 ">

@@ -10,7 +10,7 @@ import { Blogs } from "../../types/dataTypes";
 
 const CategoryPage = () => {
   const params = useParams();
-  // console.log("category page params", params);
+  console.log("category page params", params);
   const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -28,6 +28,7 @@ const CategoryPage = () => {
         {blogs &&
           blogs.map((blog: Blogs, index: number) => {
             if (blog.category.name == params.categorySlug) {
+              console.log(blog.category.name, params.title);
               return (
                 <RelatedBlogCard
                   key={index}
