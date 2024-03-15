@@ -13,6 +13,7 @@ import { Blogs } from "../../types/dataTypes";
 
 const SingleDetailsPage = () => {
   const params = useParams();
+  console.log("single details params", params);
   const { blogs, error } = useSelector((state: any) => state.blogs);
   const { tags } = useSelector((state: any) => state.tags);
   const dispatch = useDispatch();

@@ -19,11 +19,10 @@ const BlogUpdateForm = () => {
   const dispatch = useDispatch();
   const { blogs } = useSelector((state: any) => state.blogs);
   const { categories } = useSelector((state: any) => state.categories);
-  console.log("categories: ", categories);
+  // console.log("categories: ", categories);
   const { tags } = useSelector((state: any) => state.tags);
-
   const filteredBlog = blogs.find((item: any) => item._id === params.id);
-  console.log("blogsssss", filteredBlog);
+  // console.log("blogsssss", filteredBlog);
   // TODO: update variable accordingly
   // const [blog, setBlog] = useState({});
 
@@ -42,21 +41,30 @@ const BlogUpdateForm = () => {
     name: string;
   }
 
-  console.log("category item for uploads", filteredBlog?.category);
   const [selectedValues, setSelectedValues] = useState<Option[]>(
     filteredBlog?.tags
   );
   // Function triggered when an option is selected
   const onSelect = (selectedList: any) => {
     setSelectedValues(selectedList);
-    console.log("Selected List:", selectedList);
   };
 
   // Function triggered when an option is removed
   const onRemove = (selectedList: any) => {
     setSelectedValues(selectedList);
   };
+  const handleSelectCat = (e: any) => {
+    const selectedIndex = e.target.selectedIndex;
+    const selectedItemData = categories[selectedIndex]; // -1 to account for the "select option" default
+    // console.log("selected item data", selectedItemData);
 
+    // Update state with the selected item data
+    setCatItem({
+      id: selectedItemData?._id,
+      name: selectedItemData?.title,
+    });
+  };
+  // console.log("updated category", catItem);
   const navigate = useNavigate();
   //@ts-ignore
   const auth = JSON.parse(localStorage.getItem("user"));
@@ -73,8 +81,7 @@ const BlogUpdateForm = () => {
     setTitleName("");
     setBlogImage("");
 
-    navigate("/admin-blogs");
-
+    // console.log("blog desc update", newBlog);
     try {
       const response = await axios.put(
         "http://localhost:5000/api/v1/blog/update",
@@ -86,23 +93,17 @@ const BlogUpdateForm = () => {
           },
         }
       );
+      navigate("/admin-blogs");
+      console.log("befpre submit", newBlog);
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);
     }
+    //@ts-ignore
+    dispatch(fetchBlogs());
   };
-  const handleSelectCat = (e: any) => {
-    const selectedIndex = e.target.selectedIndex;
-    const selectedItemData = categories[selectedIndex]; // -1 to account for the "select option" default
-    console.log("selected item data", selectedItemData);
 
-    // Update state with the selected item data
-    setCatItem({
-      id: selectedItemData?._id,
-      name: selectedItemData?.title,
-    });
-  };
-  console.log("catitem", catItem);
+  // console.log("catitem", catItem);
   useEffect(() => {
     //@ts-ignore
     dispatch(fetchBlogs());
@@ -163,6 +164,7 @@ const BlogUpdateForm = () => {
                 onChange={(e: any, editor) => {
                   const data = editor.getData();
                   setBlogDesc(data);
+                  // console.log(data);
                 }}
               />
             </div>
@@ -177,8 +179,8 @@ const BlogUpdateForm = () => {
                 >
                   {/* <option className="text-gray-100">select option</option> */}
 
-                  {categories.map((item: Categories, index: number) => (
-                    <option key={index}>{item.title}</option>
+                  {categories.map((item: Categories) => (
+                    <option key={item.id}>{item.title}</option>
                   ))}
                 </select>
               </div>

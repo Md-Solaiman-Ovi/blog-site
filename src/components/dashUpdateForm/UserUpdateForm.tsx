@@ -33,7 +33,7 @@ const UserUpdateForm = () => {
     setUserName("");
     setEmail("");
     setPassword("");
-    navigate("/admin-users");
+
     try {
       const response = await axios.put(
         "http://localhost:5000/api/v1/user/update",
@@ -50,6 +50,7 @@ const UserUpdateForm = () => {
       setTimeout(() => {
         setShowAlert(false);
       }, 3000);
+      navigate("/admin-users");
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);

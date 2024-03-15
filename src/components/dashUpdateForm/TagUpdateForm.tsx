@@ -45,9 +45,7 @@ const TagUpdateForm = () => {
       title: tagName,
       // tagSlug: tagSlug,
     };
-    setTagName("");
-    // setTagSlug("");
-    navigate("/admin-tags");
+
     try {
       const response = await axios.put(
         "http://localhost:5000/api/v1/tag/update",
@@ -59,6 +57,7 @@ const TagUpdateForm = () => {
           },
         }
       );
+      navigate("/admin-tags");
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);

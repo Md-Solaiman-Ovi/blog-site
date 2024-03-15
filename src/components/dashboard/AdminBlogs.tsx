@@ -75,7 +75,7 @@ const AdminBlogs = () => {
           </div>
 
           <div className="h-[600px] md:h-[700px] overflow-auto md:overflow-y-scroll">
-            <table className="table-auto border-collapse rounded ">
+            <table className="table-auto border-collapse rounded  w-full">
               <thead className="sticky top-0">
                 <tr>
                   <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
@@ -110,7 +110,7 @@ const AdminBlogs = () => {
                         {ReactHtmlParser(blog.desc)}
                       </td> */}
                       <td className="border px-4 py-2 text-justify ">
-                        {ReactHtmlParser(getFirstNWords(blog.desc, 12))}...
+                        {ReactHtmlParser(getFirstNWords(blog.desc, 15))}
                       </td>
                       <td className="border px-4 py-2">{blog.category.name}</td>
                       <td className=" px-4 py-2  gap-1 ">

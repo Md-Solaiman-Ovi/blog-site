@@ -11,17 +11,15 @@ const CategoryUpdateForm = () => {
   const params = useParams();
   const { categories } = useSelector((state: any) => state.categories);
 
-  const filteredCategory = categories.find(
+  const filteredCategory = categories?.find(
     (item: any) => item._id === params.id
   );
-  const [categoryName, setCategoryName] = useState(filteredCategory.title);
-  // const [categorySlug, setCategorySlug] = useState("");
+  const [categoryName, setCategoryName] = useState(filteredCategory?.title);
+
   const [errors, setErrors] = useState<Errors>({});
-  // const [categorySlug, setCategorySlug] = useState("");
 
   interface Errors {
     categoryName?: string;
-    // Add more error messages as needed
   }
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -44,11 +42,8 @@ const CategoryUpdateForm = () => {
     const newCategory = {
       catId: params.id,
       title: categoryName,
-      // categorySlug: categorySlug,
     };
-    setCategoryName("");
-    // setCategorySlug("");
-    navigate("/admin-categories");
+
     try {
       const response = await axios.put(
         "http://localhost:5000/api/v1/category/update",
@@ -60,12 +55,11 @@ const CategoryUpdateForm = () => {
           },
         }
       );
+      navigate("/admin-categories");
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);
     }
-    //@ts-ignore
-    dispatch(fetchCategories());
   };
   useEffect(() => {
     //@ts-ignore
@@ -98,18 +92,6 @@ const CategoryUpdateForm = () => {
             <span className="text-red-500">{errors.categoryName}</span>
           )}
         </div>
-        {/* <div className="flex flex-col gap-4 text-start ">
-          <div>Category Slug</div>
-          <input
-            className=" border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
-            type="text"
-            value={categorySlug}
-            onChange={(e) => setCategorySlug(e.target.value)}
-            placeholder={filteredCategory.categorySlug}
-            required
-          />
-        </div> */}
-
         <div className="bg-sky-500 px-4 py-1 hover:bg-sky-600 text-white font-bold rounded  self-start">
           <button type="submit"> Update </button>
         </div>
