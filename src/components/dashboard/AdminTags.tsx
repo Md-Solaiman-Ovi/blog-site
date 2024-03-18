@@ -6,6 +6,7 @@ import AdminLayout from "../custom-components/AdminLayout";
 import { fetchTags } from "@/redux/tagSlice";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import LoadingAnimation from "../custom-components/LoadingAnimation";
 
 const AdminTags = () => {
   const { isLoading, tags, error } = useSelector((state: any) => state.tags);
@@ -30,7 +31,7 @@ const AdminTags = () => {
 
   return (
     <AdminLayout>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <LoadingAnimation />}
       {error && <div>{error.message}</div>}
       <div className="flex flex-col gap-8 m-8 ">
         <div className=" border-1 rounded  flex justify-between items-center ">

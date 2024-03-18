@@ -39,12 +39,12 @@ const RepliedInput = ({ id, postId, controlState }: any) => {
           },
         }
       );
+      //@ts-ignore
+      dispatch(fetchComments());
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);
     }
-    //@ts-ignore
-    dispatch(fetchComments());
   };
   useEffect(() => {
     //@ts-ignore

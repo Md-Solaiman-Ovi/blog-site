@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { handleToggle } from "@/redux/globalStateSlice";
 import { Link } from "react-router-dom";
 const AdminNavbar = () => {
+  const toggleMenu = useSelector((state: any) => state.globalState.toggleMenu);
   // const count =
   useSelector((state: any) => state.globalState.toggleMenu);
   const dispatch = useDispatch();
@@ -18,16 +19,28 @@ const AdminNavbar = () => {
   return (
     <div className="flex justify-between items-center self-center text-white w-full">
       <div className="flex items-center gap-8 self-center">
-        <div className="text-3xl py-1 font-bold font-['Oregano',cursive]  text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-sky-600  ">
-          AriSaf Blogs
+        <div className="flex items-center gap-2 ">
+          <img
+            className="w-8 h-8 rounded-full"
+            src="/public/ast-blog.jpg"
+            alt="logo"
+          />
+          <div
+            className={`text-3xl py-1 font-bold font-['Oregano',cursive]  text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-sky-600  ${
+              toggleMenu ? "block " : "hidden "
+            } `}
+          >
+            AriSaf Blogs
+          </div>
         </div>
+
         <div
           className="cursor-pointer transition delay-150 duration-300 ease-in-out"
           onClick={() => dispatch(handleToggle())}
         >
           <FiMenu className="w-7 h-7  " />
         </div>
-        <Link to={"/"}>
+        <Link to={"/"} target="_blank">
           <FaEarthAmericas className="w-6 h-6 " />
         </Link>
       </div>

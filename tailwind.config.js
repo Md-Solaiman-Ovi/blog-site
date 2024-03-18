@@ -17,8 +17,9 @@ export const theme = {
   },
   extend: {
     border: {
-      1: "2px",
+      1: "1px",
     },
+
     colors: {
       border: "hsl(var(--border))",
       input: "hsl(var(--input))",

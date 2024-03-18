@@ -22,6 +22,12 @@ const SingleDetailsPage = () => {
     dispatch(fetchBlogs());
     // dispatch(fetchTags());
   }, [dispatch]);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   const postDetail = blogs.find(
     (item: Blogs) =>
       item.slug == params.slug && item.category.name == params.categorySlug
@@ -74,6 +80,8 @@ const SingleDetailsPage = () => {
                   if (blog.category.name == "related")
                     return (
                       <RelatedBlogCard
+                        //@ts-ignore
+                        scrollToTop={scrollToTop}
                         key={index}
                         id={blog.id}
                         title={blog.title}

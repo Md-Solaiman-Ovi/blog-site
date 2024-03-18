@@ -36,6 +36,8 @@ const CommentInput = ({ postDetail }: any) => {
           },
         }
       );
+      //@ts-ignore
+      dispatch(fetchComments());
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);

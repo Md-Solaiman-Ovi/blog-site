@@ -7,6 +7,7 @@ import { useEffect } from "react";
 // import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import LoadingAnimation from "../custom-components/LoadingAnimation";
 
 const AdminCategories = () => {
   const { isLoading, categories, error } = useSelector(
@@ -32,7 +33,7 @@ const AdminCategories = () => {
   }, [dispatch]);
   return (
     <AdminLayout>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <LoadingAnimation />}
       {error && <div>{error.message}</div>}
       <div className="flex flex-col gap-8 m-8 ">
         <div className=" border-1 rounded  flex justify-between items-center ">

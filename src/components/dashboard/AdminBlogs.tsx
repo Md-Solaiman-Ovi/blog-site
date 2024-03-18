@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Blogs } from "@/types/dataTypes";
 import ReactHtmlParser from "react-html-parser";
+import LoadingAnimation from "../custom-components/LoadingAnimation";
 const AdminBlogs = () => {
   const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
 
@@ -53,7 +54,7 @@ const AdminBlogs = () => {
 
   return (
     <AdminLayout>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <LoadingAnimation />}
       {error && <div>{error.message}</div>}
       {blogs && (
         <div className="flex flex-col gap-8 m-8 ">

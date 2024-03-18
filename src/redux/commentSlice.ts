@@ -19,7 +19,7 @@ export const fetchComments = createAsyncThunk(
           },
         }
       );
-      // console.log(response.data);
+      console.log("all comments ", response.data);
       return response.data;
     } catch (error) {
       // If there's an error, you can handle it here
