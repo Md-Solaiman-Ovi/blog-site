@@ -17,11 +17,13 @@ const SingleDetailsPage = () => {
   const { blogs, error } = useSelector((state: any) => state.blogs);
   const { tags } = useSelector((state: any) => state.tags);
   const dispatch = useDispatch();
+
   useEffect(() => {
     // @ts-ignore
     dispatch(fetchBlogs());
     // dispatch(fetchTags());
-  }, [dispatch]);
+  }, [dispatch, params.slug]);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -54,7 +56,7 @@ const SingleDetailsPage = () => {
             </div>
             {blogs.map((postDetailSmall: Blogs) => {
               if (
-                postDetail.category.name == postDetailSmall.category.name &&
+                postDetail.category?.name == postDetailSmall.category?.name &&
                 postDetail.id !== postDetailSmall.id
               ) {
                 return (
@@ -77,10 +79,9 @@ const SingleDetailsPage = () => {
                 .slice(blogs.id, blogs.length - 1)
                 .map((blog: Blogs, index: number) => {
                   // console.log("tags in details :", blog.tags);
-                  if (blog.category.name == "related")
+                  if (blog.category?.name == "related")
                     return (
                       <RelatedBlogCard
-                        //@ts-ignore
                         scrollToTop={scrollToTop}
                         key={index}
                         id={blog.id}

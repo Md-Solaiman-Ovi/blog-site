@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export type Blogs = {
   id: number;
   title: string;
@@ -16,6 +17,7 @@ export type Blogs = {
       tagSlug: string;
     }
   ];
+  scrollToTop: any;
 };
 
 export type Categories = {

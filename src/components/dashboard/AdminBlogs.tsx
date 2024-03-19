@@ -107,13 +107,13 @@ const AdminBlogs = () => {
                     <tr className="border" key={index}>
                       <td className="border px-4 py-2">{index + 1}</td>
                       <td className="border px-4 py-2">{blog.title}</td>
-                      {/* <td className="border px-4 py-2">
-                        {ReactHtmlParser(blog.desc)}
-                      </td> */}
+
                       <td className="border px-4 py-2 text-justify ">
                         {ReactHtmlParser(getFirstNWords(blog.desc, 15))}
                       </td>
-                      <td className="border px-4 py-2">{blog.category.name}</td>
+                      <td className="border px-4 py-2">
+                        {blog.category?.name}
+                      </td>
                       <td className=" px-4 py-2  gap-1 ">
                         {blog.tags.map((tag: any, index: number) => (
                           <div className=" px-1 rounded" key={index}>

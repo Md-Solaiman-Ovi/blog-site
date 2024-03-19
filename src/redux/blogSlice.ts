@@ -4,10 +4,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchBlogs = createAsyncThunk("blogs/fetchBlogs", async () => {
-  //   const res = await axios.get("http://localhost:3000/blogs");
-  //   // console.log("json data", res);
-  //   return res.data;
-  // });
   // @ts-ignore
   const auth = JSON.parse(localStorage.getItem("user"));
   // console.log("auth", auth);

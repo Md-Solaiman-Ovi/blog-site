@@ -21,7 +21,10 @@ const HeroSection = () => {
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {blogs.map((topNews: Blogs, index: number) => {
-        if (topNews.category.name == "topnews" && topNews.slug == "topnews-1") {
+        if (
+          topNews.category?.name == "topnews" &&
+          topNews.slug == "topnews-1"
+        ) {
           return (
             <Link
               to={`${topNews.category.name}/${topNews.slug}`}
@@ -43,7 +46,7 @@ const HeroSection = () => {
       <div className="w-full grid grid-rows-2 gap-4">
         {blogs.map((topNews: Blogs, index: number) => {
           if (
-            topNews.category.name == "topnews" &&
+            topNews.category?.name == "topnews" &&
             topNews.slug !== "topnews-1"
           ) {
             return (

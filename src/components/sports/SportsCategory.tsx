@@ -28,7 +28,7 @@ const SportsCategory = () => {
 
           {blogs &&
             blogs.map((blogs: Blogs, index: number) => {
-              if (blogs.category.name == "sports" && blogs.slug == "post-21") {
+              if (blogs.category?.name == "sports" && blogs.slug == "post-21") {
                 return <MainCard key={blogs.id || index} blogs={blogs} />;
               }
             })}
@@ -37,7 +37,7 @@ const SportsCategory = () => {
           {blogs &&
             blogs.map((sportsNews: Blogs, index: number) => {
               if (
-                sportsNews.category.name == "sports" &&
+                sportsNews.category?.name == "sports" &&
                 sportsNews.slug != "post-21"
               ) {
                 // console.log("small id", sportsNews);

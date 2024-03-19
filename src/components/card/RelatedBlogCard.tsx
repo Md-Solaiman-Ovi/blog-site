@@ -4,13 +4,17 @@ import { Link } from "react-router-dom";
 import { getFirstNWords } from "../../redux/globalFunctions";
 import { Blogs } from "../../types/dataTypes";
 
-const RelatedBlogCard = (
-  { title, slug, image, desc, category }: Blogs,
-  props: any
-) => {
+const RelatedBlogCard = ({
+  title,
+  slug,
+  image,
+  desc,
+  category,
+  scrollToTop,
+}: Blogs) => {
   // console.log(blog)
   return (
-    <Link to={`/${category.name}/${slug}`} onClick={props.scrollToTop}>
+    <Link to={`/${category.name}/${slug}`} onClick={scrollToTop}>
       <div className="flex flex-col  border-1 shadow-xl rounded h-[500px]">
         <div className="flex h-[300px]">
           <img

@@ -36,7 +36,7 @@ const CategoryPage = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4 pb-10">
               {blogs.map((blog: Blogs, index: number) => {
-                if (blog.category.name == params.categorySlug) {
+                if (blog.category?.name == params.categorySlug) {
                   console.log(blog.category.name, params.title);
                   return (
                     <RelatedBlogCard
@@ -48,6 +48,7 @@ const CategoryPage = () => {
                       desc={blog.desc}
                       category={blog.category}
                       tags={blog.tags}
+                      scrollToTop={undefined}
                     />
                   );
                 }

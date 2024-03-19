@@ -116,7 +116,7 @@ const CreateBlogForm = () => {
         {
           headers: {
             Authorization: "Bearer " + auth.token,
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
           },
         }
       );
@@ -142,6 +142,7 @@ const CreateBlogForm = () => {
           e.key === "Enter" && e.preventDefault();
         }}
         className="flex flex-col gap-8 m-8 bg-white p-4 rounded h-[800px] overflow-y-scroll"
+        // enctype="multipart/form-data"
       >
         <div className=" border-1 rounded flex justify-between items-center bg-gray-500 p-2 text-white font-semibold text-lg">
           Create Blog
@@ -191,9 +192,9 @@ const CreateBlogForm = () => {
                 className="border-[1px] border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500"
                 onChange={handleSelectCat}
               >
-                {/* <option value="" disabled={true}>
-                  select option
-                </option> */}
+                <option value="" disabled={true}>
+                  Select Category
+                </option>
 
                 {categories.map((item: Categories, index: number) => (
                   <option key={index}>{item.title}</option>
@@ -232,7 +233,9 @@ const CreateBlogForm = () => {
               className="hidden"
               id="img"
               type="file"
+              name="image"
               onChange={handleChange}
+              multiple
             />
 
             {file ? (

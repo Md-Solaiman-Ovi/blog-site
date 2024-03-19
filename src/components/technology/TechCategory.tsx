@@ -27,7 +27,7 @@ const TechCategory = () => {
 
           {blogs &&
             blogs.map((blogs: Blogs, index: number) => {
-              if (blogs.category.name == "tech" && blogs.slug == "post-16") {
+              if (blogs.category?.name == "tech" && blogs.slug == "post-16") {
                 return <MainCard key={blogs.id || index} blogs={blogs} />;
               }
             })}
@@ -36,7 +36,7 @@ const TechCategory = () => {
           {blogs &&
             blogs.map((techNews: Blogs, index: number) => {
               if (
-                techNews.category.name == "tech" &&
+                techNews.category?.name == "tech" &&
                 techNews.slug != "post-16"
               ) {
                 // console.log("small id", techNews);
