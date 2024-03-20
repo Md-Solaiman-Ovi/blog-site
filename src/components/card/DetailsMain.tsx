@@ -14,7 +14,7 @@ const DetailsMain = ({ postDetail }: any) => {
       <div className="w-full h-[300px] cursor-pointer">
         <img
           className="object-cover w-full h-full"
-          src={postDetail.image}
+          src={"http://localhost:5000/" + postDetail.image}
           alt=""
         />
       </div>

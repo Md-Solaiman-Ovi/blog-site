@@ -13,7 +13,7 @@ const MainCard = ({ blogs }: any) => {
         <div className="w-full h-[300px] cursor-pointer">
           <img
             className="object-cover w-full h-full"
-            src={blogs.image}
+            src={"http://localhost:5000/" + blogs.image}
             alt=""
           />
         </div>

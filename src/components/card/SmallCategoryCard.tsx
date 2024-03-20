@@ -9,7 +9,7 @@ const SmallCategoryCard = ({ sportsNews }: any) => {
         <div className="w-1/3 group-hover:rounded group-hover:overflow-hidden">
           <img
             className="object-cover h-36 rounded group-hover:scale-[1.15] group-hover:duration-300   "
-            src={sportsNews.image}
+            src={"http://localhost:5000/" + sportsNews.image}
             alt=""
           />
         </div>

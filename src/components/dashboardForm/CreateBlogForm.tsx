@@ -19,10 +19,15 @@ const CreateBlogForm = () => {
   const [titleName, setTitleName] = useState("");
   // const [blogImage, setBlogImage] = useState("");
   const [blogDesc, setBlogDesc] = useState("");
-  const [catItem, setCatItem] = useState({ id: "", name: "" });
+  const [catItem, setCatItem] = useState({
+    id: "",
+    name: "",
+    categorySlug: "",
+  });
   const [selectedValues, setSelectedValues] = useState<Option[]>([]);
   const [file, setFile] = useState<any>();
   const [errors, setErrors] = useState<Errors>({});
+  const [image, setImage] = useState<any>();
 
   const { categories } = useSelector((state: any) => state.categories);
   const { tags } = useSelector((state: any) => state.tags);
@@ -42,6 +47,7 @@ const CreateBlogForm = () => {
   const handleChange = (e: any) => {
     console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
+    setImage(e.target.files[0]);
   };
   // Function triggered when an option is selected
   const onSelect = (selectedList: any) => {
@@ -55,10 +61,12 @@ const CreateBlogForm = () => {
   const handleSelectCat = (e: any) => {
     const selectedIndex = e.target.selectedIndex;
     const selectedItemData = categories[selectedIndex - 1]; // -1 to account for the "select option" default
+    console.log("category ", selectedItemData);
     // Update state with the selected item data
     setCatItem({
       id: selectedItemData._id,
       name: selectedItemData.title,
+      categorySlug: selectedItemData.categorySlug,
     });
   };
 
@@ -66,6 +74,7 @@ const CreateBlogForm = () => {
   const navigate = useNavigate();
   //@ts-ignore
   const auth = JSON.parse(localStorage.getItem("user"));
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     // Initialize validation errors object
@@ -95,17 +104,15 @@ const CreateBlogForm = () => {
 
     const newBlog = {
       title: titleName,
-      image: file,
+      image,
       desc: blogDesc,
       category: catItem,
       tags: selectedValues,
     };
+    console.log("BLOG ", newBlog);
     setTitleName("");
-    // setBlogImage("");
     setBlogDesc("");
-    // setBlogCategoryName("");
-    // setBlogTag("");
-    navigate("/admin-blogs");
+
     console.log("blog desc:", blogDesc);
     console.log("blog data:", newBlog);
 
@@ -120,6 +127,7 @@ const CreateBlogForm = () => {
           },
         }
       );
+      navigate("/admin-blogs");
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);
@@ -235,9 +243,8 @@ const CreateBlogForm = () => {
               type="file"
               name="image"
               onChange={handleChange}
-              multiple
             />
-
+            {/* <input type="file" name="image" onClick={handleImage} /> */}
             {file ? (
               <img className="object-cover h-28 rounded-t" src={file} />
             ) : (
@@ -258,7 +265,7 @@ const CreateBlogForm = () => {
         </div>
 
         <div className="bg-sky-500 px-4 py-1 hover:bg-sky-600 text-white font-bold rounded  self-start">
-          <button> Submit </button>
+          <button type="submit"> Submit </button>
         </div>
       </form>
     </AdminLayout>

@@ -47,7 +47,7 @@ function App() {
           <HeroSection blogs={blogs} />
           <SportsCategory blogs={blogs} />
           <TechCategory blogs={blogs} />
-          <Test />
+          {/* <Test /> */}
         </Layout>
       </div>
     </>

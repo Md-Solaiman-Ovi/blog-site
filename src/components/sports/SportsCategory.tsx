@@ -14,18 +14,15 @@ const SportsCategory: React.FC<ChildProps> = ({ blogs }) => {
         <div className="border-1 flex flex-col gap-4 w-full md:w-3/5 shadow-lg ">
           {blogs &&
             blogs.map((blogs: Blogs, index: number) => {
-              if (blogs.category?.name == "sports" && blogs.slug == "post-21") {
+              if (blogs.category?.name == "Sports") {
                 return <MainCard key={blogs.id || index} blogs={blogs} />;
               }
             })}
         </div>
         <div className="flex flex-col gap-4 md:w-2/5 ">
           {blogs &&
-            blogs.map((sportsNews: Blogs, index: number) => {
-              if (
-                sportsNews.category?.name == "sports" &&
-                sportsNews.slug != "post-21"
-              ) {
+            blogs.slice(2).map((sportsNews: Blogs, index: number) => {
+              if (sportsNews.category?.name == "Sports") {
                 return (
                   <SmallCategoryCard
                     key={sportsNews.id || index}

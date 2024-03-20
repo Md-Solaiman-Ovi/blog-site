@@ -12,14 +12,15 @@ const RelatedBlogCard = ({
   category,
   scrollToTop,
 }: Blogs) => {
-  // console.log(blog)
+  console.log("image", image);
+
   return (
     <Link to={`/${category.name}/${slug}`} onClick={scrollToTop}>
       <div className="flex flex-col  border-1 shadow-xl rounded h-[500px]">
         <div className="flex h-[300px]">
           <img
             className="object-cover object-top w-full h-full"
-            src={image}
+            src={"http://localhost:5000/" + image}
             alt=""
           ></img>
         </div>

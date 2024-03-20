@@ -3,7 +3,7 @@
 
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../custom-components/Layout";
-import LatestCard from "../card/LatestCard";
+// import LatestCard from "../card/LatestCard";
 import DetailsMain from "../card/DetailsMain";
 import { useEffect, useState } from "react";
 import { fetchBlogs } from "../../redux/blogSlice";
@@ -11,6 +11,7 @@ import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useParams } from "react-router-dom";
 import { Blogs } from "../../types/dataTypes";
 import axios from "axios";
+// import LatestCard from "../card/LatestCard";
 
 const SingleDetailsPage = () => {
   const params = useParams();
@@ -23,6 +24,20 @@ const SingleDetailsPage = () => {
   useEffect(() => {
     // @ts-ignore
     dispatch(fetchBlogs());
+    const fetchData = async () => {
+      const res = await axios.get(
+        "http://localhost:5000/api/v1/blog/" + params.slug,
+        {
+          headers: {
+            Authorization: "Bearer " + auth.token,
+          },
+        }
+      );
+      setSingleBlog(res.data);
+      console.log("inside effect ", res.data);
+    };
+
+    fetchData();
     // dispatch(fetchTags());
   }, [dispatch, params.slug]);
 
@@ -34,21 +49,21 @@ const SingleDetailsPage = () => {
   };
   // @ts-ignore
   const auth = JSON.parse(localStorage.getItem("user"));
-  const handleClick = async (e: any) => {
-    console.log("token ", e);
-    const res = await axios.get("http://localhost:5000/api/v1/blog/" + e, {
-      headers: {
-        Authorization: "Bearer " + auth.token,
-      },
-    });
+  // const handleClick = async (e: any) => {
+  //   console.log("token ", e);
+  //   // const res = await axios.get("http://localhost:5000/api/v1/blog/" + e, {
+  //   //   headers: {
+  //   //     Authorization: "Bearer " + auth.token,
+  //   //   },
+  //   // });
 
-    setSingleBlog(res.data);
-    console.log(singleBlog);
-  };
-  const postDetail = blogs.find(
-    (item: Blogs) =>
-      item.slug == params.slug && item.category.name == params.categorySlug
-  );
+  //   // setSingleBlog(res.data);
+  //   console.log("from me ", singleBlog);
+  // };
+  // const postDetail = blogs.find(
+  //   (item: Blogs) =>
+  //     item.slug == params.slug && item.category.name == params.categorySlug
+  // );
   return (
     <Layout>
       <div className="container">
@@ -57,22 +72,22 @@ const SingleDetailsPage = () => {
         </div>
         <div className="flex flex-col md:flex-row py-5 md:gap-10 lg:gap-20">
           {error && <div>Loading...</div>}
-          {postDetail && (
+          {singleBlog && (
             <DetailsMain
-              // key={postDetail.id}
-              postDetail={postDetail}
+              key={singleBlog.id}
+              postDetail={singleBlog}
               tags={tags}
             />
           )}
 
-          <div className="flex flex-col gap-4 w-full md:w-1/3">
+          {/* <div className="flex flex-col gap-4 w-full md:w-1/3">
             <div className="font-bold text-start text-xl text-sky-800">
               Latest Blogs
             </div>
             {blogs.map((postDetailSmall: Blogs) => {
               if (
-                postDetail.category?.name == postDetailSmall.category?.name &&
-                postDetail.id !== postDetailSmall.id
+                singleBlog?.category?.name == postDetailSmall?.category?.name &&
+                singleBlog.id !== postDetailSmall.id
               ) {
                 return (
                   <LatestCard
@@ -82,7 +97,7 @@ const SingleDetailsPage = () => {
                 );
               }
             })}
-          </div>
+          </div> */}
         </div>
         <div className="flex flex-col gap-4 py-10">
           <div className="font-bold text-start text-2xl text-sky-800">
@@ -93,23 +108,19 @@ const SingleDetailsPage = () => {
               blogs
                 .slice(blogs.id, blogs.length - 1)
                 .map((blog: Blogs, index: number) => {
-                  // console.log("tags in details :", blog.tags);
                   if (blog.category?.name == "related")
                     return (
-                      // @ts-ignore
-                      <div onClick={() => handleClick(blog._id)}>
-                        <RelatedBlogCard
-                          scrollToTop={scrollToTop}
-                          key={index}
-                          id={blog.id}
-                          title={blog.title}
-                          slug={blog.slug}
-                          image={blog.image}
-                          desc={blog.desc}
-                          category={blog.category}
-                          tags={blog.tags}
-                        />
-                      </div>
+                      <RelatedBlogCard
+                        key={index}
+                        scrollToTop={scrollToTop}
+                        id={blog.id}
+                        title={blog.title}
+                        slug={blog.slug}
+                        image={blog.image}
+                        desc={blog.desc}
+                        category={blog.category}
+                        tags={blog.tags}
+                      />
                     );
                 })}
           </div>
