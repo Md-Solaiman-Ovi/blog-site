@@ -25,9 +25,12 @@ const CategoryPage = () => {
           <LoadingAnimation />
         </div>
       )} */}
+      {isLoading && (
+        <div className="w-screen h-screen absolute z-50 ">
+          <LoadingAnimation />
+        </div>
+      )}
       <Layout>
-        {isLoading && <LoadingAnimation />}
-
         {error && <div>{error.message}</div>}
         {blogs && (
           <>

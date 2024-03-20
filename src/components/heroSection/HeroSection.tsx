@@ -1,25 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Blogs } from "../../types/dataTypes";
 import { Link } from "react-router-dom";
-import { fetchBlogs } from "../../redux/blogSlice";
 import { getFirstNWords } from "../../redux/globalFunctions";
-
-const HeroSection = () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { isLoading, blogs, error } = useSelector((state: any) => state.blogs);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    // @ts-ignore
-    dispatch(fetchBlogs());
-  }, [dispatch]);
-
+interface ChildProps {
+  blogs: Blogs[];
+}
+const HeroSection: React.FC<ChildProps> = ({ blogs }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 py-0 md:py-10 gap-10  ">
-      {isLoading && <div>Loading...</div>}
-      {error && <div>{error.message}</div>}
       {blogs.map((topNews: Blogs, index: number) => {
         if (
           topNews.category?.name == "topnews" &&

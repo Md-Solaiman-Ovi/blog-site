@@ -5,17 +5,19 @@ import { useDispatch, useSelector } from "react-redux";
 import Layout from "../custom-components/Layout";
 import LatestCard from "../card/LatestCard";
 import DetailsMain from "../card/DetailsMain";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchBlogs } from "../../redux/blogSlice";
 import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useParams } from "react-router-dom";
 import { Blogs } from "../../types/dataTypes";
+import axios from "axios";
 
 const SingleDetailsPage = () => {
   const params = useParams();
   console.log("single details params", params);
   const { blogs, error } = useSelector((state: any) => state.blogs);
   const { tags } = useSelector((state: any) => state.tags);
+  const [singleBlog, setSingleBlog] = useState<any>(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,6 +31,19 @@ const SingleDetailsPage = () => {
       top: 0,
       behavior: "smooth",
     });
+  };
+  // @ts-ignore
+  const auth = JSON.parse(localStorage.getItem("user"));
+  const handleClick = async (e: any) => {
+    console.log("token ", e);
+    const res = await axios.get("http://localhost:5000/api/v1/blog/" + e, {
+      headers: {
+        Authorization: "Bearer " + auth.token,
+      },
+    });
+
+    setSingleBlog(res.data);
+    console.log(singleBlog);
   };
   const postDetail = blogs.find(
     (item: Blogs) =>
@@ -81,17 +96,20 @@ const SingleDetailsPage = () => {
                   // console.log("tags in details :", blog.tags);
                   if (blog.category?.name == "related")
                     return (
-                      <RelatedBlogCard
-                        scrollToTop={scrollToTop}
-                        key={index}
-                        id={blog.id}
-                        title={blog.title}
-                        slug={blog.slug}
-                        image={blog.image}
-                        desc={blog.desc}
-                        category={blog.category}
-                        tags={blog.tags}
-                      />
+                      // @ts-ignore
+                      <div onClick={() => handleClick(blog._id)}>
+                        <RelatedBlogCard
+                          scrollToTop={scrollToTop}
+                          key={index}
+                          id={blog.id}
+                          title={blog.title}
+                          slug={blog.slug}
+                          image={blog.image}
+                          desc={blog.desc}
+                          category={blog.category}
+                          tags={blog.tags}
+                        />
+                      </div>
                     );
                 })}
           </div>

@@ -25,7 +25,7 @@ const Navbar = () => {
   const val = JSON.parse(localStorage.getItem("user"));
 
   return (
-    <nav className=" bg-gray-50 top-0 sticky px-4 z-50">
+    <nav className=" bg-gray-50 top-0 sticky px-4 z-40">
       <div className="container pt-4">
         <div className="flex justify-between items-center">
           <Link to={"/"}>
