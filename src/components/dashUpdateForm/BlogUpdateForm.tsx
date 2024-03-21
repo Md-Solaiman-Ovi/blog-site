@@ -16,6 +16,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 const BlogUpdateForm = () => {
   const params = useParams();
+  console.log(params.id);
   const dispatch = useDispatch();
   const { blogs } = useSelector((state: any) => state.blogs);
   const { categories } = useSelector((state: any) => state.categories);
@@ -84,12 +85,13 @@ const BlogUpdateForm = () => {
     // console.log("blog desc update", newBlog);
     try {
       const response = await axios.put(
-        "http://localhost:5000/api/v1/blog/update",
+        "http://localhost:5000/api/v1/blog/" + params.id,
+
         newBlog,
         {
           headers: {
             Authorization: "Bearer " + auth.token,
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
           },
         }
       );

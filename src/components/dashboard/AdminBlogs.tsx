@@ -78,7 +78,7 @@ const AdminBlogs = () => {
           <div className="h-[600px] md:h-[700px] overflow-auto md:overflow-y-scroll">
             <table className="table-auto border-collapse rounded  w-full">
               <thead className="sticky top-0">
-                <tr>
+                <tr className="">
                   <th className="px-4 py-2 bg-gray-200 text-gray-600 ">
                     Serial no.
                   </th>
@@ -104,7 +104,7 @@ const AdminBlogs = () => {
               <tbody className=" bg-white ">
                 {filteredBlogs.map((blog: any, index: number) => {
                   return (
-                    <tr className="border" key={index}>
+                    <tr className="" key={index}>
                       <td className="border px-4 py-2">{index + 1}</td>
                       <td className="border px-4 py-2">{blog.title}</td>
 
@@ -114,7 +114,7 @@ const AdminBlogs = () => {
                       <td className="border px-4 py-2">
                         {blog.category?.name}
                       </td>
-                      <td className=" px-4 py-2  gap-1 ">
+                      <td className="border px-4 py-2  gap-1 ">
                         {blog.tags.map((tag: any, index: number) => (
                           <div className=" px-1 rounded" key={index}>
                             {tag.title}{" "}
@@ -123,7 +123,7 @@ const AdminBlogs = () => {
                       </td>
                       <td className="border px-4 py-2">{blog.slug}</td>
                       <td className="border px-4 py-2">{blog.image}</td>
-                      <td className="px-4 py-2 flex justify-center items-center gap-4">
+                      <td className="border px-4 py-2 flex justify-center items-center gap-4">
                         <Link
                           to={`/update-blog-form/${blog._id}`}
                           className="px-4 py-1 bg-teal-500 text-white rounded "
@@ -131,7 +131,7 @@ const AdminBlogs = () => {
                           Edit
                         </Link>{" "}
                         <div
-                          className="px-4 py-1 bg-red-500 text-white rounded cursor-pointer"
+                          className="px-4 py-1 bg-red-500 text-white rounded cursor-pointer "
                           onClick={() => deleteBlog(blog._id)}
                         >
                           delete

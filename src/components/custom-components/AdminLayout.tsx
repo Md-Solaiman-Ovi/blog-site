@@ -8,7 +8,7 @@ const AdminLayout = ({ children }: any) => {
 
   return (
     <div className="h-screen w-screen flex flex-col items-center bg-blue-50 overflow-hidden">
-      <div className="w-full h-20 flex items-center py-2 px-8 bg-slate-700 ">
+      <div className="w-full h-20 flex items-center py-2 px-7 bg-slate-700 ">
         <AdminNavbar />
       </div>
       <div className="w-full flex h-[calc(100%-80px)]">
@@ -20,7 +20,7 @@ const AdminLayout = ({ children }: any) => {
           <AdminSidebar />
         </div>
 
-        <div className="w-full  ">{children} </div>
+        <div className="w-full">{children} </div>
       </div>
     </div>
   );

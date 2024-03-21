@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom";
 import { getFirstNWords } from "../../redux/globalFunctions";
 import { Blogs } from "../../types/dataTypes";
-
+import ReactHtmlParser from "react-html-parser";
 const RelatedBlogCard = ({
   title,
   slug,
@@ -27,7 +27,7 @@ const RelatedBlogCard = ({
         <div className="text-lg font-bold text-center p-2 ">{title}</div>
         <div className="flex flex-col justify-between ">
           <div className="text-sm text-justify px-4 ">
-            {getFirstNWords(desc, 20)}
+            {ReactHtmlParser(getFirstNWords(desc, 20))}
           </div>
           <div className="text-start text-[11px] italic text-gray-400 p-2">
             Published on: 13 Jan 2024

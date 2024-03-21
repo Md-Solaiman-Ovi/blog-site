@@ -5,7 +5,7 @@ import { BsSearch } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { fetchCategories } from "../../redux/categorySlice";
 import { Categories } from "../../types/dataTypes";
 // import EditDeleteOption from "../comments/EditDeleteOption";
@@ -20,6 +20,19 @@ const Navbar = () => {
   const location = useLocation();
 
   const [dropDown, setDropDown] = useState(false);
+  const dropDownRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const handler = (e: any) => {
+      if (!dropDownRef.current?.contains(e.target)) {
+        setDropDown(false);
+        console.log(dropDownRef.current);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
 
   // @ts-ignore
   const val = JSON.parse(localStorage.getItem("user"));
@@ -63,36 +76,40 @@ const Navbar = () => {
             ) : (
               <div className="md:flex gap-3 hidden ">
                 {" "}
-                <div className="rounded-full border-2 border-sky-500 text-sky-600 text-[20px] w-[30px] h-[30px] grid place-items-center">
+                <div className="rounded-full border-2 border-sky-500 text-sky-600 text-[20px] w-[30px] h-[30px] grid place-items-center cursor-pointer">
                   {" "}
                   <AiOutlineUser onClick={() => setDropDown(!dropDown)} />
                 </div>
-                <div className="flex justify-center items-center">
+                <Link
+                  to={"/user-profile"}
+                  className="flex justify-center items-center cursor-pointer"
+                >
                   <p className="text-sky-700 font-['Oregano',cursive] ">
                     Hello, {val.user.name}
                   </p>
-                </div>{" "}
+                </Link>{" "}
                 {dropDown && (
                   <div
-                    className={`bg-gray-100 text-black flex flex-col text-sm absolute top-14 right-52 border-1
+                    className={`bg-gray-100 text-black flex flex-col text-base absolute top-16 right-52 border-1  rounded shadow-sm shadow-slate-400
 
                        `}
+                    ref={dropDownRef}
                   >
                     <Link
                       to={"/user-profile"}
-                      className="hover:bg-sky-500 hover:text-white w-full p-1 border-b-1"
+                      className="hover:bg-sky-500 hover:text-white w-full px-4 py-1 border-b-1 rounded-t"
                     >
                       Your Profile
                     </Link>
                     <Link
                       to={"/admin-dashboard"}
-                      className="hover:bg-sky-500 hover:text-white w-full p-1 border-b-1"
+                      className="hover:bg-sky-500 hover:text-white w-full px-4 py-1 border-b-1"
                     >
                       Dashboard
                     </Link>
                     <Link
                       to={"/user-profile"}
-                      className="hover:bg-sky-500 hover:text-white w-full  p-1"
+                      className="hover:bg-sky-500 hover:text-white w-full  px-4 py-1 rounded-b"
                     >
                       Logout
                     </Link>

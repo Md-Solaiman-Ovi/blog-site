@@ -7,7 +7,7 @@ import LoadingAnimation from "./components/custom-components/LoadingAnimation";
 import HeroSection from "./components/heroSection/HeroSection";
 import SportsCategory from "./components/sports/SportsCategory";
 import TechCategory from "./components/technology/TechCategory";
-import Test from "./components/test/Test";
+// import Test from "./components/test/Test";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogs } from "./redux/blogSlice";
 
@@ -44,9 +44,9 @@ function App() {
       )}
       <div>
         <Layout>
-          <HeroSection blogs={blogs} />
-          <SportsCategory blogs={blogs} />
-          <TechCategory blogs={blogs} />
+          <HeroSection blogs={blogs} categoryName="Topnews" />
+          <SportsCategory blogs={blogs} categoryName="Sports" />
+          <TechCategory blogs={blogs} categoryName="Technology" />
           {/* <Test /> */}
         </Layout>
       </div>

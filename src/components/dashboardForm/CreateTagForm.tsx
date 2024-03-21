@@ -42,7 +42,7 @@ const CreateTagForm = () => {
     };
     setTagName("");
     // setTagSlug("");
-    navigate("/admin-tags");
+
     try {
       const response = await axios.post(
         "http://localhost:5000/api/v1/tag",
@@ -54,6 +54,7 @@ const CreateTagForm = () => {
           },
         }
       );
+      navigate("/admin-tags");
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);

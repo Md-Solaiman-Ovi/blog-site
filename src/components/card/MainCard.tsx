@@ -2,6 +2,7 @@
 
 import { Link } from "react-router-dom";
 import { getFirstNWords } from "../../redux/globalFunctions";
+import ReactHtmlParser from "react-html-parser";
 // import { Blogs } from "../../types/dataTypes";
 
 const MainCard = ({ blogs }: any) => {
@@ -19,7 +20,7 @@ const MainCard = ({ blogs }: any) => {
         </div>
 
         <div className="text-justify p-4 ">
-          {getFirstNWords(blogs.desc, 100)}
+          {ReactHtmlParser(getFirstNWords(blogs.desc, 100))}
         </div>
       </Link>
     </div>

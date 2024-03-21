@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { getFirstNWords } from "../../redux/globalFunctions";
+import ReactHtmlParser from "react-html-parser";
 const LatestCard = (postdetail: any) => {
   // console.log("latest vlog card", postdetail.postDetailSmall);
   return (
@@ -21,7 +22,9 @@ const LatestCard = (postdetail: any) => {
             {postdetail.postDetailSmall.title}
           </div>
           <div className="text-sm">
-            {getFirstNWords(postdetail.postDetailSmall.desc, 10)}
+            {ReactHtmlParser(
+              getFirstNWords(postdetail.postDetailSmall.desc, 10)
+            )}
           </div>
         </div>
       </div>

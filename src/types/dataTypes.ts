@@ -6,6 +6,7 @@ export type Blogs = {
   image: string;
   desc: string;
   category: {
+    categorySlug: string | undefined;
     categoryName: string;
     id: number;
     name: string;

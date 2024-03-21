@@ -3,6 +3,7 @@
 import { Link } from "react-router-dom";
 import Comment from "../comments/CommentSection";
 import { Tags } from "../../types/dataTypes";
+import ReactHtmlParser from "react-html-parser";
 
 const DetailsMain = ({ postDetail }: any) => {
   return (
@@ -23,7 +24,9 @@ const DetailsMain = ({ postDetail }: any) => {
         <div>Author: Mahmudul Hasib</div>
       </div>
 
-      <div className="text-justify p-4 ">{postDetail.desc}</div>
+      <div className="text-justify p-4 ">
+        {ReactHtmlParser(postDetail.desc)}
+      </div>
       <div className=" grid grid-cols-3  gap-2 p-4 ">
         {postDetail.tags.map((tag: Tags, index: number) => {
           // console.log("list of tags", tag);

@@ -43,7 +43,7 @@ const CreateCategoryForm = () => {
     };
     setCategoryName("");
     // setCategorySlug("");
-    navigate("/admin-categories");
+
     try {
       const response = await axios.post(
         "http://localhost:5000/api/v1/category/",
@@ -55,6 +55,7 @@ const CreateCategoryForm = () => {
           },
         }
       );
+      navigate("/admin-categories");
       return response.data;
     } catch (error) {
       console.error("Error adding new post:", error);
