@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import AdminLayout from "../custom-components/AdminLayout";
+// import AdminLayout from "../custom-components/AdminLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
@@ -115,14 +115,15 @@ const BlogUpdateForm = () => {
     dispatch(fetchTags());
   }, [dispatch]);
   return (
-    <AdminLayout>
+    // <AdminLayout>
+    <>
       {filteredBlog ? (
         <form
           onSubmit={handleSubmit}
           onKeyPress={(e) => {
             e.key === "Enter" && e.preventDefault();
           }}
-          className="flex flex-col gap-8 m-8 bg-white p-4 rounded h-[800px] overflow-y-scroll"
+          className="flex flex-col gap-8 m-8 bg-white p-4 rounded h-[800px] overflow-y-scroll w-full"
         >
           <div className=" border-1 rounded flex justify-between items-center bg-gray-500 p-2 text-white font-semibold text-lg">
             Update Blog
@@ -141,18 +142,6 @@ const BlogUpdateForm = () => {
           </div>
 
           <div className="flex gap-8 ">
-            {/* <div className="flex flex-col gap-4 text-start w-full">
-              <div>Description</div>
-              <textarea
-                className=" border-[1px] h-full border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500  "
-                // type="text"
-                value={blogDesc}
-                onChange={(e) => setBlogDesc(e.target.value)}
-                placeholder="Write description"
-                cols={30}
-                rows={10}
-              ></textarea>
-            </div> */}
             <div className="flex flex-col gap-4 text-start w-full">
               <div>Description</div>
               <div className="border-[1px] h-full border-gray-300 p-2 rounded focus:outline-[0.5px] focus:outline-sky-500 "></div>
@@ -247,7 +236,8 @@ const BlogUpdateForm = () => {
       ) : (
         <div>Loading...</div>
       )}
-    </AdminLayout>
+    </>
+    // </AdminLayout>
   );
 };
 

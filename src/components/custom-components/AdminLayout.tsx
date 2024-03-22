@@ -1,9 +1,10 @@
+import { Outlet } from "react-router-dom";
 import AdminNavbar from "../dashboard/AdminNavbar";
 import AdminSidebar from "../dashboard/AdminSidebar";
 import { useSelector } from "react-redux";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const AdminLayout = ({ children }: any) => {
+const AdminLayout = () => {
   const toggleMenu = useSelector((state: any) => state.globalState.toggleMenu);
 
   return (
@@ -20,7 +21,8 @@ const AdminLayout = ({ children }: any) => {
           <AdminSidebar />
         </div>
 
-        <div className="w-full">{children} </div>
+        {/* <div className="w-full">{children} </div> */}
+        <Outlet />
       </div>
     </div>
   );

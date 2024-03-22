@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import AdminLayout from "../custom-components/AdminLayout";
+// import AdminLayout from "../custom-components/AdminLayout";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -143,13 +143,14 @@ const CreateBlogForm = () => {
   }, [dispatch]);
 
   return (
-    <AdminLayout>
+    // <AdminLayout>
+    <>
       <form
         onSubmit={handleSubmit}
         onKeyPress={(e) => {
           e.key === "Enter" && e.preventDefault();
         }}
-        className="flex flex-col gap-8 m-8 bg-white p-4 rounded h-[800px] overflow-y-scroll"
+        className="flex flex-col gap-8 m-8 bg-white p-4 rounded h-[800px] overflow-y-scroll w-full"
         // enctype="multipart/form-data"
       >
         <div className=" border-1 rounded flex justify-between items-center bg-gray-500 p-2 text-white font-semibold text-lg">
@@ -268,7 +269,8 @@ const CreateBlogForm = () => {
           <button type="submit"> Submit </button>
         </div>
       </form>
-    </AdminLayout>
+    </>
+    // </AdminLayout>
   );
 };
 

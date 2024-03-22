@@ -19,7 +19,7 @@ const AdminNavbar = () => {
   return (
     <div className="flex justify-between items-center self-center text-white w-full">
       <div className="flex items-center gap-8 self-center">
-        <div className="flex items-center gap-2 ">
+        <div className="flex items-center gap-2  ">
           <img
             className="w-8 h-8 rounded-full"
             src="/public/ast-blog.jpg"

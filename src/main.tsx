@@ -26,6 +26,8 @@ import TagUpdateForm from "./components/dashUpdateForm/TagUpdateForm.tsx";
 import CategoryUpdateForm from "./components/dashUpdateForm/CategoryUpdateForm.tsx";
 import UserUpdateForm from "./components/dashUpdateForm/UserUpdateForm.tsx";
 import BlogUpdateForm from "./components/dashUpdateForm/BlogUpdateForm.tsx";
+import AdminLayout from "./components/custom-components/AdminLayout.tsx";
+import Home from "./components/pages/Home.tsx";
 // import Login from "./components/account/Login.tsx";
 
 const val = localStorage.getItem("user");
@@ -34,16 +36,17 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
+    ],
   },
   {
     path: "/",
     element: val ? <Navigate to="/" /> : <Navigate to="/signin-signup-page" />,
   },
-  // {
-  //   path: "/login",
-  //   element: <Login />,
-  // },
-
   {
     path: "/signin-signup-page",
     element: val ? <Navigate to={"/"} /> : <SignInSignUpPage />,
@@ -76,58 +79,117 @@ const router = createBrowserRouter([
     element: <SignInSignUpPage />,
   },
 
-  {
-    path: "/admin-categories",
-    element: <AdminCategories />,
-  },
-  {
-    path: "/admin-tags",
-    element: <AdminTags />,
-  },
-  {
-    path: "/admin-blogs",
-    element: <AdminBlogs />,
-  },
-  {
-    path: "/admin-users",
-    element: <AdminUsers />,
-  },
+  // {
+  //   path: "/admin-categories",
+  //   element: <AdminCategories />,
+  // },
+  // {
+  //   path: "/admin-tags",
+  //   element: <AdminTags />,
+  // },
+  // {
+  //   path: "/admin-blogs",
+  //   element: <AdminBlogs />,
+  // },
+  // {
+  //   path: "/admin-users",
+  //   element: <AdminUsers />,
+  // },
 
+  // {
+  //   path: "/admin-dashboard",
+  //   element: <Dashboard />,
+  // },
+  // {
+  //   path: "/blog-form",
+  //   element: <CreateBlogForm />,
+  // },
+  // {
+  //   path: "/category-form",
+  //   element: <CreateCategoryForm />,
+  // },
+  // {
+  //   path: "/tag-form",
+  //   element: <CreateTagForm />,
+  // },
+  // {
+  //   path: "/user-form",
+  //   element: <CreateUserForm />,
+  // },
+  // {
+  //   path: "/update-tag-form/:id",
+  //   element: <TagUpdateForm />,
+  // },
+  // {
+  //   path: "/update-category-form/:id",
+  //   element: <CategoryUpdateForm />,
+  // },
+  // {
+  //   path: "/update-user-form/:id",
+  //   element: <UserUpdateForm />,
+  // },
+  // {
+  //   path: "/update-blog-form/:id",
+  //   element: <BlogUpdateForm />,
+  // },
   {
-    path: "/admin-dashboard",
-    element: <Dashboard />,
-  },
-  {
-    path: "/blog-form",
-    element: <CreateBlogForm />,
-  },
-  {
-    path: "/category-form",
-    element: <CreateCategoryForm />,
-  },
-  {
-    path: "/tag-form",
-    element: <CreateTagForm />,
-  },
-  {
-    path: "/user-form",
-    element: <CreateUserForm />,
-  },
-  {
-    path: "/update-tag-form/:id",
-    element: <TagUpdateForm />,
-  },
-  {
-    path: "/update-category-form/:id",
-    element: <CategoryUpdateForm />,
-  },
-  {
-    path: "/update-user-form/:id",
-    element: <UserUpdateForm />,
-  },
-  {
-    path: "/update-blog-form/:id",
-    element: <BlogUpdateForm />,
+    path: "/",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "admin-dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "admin-blogs",
+        element: <AdminBlogs />,
+      },
+      {
+        path: "admin-categories",
+        element: <AdminCategories />,
+      },
+      {
+        path: "admin-tags",
+        element: <AdminTags />,
+      },
+
+      {
+        path: "admin-users",
+        element: <AdminUsers />,
+      },
+      {
+        path: "/admin-blogs/create-blog",
+        element: <CreateBlogForm />,
+      },
+      {
+        path: "/admin-category/create-category",
+        element: <CreateCategoryForm />,
+      },
+      {
+        path: "/admin-tags/create-tag",
+        element: <CreateTagForm />,
+      },
+      {
+        path: "/admin-users/create-user",
+        element: <CreateUserForm />,
+      },
+      {
+        path: "/update-tag-form/:id",
+        element: <TagUpdateForm />,
+      },
+      {
+        path: "/update-category-form/:id",
+        element: <CategoryUpdateForm />,
+      },
+      {
+        path: "/update-user-form/:id",
+        element: <UserUpdateForm />,
+      },
+      {
+        path: "/update-blog-form/:id",
+        element: <BlogUpdateForm />,
+      },
+    ],
   },
 ]);
 

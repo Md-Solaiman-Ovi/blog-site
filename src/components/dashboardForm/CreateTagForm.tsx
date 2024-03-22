@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useDispatch, useSelector } from "react-redux";
-import AdminLayout from "../custom-components/AdminLayout";
+// import AdminLayout from "../custom-components/AdminLayout";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -67,13 +67,14 @@ const CreateTagForm = () => {
   }, [dispatch]);
 
   return (
-    <AdminLayout>
+    // <AdminLayout>
+    <>
       <form
         onSubmit={handleSubmit}
         onKeyPress={(e) => {
           e.key === "Enter" && e.preventDefault();
         }}
-        className="flex flex-col gap-8 m-8 bg-white p-4 rounded"
+        className="flex flex-col gap-8 m-8 bg-white p-4 rounded w-full"
       >
         <div className=" border-1 rounded flex justify-between items-center bg-gray-500 p-2 text-white font-semibold text-lg">
           Create Tag
@@ -98,7 +99,8 @@ const CreateTagForm = () => {
           <button type="submit"> Submit </button>
         </div>
       </form>
-    </AdminLayout>
+    </>
+    // </AdminLayout>
   );
 };
 

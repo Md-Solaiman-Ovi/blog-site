@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useDispatch, useSelector } from "react-redux";
-import AdminLayout from "../custom-components/AdminLayout";
+// import AdminLayout from "../custom-components/AdminLayout";
 import { useEffect, useState } from "react";
 import Alert from "../dashboardCard/Alert";
 import axios from "axios";
@@ -94,7 +94,8 @@ const CreateUserForm = () => {
   // };
   // console.log("user after", users);
   return (
-    <AdminLayout>
+    // <AdminLayout>
+    <>
       {showAlert && (
         <Alert
           type="green"
@@ -108,7 +109,7 @@ const CreateUserForm = () => {
         onKeyPress={(e) => {
           e.key === "Enter" && e.preventDefault();
         }}
-        className="flex flex-col gap-8 m-8 bg-white p-4 rounded"
+        className="flex flex-col gap-8 m-8 bg-white p-4 rounded w-full"
       >
         <div className=" border-1 rounded flex justify-between items-center bg-gray-500 p-2 text-white font-semibold text-lg">
           Create User
@@ -161,7 +162,8 @@ const CreateUserForm = () => {
           <button type="submit"> Submit </button>
         </div>
       </form>
-    </AdminLayout>
+    </>
+    // </AdminLayout>
   );
 };
 export default CreateUserForm;

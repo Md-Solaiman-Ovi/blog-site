@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import AdminLayout from "../custom-components/AdminLayout";
+// import AdminLayout from "../custom-components/AdminLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
@@ -61,7 +61,8 @@ const UserUpdateForm = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
   return (
-    <AdminLayout>
+    // <AdminLayout>
+    <>
       {showAlert && (
         <Alert
           type="green"
@@ -75,7 +76,7 @@ const UserUpdateForm = () => {
         onKeyPress={(e) => {
           e.key === "Enter" && e.preventDefault();
         }}
-        className="flex flex-col gap-8 m-8 bg-white p-4 rounded"
+        className="flex flex-col gap-8 m-8 bg-white p-4 rounded w-full"
       >
         <div className=" border-1 rounded flex justify-between items-center bg-gray-500 p-2 text-white font-semibold text-lg">
           Update User
@@ -118,7 +119,8 @@ const UserUpdateForm = () => {
           <button type="submit"> Update </button>
         </div>
       </form>
-    </AdminLayout>
+    </>
+    // </AdminLayout>
   );
 };
 

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import AdminLayout from "../custom-components/AdminLayout";
+// import AdminLayout from "../custom-components/AdminLayout";
 import { fetchTags } from "@/redux/tagSlice";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -30,10 +30,15 @@ const AdminTags = () => {
   }, [dispatch]);
 
   return (
-    <AdminLayout>
-      {isLoading && <LoadingAnimation />}
+    // <AdminLayout>
+    <>
+      {isLoading && (
+        <div className="w-screen h-screen absolute z-50">
+          <LoadingAnimation />
+        </div>
+      )}
       {error && <div>{error.message}</div>}
-      <div className="flex flex-col gap-8 m-8 ">
+      <div className="flex flex-col gap-8 m-8 w-full">
         <div className=" border-1 rounded  flex justify-between items-center ">
           <input
             type="text"
@@ -41,7 +46,7 @@ const AdminTags = () => {
             className="border-2 w-1/5 p-2  rounded"
           />
           <Link
-            to={"/tag-form"}
+            to={"/admin-tags/create-tag"}
             className="bg-green-500 hover:bg-blue-600 text-white rounded px-4 py-2"
           >
             Add new Tag
@@ -93,7 +98,8 @@ const AdminTags = () => {
           </table>
         </div>
       </div>
-    </AdminLayout>
+    </>
+    // </AdminLayout>
   );
 };
 

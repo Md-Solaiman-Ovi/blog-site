@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { fetchCategories } from "@/redux/categorySlice";
-import AdminLayout from "../custom-components/AdminLayout";
+// import AdminLayout from "../custom-components/AdminLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 // import { Button } from "../ui/button";
@@ -32,10 +32,15 @@ const AdminCategories = () => {
     dispatch(fetchCategories());
   }, [dispatch]);
   return (
-    <AdminLayout>
-      {isLoading && <LoadingAnimation />}
+    // <AdminLayout>
+    <>
+      {isLoading && (
+        <div className="w-screen h-screen absolute z-50">
+          <LoadingAnimation />
+        </div>
+      )}
       {error && <div>{error.message}</div>}
-      <div className="flex flex-col gap-8 m-8 ">
+      <div className="flex flex-col gap-8 m-8 w-full">
         <div className=" border-1 rounded  flex justify-between items-center ">
           <input
             type="text"
@@ -43,7 +48,7 @@ const AdminCategories = () => {
             className="border-2 w-1/5 p-2  rounded"
           />
           <Link
-            to={"/category-form"}
+            to={"/admin-category/create-category"}
             className="bg-green-500 hover:bg-blue-600 text-white rounded px-4 py-2"
           >
             Add new Category
@@ -97,7 +102,8 @@ const AdminCategories = () => {
           </table>
         </div>
       </div>
-    </AdminLayout>
+    </>
+    // </AdminLayout>
   );
 };
 

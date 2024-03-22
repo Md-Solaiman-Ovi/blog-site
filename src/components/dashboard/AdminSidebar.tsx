@@ -35,7 +35,7 @@ const AdminSidebar = () => {
     <div className="my-5 flex flex-col gap-8 w-full  ">
       <div className="flex flex-col gap-2 text-start text-lg md:text-xl text-white px-3">
         <Link
-          to={"/admin-dashboard"}
+          to={"admin-dashboard"}
           className={`flex items-center gap-4 hover:bg-gray-500 font-semibold px-4 py-1 rounded cursor-pointer ${
             location.pathname === "/admin-dashboard" ? "bg-slate-700" : ""
           }`}
@@ -48,7 +48,7 @@ const AdminSidebar = () => {
           </div>
         </Link>
         <Link
-          to={"/admin-blogs"}
+          to={"admin-blogs"}
           className={`flex items-center gap-4 font-semibold  px-4 py-1 rounded cursor-pointer ${
             location.pathname === "/admin-blogs"
               ? "bg-slate-700"
@@ -63,7 +63,7 @@ const AdminSidebar = () => {
           </div>
         </Link>
         <Link
-          to={"/admin-categories"}
+          to={"admin-categories"}
           className={`flex items-center gap-4  font-semibold px-4 py-1 rounded cursor-pointer ${
             location.pathname === "/admin-categories"
               ? "bg-slate-700"
@@ -78,7 +78,7 @@ const AdminSidebar = () => {
           </div>
         </Link>
         <Link
-          to={"/admin-tags"}
+          to={"admin-tags"}
           className={`flex items-center gap-4  font-semibold px-4 py-1 rounded cursor-pointer ${
             location.pathname === "/admin-tags"
               ? "bg-slate-700"
@@ -93,7 +93,7 @@ const AdminSidebar = () => {
           </div>
         </Link>
         <Link
-          to={"/admin-users"}
+          to={"admin-users"}
           className={`
           flex items-center gap-4  font-semibold px-4 py-1 rounded cursor-pointer ${
             location.pathname === "/admin-users"

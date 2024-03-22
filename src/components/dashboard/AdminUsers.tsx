@@ -3,7 +3,7 @@
 
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import AdminLayout from "../custom-components/AdminLayout";
+// import AdminLayout from "../custom-components/AdminLayout";
 // import { Button } from "../ui/button";
 import { fetchUsers } from "@/redux/userSlice";
 import { Link } from "react-router-dom";
@@ -34,10 +34,15 @@ const AdminUsers = () => {
   }, [dispatch]);
 
   return (
-    <AdminLayout>
-      {isLoading && <LoadingAnimation />}
+    // <AdminLayout>
+    <>
+      {isLoading && (
+        <div className="w-screen h-screen absolute z-50">
+          <LoadingAnimation />
+        </div>
+      )}
       {error && <div>{error.message}</div>}
-      <div className="flex flex-col gap-8 m-8 ">
+      <div className="flex flex-col gap-8 m-8 w-full">
         <div className=" border-1 rounded flex justify-between items-center ">
           <input
             type="text"
@@ -45,7 +50,7 @@ const AdminUsers = () => {
             className="border-2 w-1/5 p-2  rounded"
           />
           <Link
-            to={"/user-form"}
+            to={"/admin-users/create-user"}
             className="bg-green-500 hover:bg-blue-600 text-white rounded px-4 py-2"
           >
             Create new user
@@ -96,7 +101,8 @@ const AdminUsers = () => {
           </table>
         </div>
       </div>
-    </AdminLayout>
+    </>
+    // </AdminLayout>
   );
 };
 

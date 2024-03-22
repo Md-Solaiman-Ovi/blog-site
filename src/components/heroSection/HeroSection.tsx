@@ -2,6 +2,7 @@ import { Blogs } from "../../types/dataTypes";
 import { Link } from "react-router-dom";
 import { getFirstNWords } from "../../redux/globalFunctions";
 import { useEffect, useState } from "react";
+import ReactHtmlParser from "react-html-parser";
 interface ChildProps {
   blogs: Blogs[];
   categoryName: string;
@@ -51,7 +52,9 @@ const HeroSection: React.FC<ChildProps> = ({ categoryName }) => {
                   alt=""
                 />
               </div>
-              <div className="text-justify p-4">{topNews.desc}</div>
+              <div className="text-justify p-4">
+                {ReactHtmlParser(topNews.desc)}
+              </div>
             </div>
           </Link>
         );
@@ -81,7 +84,7 @@ const HeroSection: React.FC<ChildProps> = ({ categoryName }) => {
                     {topNews.title}
                   </div>
                   <div className="text-justify text-white text-sm  p-4  ">
-                    {getFirstNWords(topNews.desc, 30)}
+                    {ReactHtmlParser(getFirstNWords(topNews.desc, 30))}
                   </div>
                 </div>
               </Link>
