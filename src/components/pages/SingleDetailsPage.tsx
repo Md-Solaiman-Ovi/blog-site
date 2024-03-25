@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useDispatch, useSelector } from "react-redux";
-import Layout from "../custom-components/Layout";
+
 // import LatestCard from "../card/LatestCard";
 import DetailsMain from "../card/DetailsMain";
 import { useEffect, useState } from "react";
@@ -11,6 +11,7 @@ import RelatedBlogCard from "../card/RelatedBlogCard";
 import { useParams } from "react-router-dom";
 import { Blogs } from "../../types/dataTypes";
 import axios from "axios";
+import LatestCard from "../card/LatestCard";
 // import LatestCard from "../card/LatestCard";
 
 const SingleDetailsPage = () => {
@@ -26,12 +27,12 @@ const SingleDetailsPage = () => {
     dispatch(fetchBlogs());
     const fetchData = async () => {
       const res = await axios.get(
-        "http://localhost:5000/api/v1/blog/" + params.slug,
-        {
-          headers: {
-            Authorization: "Bearer " + auth.token,
-          },
-        }
+        "http://localhost:5000/api/v1/blog/" + params.slug
+        // {
+        //   // headers: {
+        //   //   Authorization: "Bearer " + auth.token,
+        //   // },
+        // }
       );
       setSingleBlog(res.data);
       console.log("inside effect ", res.data);
@@ -48,24 +49,9 @@ const SingleDetailsPage = () => {
     });
   };
   // @ts-ignore
-  const auth = JSON.parse(localStorage.getItem("user"));
-  // const handleClick = async (e: any) => {
-  //   console.log("token ", e);
-  //   // const res = await axios.get("http://localhost:5000/api/v1/blog/" + e, {
-  //   //   headers: {
-  //   //     Authorization: "Bearer " + auth.token,
-  //   //   },
-  //   // });
-
-  //   // setSingleBlog(res.data);
-  //   console.log("from me ", singleBlog);
-  // };
-  // const postDetail = blogs.find(
-  //   (item: Blogs) =>
-  //     item.slug == params.slug && item.category.name == params.categorySlug
-  // );
+  // const auth = JSON.parse(localStorage.getItem("user"));
   return (
-    <Layout>
+    <>
       <div className="container">
         <div className="text-start font-bold text-sm  text-sky-900 pt-5">
           Home {">"}Sports Category {">"} details
@@ -80,7 +66,7 @@ const SingleDetailsPage = () => {
             />
           )}
 
-          {/* <div className="flex flex-col gap-4 w-full md:w-1/3">
+          <div className="flex flex-col gap-4 w-full md:w-1/3">
             <div className="font-bold text-start text-xl text-sky-800">
               Latest Blogs
             </div>
@@ -97,7 +83,7 @@ const SingleDetailsPage = () => {
                 );
               }
             })}
-          </div> */}
+          </div>
         </div>
         <div className="flex flex-col gap-4 py-10">
           <div className="font-bold text-start text-2xl text-sky-800">
@@ -108,7 +94,7 @@ const SingleDetailsPage = () => {
               blogs
                 .slice(blogs.id, blogs.length - 1)
                 .map((blog: Blogs, index: number) => {
-                  if (blog.category?.name == "related")
+                  if (blog.category?.name == "Related")
                     return (
                       <RelatedBlogCard
                         key={index}
@@ -126,7 +112,7 @@ const SingleDetailsPage = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

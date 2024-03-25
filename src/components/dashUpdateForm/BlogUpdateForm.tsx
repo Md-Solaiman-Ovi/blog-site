@@ -203,7 +203,10 @@ const BlogUpdateForm = () => {
               />
 
               {file ? (
-                <img className="object-cover h-28 rounded-t" src={file} />
+                <img
+                  className="object-cover h-28 rounded-t"
+                  src={"http://localhost:5000/" + file}
+                />
               ) : (
                 <div className=" flex justify-center items-center self-center border-[1px] w-full h-28 rounded-t">
                   <CiImageOn className="h-10 w-10 self-center " />

@@ -5,16 +5,16 @@ import axios from "axios";
 
 export const fetchBlogs = createAsyncThunk("blogs/fetchBlogs", async () => {
   // @ts-ignore
-  const auth = JSON.parse(localStorage.getItem("user"));
+  // const auth = JSON.parse(localStorage.getItem("user"));
   // console.log("auth", auth);
   try {
     const response = await axios.get(
-      "http://localhost:5000/api/v1/blog/allposts",
-      {
-        headers: {
-          Authorization: "Bearer " + auth.token,
-        },
-      }
+      "http://localhost:5000/api/v1/blog/allposts"
+      // {
+      //   headers: {
+      //     Authorization: "Bearer " + auth.token,
+      //   },
+      // }
     );
     return response.data;
   } catch (error) {

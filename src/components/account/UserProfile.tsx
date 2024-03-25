@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Layout from "../custom-components/Layout";
+
 import { MdOutlineModeEditOutline } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const UserProfile = () => {
   };
   console.log(user);
   return (
-    <Layout>
+    <>
       <div className="w-full">
         <div className="h-64 ">
           <img
@@ -109,7 +109,7 @@ const UserProfile = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

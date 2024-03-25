@@ -34,104 +34,60 @@ const val = localStorage.getItem("user");
 
 const router = createBrowserRouter([
   {
+    path: "/signin-signup-page",
+    element: !val ? <SignInSignUpPage /> : <Navigate to={"/admin-dashboard"} />,
+  },
+  {
     path: "/",
+
     element: <App />,
     children: [
       {
         path: "",
         element: <Home />,
       },
+
+      // {
+      //   path: "/user-profile",
+      //   element: <UserProfile />,
+      // },
+      {
+        path: "/user-profile",
+        element: val ? <UserProfile /> : <Navigate to="/signin-signup-page" />,
+      },
+
+      {
+        path: ":categorySlug/:slug",
+        element: <SingleDetailsPage />,
+      },
+      {
+        path: "tag/:tagSlug",
+        element: <TagPage />,
+      },
+
+      {
+        path: ":categorySlug",
+        element: <CategoryPage />,
+      },
     ],
   },
   {
-    path: "/",
-    element: val ? <Navigate to="/" /> : <Navigate to="/signin-signup-page" />,
-  },
-  {
     path: "/signin-signup-page",
-    element: val ? <Navigate to={"/"} /> : <SignInSignUpPage />,
+    element: val ? (
+      <Navigate to="/admin-dashboard" />
+    ) : (
+      <Navigate to="/signin-signup-page" />
+    ),
   },
-  {
-    path: "/user-profile",
-    element: val ? <UserProfile /> : <Navigate to="/signin-signup-page" />,
-  },
-
-  {
-    path: "/user-profile",
-    element: <UserProfile />,
-  },
-
-  {
-    path: ":categorySlug/:slug",
-    element: <SingleDetailsPage />,
-  },
-  {
-    path: "tag/:tagSlug",
-    element: <TagPage />,
-  },
-
-  {
-    path: ":categorySlug",
-    element: <CategoryPage />,
-  },
-  {
-    path: "/signin-signup-page",
-    element: <SignInSignUpPage />,
-  },
-
   // {
-  //   path: "/admin-categories",
-  //   element: <AdminCategories />,
+  //   path: "/",
+  //   element: val ? <Navigate to="/" /> : <Navigate to="/signin-signup-page" />,
   // },
   // {
-  //   path: "/admin-tags",
-  //   element: <AdminTags />,
-  // },
-  // {
-  //   path: "/admin-blogs",
-  //   element: <AdminBlogs />,
-  // },
-  // {
-  //   path: "/admin-users",
-  //   element: <AdminUsers />,
+  //   path: "/signin-signup-page",
+  //   element: val ? <Navigate to={"/"} /> : <SignInSignUpPage />,
   // },
 
-  // {
-  //   path: "/admin-dashboard",
-  //   element: <Dashboard />,
-  // },
-  // {
-  //   path: "/blog-form",
-  //   element: <CreateBlogForm />,
-  // },
-  // {
-  //   path: "/category-form",
-  //   element: <CreateCategoryForm />,
-  // },
-  // {
-  //   path: "/tag-form",
-  //   element: <CreateTagForm />,
-  // },
-  // {
-  //   path: "/user-form",
-  //   element: <CreateUserForm />,
-  // },
-  // {
-  //   path: "/update-tag-form/:id",
-  //   element: <TagUpdateForm />,
-  // },
-  // {
-  //   path: "/update-category-form/:id",
-  //   element: <CategoryUpdateForm />,
-  // },
-  // {
-  //   path: "/update-user-form/:id",
-  //   element: <UserUpdateForm />,
-  // },
-  // {
-  //   path: "/update-blog-form/:id",
-  //   element: <BlogUpdateForm />,
-  // },
   {
     path: "/",
     element: <AdminLayout />,
@@ -192,6 +148,96 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
+// {
+//   path: "/",
+//   element: val ? <Navigate to="/" /> : <Navigate to="/signin-signup-page" />,
+// },
+// {
+//   path: "/signin-signup-page",
+//   element: val ? <Navigate to={"/"} /> : <SignInSignUpPage />,
+// },
+// {
+//   path: "/user-profile",
+//   element: val ? <UserProfile /> : <Navigate to="/signin-signup-page" />,
+// },
+
+// {
+//   path: "/user-profile",
+//   element: <UserProfile />,
+// },
+
+// {
+//   path: ":categorySlug/:slug",
+//   element: <SingleDetailsPage />,
+// },
+// {
+//   path: "tag/:tagSlug",
+//   element: <TagPage />,
+// },
+
+// {
+//   path: ":categorySlug",
+//   element: <CategoryPage />,
+// },
+// {
+//   path: "/signin-signup-page",
+//   element: <SignInSignUpPage />,
+// },
+
+// {
+//   path: "/admin-categories",
+//   element: <AdminCategories />,
+// },
+// {
+//   path: "/admin-tags",
+//   element: <AdminTags />,
+// },
+// {
+//   path: "/admin-blogs",
+//   element: <AdminBlogs />,
+// },
+// {
+//   path: "/admin-users",
+//   element: <AdminUsers />,
+// },
+
+// {
+//   path: "/admin-dashboard",
+//   element: <Dashboard />,
+// },
+// {
+//   path: "/blog-form",
+//   element: <CreateBlogForm />,
+// },
+// {
+//   path: "/category-form",
+//   element: <CreateCategoryForm />,
+// },
+// {
+//   path: "/tag-form",
+//   element: <CreateTagForm />,
+// },
+// {
+//   path: "/user-form",
+//   element: <CreateUserForm />,
+// },
+// {
+//   path: "/update-tag-form/:id",
+//   element: <TagUpdateForm />,
+// },
+// {
+//   path: "/update-category-form/:id",
+//   element: <CategoryUpdateForm />,
+// },
+// {
+//   path: "/update-user-form/:id",
+//   element: <UserUpdateForm />,
+// },
+// {
+//   path: "/update-blog-form/:id",
+//   element: <BlogUpdateForm />,
+// },
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Provider store={store}>

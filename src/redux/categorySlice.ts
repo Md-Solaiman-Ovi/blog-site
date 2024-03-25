@@ -8,16 +8,16 @@ export const fetchCategories = createAsyncThunk(
   async () => {
     //
     // @ts-ignore
-    const auth = JSON.parse(localStorage.getItem("user"));
+    // const auth = JSON.parse(localStorage.getItem("user"));
     // console.log("auth", auth);
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/v1/category/allcategories",
-        {
-          headers: {
-            Authorization: "Bearer " + auth.token,
-          },
-        }
+        "http://localhost:5000/api/v1/category/allcategories"
+        // {
+        // headers: {
+        //   Authorization: "Bearer " + auth.token,
+        // },
+        // }
       );
       // console.log(response.data);
       return response.data;

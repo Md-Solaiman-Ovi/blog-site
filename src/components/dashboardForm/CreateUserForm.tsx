@@ -20,7 +20,7 @@ const CreateUserForm = () => {
   // const [categorySlug, setCategorySlug] = useState("");
 
   interface Errors {
-    useName?: string;
+    userName?: string;
     email?: string;
     password?: string;
     // Add more error messages as needed
@@ -126,7 +126,7 @@ const CreateUserForm = () => {
             placeholder="Username"
           />
           {userName == "" && (
-            <span className="text-red-500">{errors.useName}</span>
+            <span className="text-red-500">{errors.userName}</span>
           )}
         </div>
         <div className="flex flex-col gap-4 text-start ">

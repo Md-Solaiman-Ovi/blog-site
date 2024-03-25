@@ -18,18 +18,37 @@ const Home = () => {
     dispatch(fetchBlogs());
   }, [dispatch]);
 
-  const [Loading, setLoading] = useState(!isLoading);
+  // const [Loading, setLoading] = useState(!isLoading);
+  // useEffect(() => {
+  //   // Simulate an API call
+  //   setTimeout(() => {
+  //     setLoading(isLoading);
+  //   }, 2000);
+  // }, []);
+
+  // return (
+  //   <>
+  //     {Loading && (
+  //       <div className="w-screen h-screen absolute z-50 ">
+  //         <LoadingAnimation />
+  //       </div>
+  //     )}
+  // State to manage loading
+  const [loading, setLoading] = useState(!isLoading);
+
   useEffect(() => {
     // Simulate an API call
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoading(isLoading);
     }, 2000);
-  }, []);
+
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, [isLoading]);
 
   return (
     <>
-      {Loading && (
-        <div className="w-screen h-screen absolute z-50 ">
+      {loading && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
           <LoadingAnimation />
         </div>
       )}
